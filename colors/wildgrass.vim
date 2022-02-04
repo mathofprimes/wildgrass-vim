@@ -3,7 +3,6 @@
 " reset colors to defaults so we can define new ones
 highlight clear
 
-" support previous version of vim
 if exists("syntax_on")
     syntax reset
 endif
@@ -11,19 +10,20 @@ endif
 " colorscheme name
 set g:colors_name="wildgrass"
 
-" foreground { 9CCC5A } 
-" background { 202220 }
+" Foreground = 9CCC5A  
+" Background = 202220
 
-" neon { 00FF00 } 
-" cyan { 00D5A0 }
-" yellow { C0D000 }  
-" slate { 303C3F } 
-" gray { 708070 }
-" faded { A0B090 }
-" bronze { A89984 } 
+" PureGreen = #00A000 
+" CyanGreen = #00D5A0 
+" BronzeGreen = #8C8E00  
+" GoldenGreen = #ACCC00 
+" SlateGreen = #505F5C
+" GrayGreen = #A0B090
+" FadedGreen = #A89984
+" SkyGreen = #4CB0A0
 
-" various/ui {
-highlight Normal guifg=#9CC5A guibg=#202220
+" user interface:
+highlight Normal guifg=#ACC5A guibg=#202220
 
 highlight Cursor
 highlight CursorColumn
@@ -81,7 +81,7 @@ highlight WildMenu
 
 " }
 
-" syntax (see :h group-name) {
+" syntax (see :h group-name)
 highlight Comment guifg=#708070
 
 highlight Constant guifg=#708070
@@ -127,5 +127,3 @@ highlight Ignore guifg=#9CCC5A
 highlight Error guifg=#C0D000
 
 highlight Todo guifg=#00D5A0
-
-" } syntax
