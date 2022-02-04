@@ -1,129 +1,127 @@
 " colorscheme file for wildgrass
 
 " reset colors to defaults so we can define new ones
-highlight clear
+hi clear
 
 if exists("syntax_on")
     syntax reset
 endif
 
 " colorscheme name
-set g:colors_name="wildgrass"
+let g:colors_name= 'wildgrass'
 
-" Foreground = 9CCC5A  
-" Background = 202220
+" set termguicolors
+set termguicolors
+    
+    " SYNTAX GROUPS (see :h group-name):
+    
+    " background (#242523, dark gray green)
+    " foreground (#242523, tan green)
+    hi Normal guifg=#BCC952 guibg=#242523
 
-" PureGreen = #00A000 
-" CyanGreen = #00D5A0 
-" BronzeGreen = #8C8E00  
-" GoldenGreen = #ACCC00 
-" SlateGreen = #505F5C
-" GrayGreen = #A0B090
-" FadedGreen = #A89984
-" SkyGreen = #4CB0A0
+    " comments (#99A599, light gray green)
+    hi Comment guifg=#99A599
 
-" user interface:
-highlight Normal guifg=#ACC5A guibg=#202220
+    " constants (#00D790, cyan green)
+    hi Constant guifg=#00D790
+    hi String guifg=#00D790
+    hi Character guifg=#00D790
+    hi Number guifg=#00D790
+    hi Boolean guifg=#00D790
+    hi Float guifg=#00D790
+    
+    " variables (#00B700, pure green)
+    hi Identifier guifg=#00B700
+    hi Function guifg=#00B700
 
-highlight Cursor
-highlight CursorColumn
-highlight Cursorline
+    " keywords (#A98020, burnt)
+    hi Statement guifg=#A98020
+    hi Conditional guifg=#A98020
+    hi Repeat guifg=#A98020
+    hi Label guifg=#A98020
+    hi Operator guifg=#A98020
+    hi Keyword guifg=#A98020
+    hi Exception guifg=#A98020
+    
+    " metas (#5A8C35, camo green)
+    hi PreProc guifg=#5A8C35
+    hi Include guifg=#5A8C35
+    hi Define guifg=#5A8C35
+    hi Macro guifg=#5A8C35
+    hi PreCondit guifg=#5A8C35
+    
+    " types (#707F7C, slate green)
+    hi Type guifg=#707F7C
+    hi StorageClass guifg=#707F7C
+    hi Structure guifg=#707F7C
+    hi Typedef guifg=#707F7C
+    
+    " specials (#CCCC00, yellow)
+    highlight Special guifg=#5CCCC0
+    highlight SpecialChar guifg=#ACCCC0
+    highlight Tag guifg=#ACCCC0
+    highlight Deliminator guifg=#9CCCC0
+    highlight SpecialComment guifg=#7CCCC0
+    highlight Debug guifg=#CCCCC0
 
-highlight LineNr
-highlight CursorLineNr
+    " others (#50C0A0, blue green)
+    hi Underlined guifg=#50C0A0
+    hi Ignore guifg=#50C0A0
+    hi Error guifg=#50C0A0
+    hi Todo guifg=#50C0A0
 
-highlight DiffAdd
-highlight DiffChange
-highlight DiffDelete
-highlight DiffText
+    " HIGHLIGHTING GROUPS (see :h highlight-groups): 
+    
+    " cursor is same as text, col / row are lighter versions of background
+    hi Cursor guifg=#BCC952
+    hi CursorColumn guibg=#293028
+    hi Cursorline guibg=#293028
 
-highlight IncSearch
-highlight Search
+    hi LineNr guifg=#99A599
+    hi CursorLineNr guifg=#00B700 guibg=#293028
 
-highlight ErrorMsg
-highlight ModeMsg
-highlight MoreMsg
-highlight WarningMsg
-highlight Question
+    hi DiffAdd
+    hi DiffChange
+    hi DiffDelete
+    hi DiffText
 
-highlight Pmenu
-highlight PmenuSel
-highlight PmenuSbar
-highlight PmenuThumb
+    hi IncSearch
+    hi Search
 
-highlight SpellBad
-highlight SpellCap
-highlight SpellLocal
-highlight SpellRare
+    hi ErrorMsg
+    hi ModeMsg
+    hi MoreMsg
+    hi WarningMsg
+    hi Question
 
-highlight StatusLine
-highlight StatusLineNC
-highlight TabLine
-highlight TabLineFill
-highlight TabLineSel
+    hi Pmenu
+    hi PmenuSel
+    hi PmenuSbar
+    hi PmenuThumb
 
-highlight Visual
-highlight VisualNOS
+    hi SpellBad
+    hi SpellCap
+    hi SpellLocal
+    hi SpellRare
 
-highlight ColorColumn
-highlight Conceal
-highlight Directory
-highlight VertSplit
-highlight Folded
-highlight FoldColumn
-highlight SignColumn
+    hi StatusLine
+    hi StatusLineNC
+    hi TabLine
+    hi TabLineFill
+    hi TabLineSel
 
-highlight MatchParen
-highlight SpecialKey
-highlight Title
-highlight WildMenu
-" } various/ui
+    hi Visual
+    hi VisualNOS
 
-" }
+    hi ColorColumn
+    hi Conceal
+    hi Directory
+    hi VertSplit
+    hi Folded
+    hi FoldColumn
+    hi SignColumn
 
-" syntax (see :h group-name)
-highlight Comment guifg=#708070
-
-highlight Constant guifg=#708070
-highlight String guifg=#
-highlight Character	guifg=#00D5A0
-highlight Number guifg=#00D5A0
-highlight Boolean guifg=#00D5A0
-highlight Float guifg=#00D5A0
-
-highlight Identifier guifg=#C0D000
-highlight Function guifg=#C0D000
-
-highlight Statement	guifg=#C0D000
-highlight Conditional guifg=#C0D000
-highlight Repeat guifg=#C0D000
-highlight Label guifg=#C0D000
-highlight Operator guifg=#C0D000
-highlight Keyword guifg=#C0D000
-highlight Exception	guifg=#C0D000
-
-highlight PreProc guifg=#00D5A0
-highlight Include guifg=#00D5A0
-highlight Define guifg=#00D5A0
-highlight Macro guifg=#00D5A0
-highlight PreCondit guifg=#00D5A0
-
-highlight Type guifg=#A0B090
-highlight StorageClass guifg=#A0B090
-highlight Structure guifg=#A0B090
-highlight Typedef guifg=#C0D000
-
-highlight Special guifg=#50A050
-highlight SpecialChar guifg=#A0B090
-highlight Tag guifg=#A0B090
-highlight Deliminator guifg=#9CCC5A
-highlight SpecialComment guifg=#708070
-highlight Debug guifg=#C0D000
-
-highlight Underlined guifg=#9CCC5A
-
-highlight Ignore guifg=#9CCC5A
-
-highlight Error guifg=#C0D000
-
-highlight Todo guifg=#00D5A0
+    hi MatchParen guibg=#293028
+    hi SpecialKey guifg=#CCCC00
+    hi Title guifg=#CCCC00
+    hi WildMenu guifg=#CCCC00 guibg=#293028
