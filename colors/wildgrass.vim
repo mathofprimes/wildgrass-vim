@@ -1,6 +1,4 @@
-
-hi ColorColumn guifg=#50C0A0
-hi Conceal guifg=#50C0" colorscheme file for wildgrass,
+" colorscheme file for wildgrass,
 " a colorscheme for vim and gvim
 
 " reset colors to defaults so we can define new ones
