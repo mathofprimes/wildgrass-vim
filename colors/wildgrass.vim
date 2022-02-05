@@ -125,3 +125,5 @@ hi MatchParen guibg=#293028
 hi SpecialKey guifg=#CCCC00
 hi Title guifg=#CCCC00
 hi WildMenu guifg=#CCCC00 guibg=#293028
+
+" end of color file
