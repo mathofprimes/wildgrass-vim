@@ -1,5 +1,4 @@
 " colorscheme file for wildgrass,
-" a colorscheme for vim and gvim
 
 " reset colors to defaults so we can define new ones
 hi clear
@@ -11,23 +10,35 @@ endif
 " colorscheme name
 let g:colors_name= 'wildgrass'
 
-" MAIN:
+set termguicolors
 
-" background/foreground
+" Palette {
+"     PAPER GREEN: #B0C555
+"     CHARCOAL GREEN 1: #242624
+"     CHARCOAL GREEN 2: #262826
+"    
+"     LIGHT GRAY GREEN: #808880
 
-hi Cursor gui=reverse
+"     BRIGHT YELLOW GREEN: #F0FF00
+"     CYAN GREEN: #00E090
+"     BRONZE GREEN: #909000
+"     PURE GREEN: #00FF00
+"     SLATE GREEN: #55B095
+"     TURQUOISE GREEN: #009090 
+"     FADED GREEN: 5A8C35
+" }
+
 " SYNTAX GROUPS (see :h group-name):
 
-" comments (#99A599, light gray green)
-hi Comment guifg=#99A599
+hi Comment cterm=italic ctermfg=NONE gui=italic guifg=#808880 guibg=NONE
 
 " constants (cyan green)
-hi Constant guifg=#00D790
-hi String guifg=#00D790
-hi Character guifg=#00D790
-hi Number guifg=#00D790
-hi Boolean guifg=#00D790
-hi Float guifg=#00D790
+hi Constant guifg=#00E090
+hi String guifg=#00E090
+hi Character guifg=#00E090
+hi Number guifg=#00E090
+hi Boolean guifg=#00E090
+hi Float guifg=#00E090
     
 " variables (#00B700, pure green)
 hi Identifier guifg=#00B700
@@ -70,16 +81,22 @@ hi Error guifg=#50C0A0
 hi Todo guifg=#50C0A0
 
 " HIGHLIGHTING GROUPS (see :h hi-groups): 
+" Organized in a way that makes sense
+
+hi Normal cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#BCC952 guibg=#242523
+
 
 hi ColorColumn guifg=#50C0A0
 
-hi CursorColumn term=standout ctermfg=NONE guibg=#293028 gui=NONE
 hi Conceal guifg=#50C0A0
 " hi CursorIM
-hi CursorLine cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=#293028
+hi Cursor gui=reverse
 " hi lCursor
 
-hi Directory
+hi CursorColumn term=standout ctermfg=NONE guibg=#293028 gui=NONE
+hi CursorLine cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=#293028
+
+hi Directory cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00B700
 hi DiffAdd guifg=#707F7C
 hi DiffChange guifg=#707F7C
 hi DiffDelete guifg=#707F7C
@@ -111,18 +128,16 @@ hi MoreMsg gui=bold guifg=#CCCC00
 
 hi NonText guifg=#FFFFFF
 
-hi Normal cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#BCC952 guibg=#242523
-
-hi Pmenu cterm=NONE ctermfg=NONE guifg=#00B700
-hi PmenuSel guifg=#00B700
-hi PmenuSbar guifg=#00B700
-hi PmenuThumb guifg=#00B700
+"""
+hi Pmenu cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00B700 guibg=NONE
+hi PmenuSel cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00B700 guibg=NONE
+hi PmenuSbar cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00B700 guibg=NONE
+hi PmenuThumb cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00B700 guibg=NONE
 
 hi Question gui=bold guifg=#CCCC00
 hi QuickFixLine guifg=#FFFFFF
 
 hi Search gui=reverse
-
 
 hi SpecialKey guifg=#CCCC00
 
@@ -152,15 +167,3 @@ hi WildMenu guifg=#CCCC00 guibg=#293028
 
 
 " gvim additional colors?
-hi Directory guifg=#50C0A0
-hi VertSplit guifg=#50C0A0
-hi Folded guifg=#50C0A0
-hi FoldColumn guifg=#50C0A0
-hi SignColumn guifg=#50C0A0
-
-hi MatchParen guibg=#293028
-hi SpecialKey guifg=#CCCC00
-hi Title guifg=#CCCC00
-hi WildMenu guifg=#CCCC00 guibg=#293028
-
-" end of color file
