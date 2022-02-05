@@ -1,4 +1,7 @@
-" colorscheme file for wildgrass
+
+hi ColorColumn guifg=#50C0A0
+hi Conceal guifg=#50C0" colorscheme file for wildgrass,
+" a colorscheme for vim and gvim
 
 " reset colors to defaults so we can define new ones
 hi clear
@@ -10,19 +13,17 @@ endif
 " colorscheme name
 let g:colors_name= 'wildgrass'
 
-" set termguicolors
-set termguicolors
-    
+" MAIN:
+
+" background/foreground
+
+hi Cursor gui=reverse
 " SYNTAX GROUPS (see :h group-name):
-    
-" background (#242523, dark gray green)
-" foreground (#242523, tan green)
-hi Normal guifg=#BCC952 guibg=#242523
 
 " comments (#99A599, light gray green)
 hi Comment guifg=#99A599
 
-" constants (#00D790, cyan green)
+" constants (cyan green)
 hi Constant guifg=#00D790
 hi String guifg=#00D790
 hi Character guifg=#00D790
@@ -72,32 +73,60 @@ hi Todo guifg=#50C0A0
 
 " HIGHLIGHTING GROUPS (see :h hi-groups): 
 
-" cursor is same as text, col / row are lighter versions of background
-hi Cursor gui=reverse
-hi CursorColumn guibg=#293028 gui=none
-hi Cursorline guibg=#293028 gui=none
+hi ColorColumn guifg=#50C0A0
 
-hi LineNr guifg=#99A599
-hi CursorLineNr guifg=#00B700 guibg=#293028
+hi CursorColumn term=standout ctermfg=NONE guibg=#293028 gui=NONE
+hi Conceal guifg=#50C0A0
+" hi CursorIM
+hi CursorLine cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=#293028
+" hi lCursor
 
+hi Directory
 hi DiffAdd guifg=#707F7C
 hi DiffChange guifg=#707F7C
 hi DiffDelete guifg=#707F7C
 hi DiffText guifg=#707F7C
 
-hi IncSearch gui=reverse
-hi Search gui=reverse
-
+hi EndOfBuffer guifg=#707F7C
 hi ErrorMsg gui=bold guifg=#CCCC00
+
+hi VertSplit guifg=#50C0A0
+
+hi Folded guifg=#50C0A0
+hi FoldColumn guifg=#50C0A0
+hi SignColumn guifg=#50C0A0
+
+hi IncSearch gui=reverse
+
+hi LineNr guifg=#99A599
+hi LineNrAbove guifg=#55FF77
+hi LineNrBelow guifg=#55FF00
+
+hi CursorLineNr cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00B700 guibg=#293028
+hi CursorLineSign gui=NONE guifg=#00B700
+hi CursorLineFold gui=NONE guifg=#00B700
+
+hi MatchParen guibg=#293028
+
 hi ModeMsg gui=bold guifg=#CCCC00
 hi MoreMsg gui=bold guifg=#CCCC00
-hi WarningMsg gui=bold guifg=#CCCC00
-hi Question gui=bold guifg=#CCCC00
 
-hi Pmenu guifg=#00B700
+hi NonText guifg=#FFFFFF
+
+hi Normal cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#BCC952 guibg=#242523
+
+hi Pmenu cterm=NONE ctermfg=NONE guifg=#00B700
 hi PmenuSel guifg=#00B700
 hi PmenuSbar guifg=#00B700
 hi PmenuThumb guifg=#00B700
+
+hi Question gui=bold guifg=#CCCC00
+hi QuickFixLine guifg=#FFFFFF
+
+hi Search gui=reverse
+
+
+hi SpecialKey guifg=#CCCC00
 
 hi SpellBad guifg=#CCCC00 gui=underline
 hi SpellCap guifg=#CCCC00 gui=underline
@@ -106,15 +135,25 @@ hi SpellRare guifg=#CCCC00 gui=underline
 
 hi StatusLine guifg=#50C0A0
 hi StatusLineNC guifg=#50C0A0
-hi TabLine guifg=#50C0A0
-hi TabLineFill guifg=#50C0A0
-hi TabLineSel guifg=#50C0A0
+hi StatusLineTerm cterm=NONE ctermfg=NONE
+hi StatusLineTermNC cterm=NONE ctermfg=NONE
+
+hi Terminal guifg=#CC00ff
+
+hi Title guifg=#CCCC00
 
 hi Visual guifg=#50C0A0
 hi VisualNOS guifg=#50C0A0
 
-hi ColorColumn guifg=#50C0A0
-hi Conceal guifg=#50C0A0
+hi TabLine guifg=#50C0A0
+hi TabLineFill guifg=#50C0A0
+hi TabLineSel guifg=#50C0A0
+
+hi WarningMsg gui=bold guifg=#CCCC00
+hi WildMenu guifg=#CCCC00 guibg=#293028
+
+
+" gvim additional colors?
 hi Directory guifg=#50C0A0
 hi VertSplit guifg=#50C0A0
 hi Folded guifg=#50C0A0
