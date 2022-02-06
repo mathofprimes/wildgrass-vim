@@ -43,38 +43,38 @@ hi Boolean cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00E090 guibg=NON
 hi Float cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00E090 guibg=NONE
     
 " pure green
-hi Identifier guifg=#00FF00
-hi Function guifg=#00FF00
+hi Identifier cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00FF00 guibg=NONE
+hi Function cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00FF00 guibg=NONE
 
 " bronze green
-hi Statement guifg=#A98020
-hi Conditional guifg=#A98020
-hi Repeat guifg=#A98020
-hi Label guifg=#A98020
-hi Operator guifg=#A98020
-hi Keyword guifg=#A98020
-hi Exception guifg=#A98020
+hi Statement cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#909000 guibg=NONE
+hi Conditional cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#909000 guibg=NONE
+hi Repeat cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#909000 guibg=NONE
+hi Label cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#909000 guibg=NONE
+hi Operator cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#909000 guibg=NONE
+hi Keyword cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#909000 guibg=NONE
+hi Exception cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#909000 guibg=NONE
 
-" metas (#5A8C35, camo green)
-hi PreProc guifg=#5A8C35
-hi Include guifg=#5A8C35
-hi Define guifg=#5A8C35
-hi Macro guifg=#5A8C35
-hi PreCondit guifg=#5A8C35
+" faded green
+hi PreProc cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#5A8C35 guibg=NONE
+hi Include cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#5A8C35 guibg=NONE
+hi Define cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#5A8C35 guibg=NONE
+hi Macro cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#5A8C35 guibg=NONE
+hi PreCondit cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#5A8C35 guibg=NONE
 
 " types (#55B095, slate green)
-hi Type guifg=#55B095
-hi StorageClass guifg=#55B095
+hi Type cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#55B095 guibg=NONE
+hi StorageClass cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#55B095 guibg=NONE
 hi Structure guifg=#55B095
 hi Typedef guifg=#55B095
 
 " specials (#FFFF00, yellow)
-hi Special guifg=#5CCCC0
-hi SpecialChar guifg=#ACCCC0
-hi Tag guifg=#ACCCC0
-hi Deliminator guifg=#9CCCC0
-hi SpecialComment guifg=#7CCCC0
-hi Debug guifg=#CCCCC0
+hi Special cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00FF00 guibg=NONE
+hi SpecialChar cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00FF00 guibg=NONE
+hi Tag cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00FF00 guibg=NONE
+hi Deliminator cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00FF00 guibg=NONE
+hi SpecialComment cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00FF00 guibg=NONE
+hi Debug cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00FF00 guibg=NONE
 
 " others (#50C0A0, blue green)
 hi Underlined guifg=#50C0A0
@@ -99,7 +99,7 @@ hi Directory cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00FF00
 hi DiffAdd guifg=#55B095
 hi DiffChange guifg=#55B095
 hi DiffDelete guifg=#55B095
-hi DiffText cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#55B095 guibg=#FFFFFF
+hi DiffText cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#55B095 guibg=#55B095
 
 
 " yellow green
@@ -145,10 +145,11 @@ hi Search gui=reverse
 
 hi SpecialKey guifg=#FFFF00
 
-hi SpellBad guifg=#FFFF00 gui=underline
-hi SpellCap guifg=#FFFF00 gui=underline
-hi SpellLocal guifg=#FFFF00 gui=underline
-hi SpellRare guifg=#FFFF00 gui=underline 
+" spelling errors
+hi SpellBad cterm=underline ctermfg=NONE ctermbg=NONE gui=underline guifg=NONE guibg=NONE guisp=#FFFF00 
+hi SpellCap cterm=NONE ctermfg=NONE ctermbg=NONE gui=underline guifg=NONE guibg=NONE
+hi SpellLocal cterm=NONE ctermfg=NONE ctermbg=NONE gui=underline guifg=NONE guibg=NONE
+hi SpellRare cterm=NONE ctermfg=NONE ctermbg=NONE gui=underline guifg=NONE guibg=NONE 
 
 hi StatusLine guifg=#50C0A0
 hi StatusLineNC guifg=#50C0A0
