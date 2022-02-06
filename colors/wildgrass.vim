@@ -7,17 +7,19 @@ if exists("syntax_on")
     syntax reset
 endif
 
-" colorscheme name
+" name
 let g:colors_name= 'wildgrass'
 
 set termguicolors
 
 " Palette {
 "     PAPER GREEN: #B0C555
-"     CHARCOAL GREEN 1: #242624
-"     CHARCOAL GREEN 2: #262826
+"     
+"     CHARCOAL GREEN: #242624
+"     CHARCOAL GREEN: #262826
+"     CHARCOAL GREEN: #283028
 "    
-"     LIGHT GRAY GREEN: #808880
+"     LIGHT GRAY GREEN: #757575
 
 "     BRIGHT YELLOW GREEN: #F0FF00
 "     CYAN GREEN: #00E090
@@ -30,21 +32,21 @@ set termguicolors
 
 " SYNTAX GROUPS (see :h group-name):
 
-hi Comment cterm=italic ctermfg=NONE gui=italic guifg=#808880 guibg=NONE
+hi Comment cterm=italic ctermfg=NONE ctermbg=NONE gui=italic guifg=#757575 guibg=NONE
 
-" constants (cyan green)
-hi Constant guifg=#00E090
-hi String guifg=#00E090
-hi Character guifg=#00E090
-hi Number guifg=#00E090
-hi Boolean guifg=#00E090
-hi Float guifg=#00E090
+" cyan green 
+hi Constant cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00E090 guibg=NONE
+hi String cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00E090 guibg=NONE
+hi Character cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00E090 guibg=NONE
+hi Number cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00E090 guibg=NONE
+hi Boolean cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00E090 guibg=NONE
+hi Float cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00E090 guibg=NONE
     
-" variables (#00B700, pure green)
-hi Identifier guifg=#00B700
-hi Function guifg=#00B700
+" pure green
+hi Identifier guifg=#00FF00
+hi Function guifg=#00FF00
 
-" keywords (#A98020, burnt)
+" bronze green
 hi Statement guifg=#A98020
 hi Conditional guifg=#A98020
 hi Repeat guifg=#A98020
@@ -60,13 +62,13 @@ hi Define guifg=#5A8C35
 hi Macro guifg=#5A8C35
 hi PreCondit guifg=#5A8C35
 
-" types (#707F7C, slate green)
-hi Type guifg=#707F7C
-hi StorageClass guifg=#707F7C
-hi Structure guifg=#707F7C
-hi Typedef guifg=#707F7C
+" types (#55B095, slate green)
+hi Type guifg=#55B095
+hi StorageClass guifg=#55B095
+hi Structure guifg=#55B095
+hi Typedef guifg=#55B095
 
-" specials (#CCCC00, yellow)
+" specials (#FFFF00, yellow)
 hi Special guifg=#5CCCC0
 hi SpecialChar guifg=#ACCCC0
 hi Tag guifg=#ACCCC0
@@ -83,77 +85,78 @@ hi Todo guifg=#50C0A0
 " HIGHLIGHTING GROUPS (see :h hi-groups): 
 " Organized in a way that makes sense
 
+" main colors
 hi Normal cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#BCC952 guibg=#242523
+hi Terminal cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#CC00FF guibg=NONE
 
-
-hi ColorColumn guifg=#50C0A0
 
 hi Conceal guifg=#50C0A0
-" hi CursorIM
+hi CursorIM cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00FF00 guibg=NONE
 hi Cursor gui=reverse
-" hi lCursor
+hi lCursor cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00FF00 guibg=NONE
 
-hi CursorColumn term=standout ctermfg=NONE guibg=#293028 gui=NONE
-hi CursorLine cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=#293028
+hi Directory cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00FF00
+hi DiffAdd guifg=#55B095
+hi DiffChange guifg=#55B095
+hi DiffDelete guifg=#55B095
+hi DiffText cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#55B095 guibg=#FFFFFF
 
-hi Directory cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00B700
-hi DiffAdd guifg=#707F7C
-hi DiffChange guifg=#707F7C
-hi DiffDelete guifg=#707F7C
-hi DiffText guifg=#707F7C
 
-hi EndOfBuffer guifg=#707F7C
-hi ErrorMsg gui=bold guifg=#CCCC00
+" yellow green
 
-hi VertSplit guifg=#50C0A0
-
-hi Folded guifg=#50C0A0
-hi FoldColumn guifg=#50C0A0
-hi SignColumn guifg=#50C0A0
+" messages and errors
+hi ModeMsg gui=bold guifg=#FFFF00
+hi MoreMsg gui=bold guifg=#FFFF00
+hi ErrorMsg cterm=bold ctermfg=NONE ctermbg=NONE gui=bold guifg=#FFFF00 guibg=NONE
 
 hi IncSearch gui=reverse
 
-hi LineNr guifg=#99A599
-hi LineNrAbove guifg=#55FF77
-hi LineNrBelow guifg=#55FF00
+" column-, line-related groups
+hi ColorColumn cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#262826 guibg=NONE
+hi CursorColumn cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=#262826
+hi CursorLine cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=#262826
+hi CursorLineNr cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00FF00 guibg=#262826
+hi CursorLineSign cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=#262826
+hi CursorLineFold cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=#262826
+hi EndOfBuffer cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#757575 guibg=#262826
+hi LineNr cterm=bold ctermfg=NONE ctermbg=NONE gui=bold guifg=#00FF00 guibg=#242624
+hi LineNrAbove cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#757575 guibg=#262826
+hi LineNrBelow cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#757575 guibg=#262826
+hi Folded cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#50C0A0 guibg=NONE
+hi FoldColumn cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#50C0A0 guibg=NONE
+hi SignColumn cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#50C0A0 guibg=NONE
+hi VertSplit cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#50C0A0 guibg=NONE
 
-hi CursorLineNr cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00B700 guibg=#293028
-hi CursorLineSign gui=NONE guifg=#00B700
-hi CursorLineFold gui=NONE guifg=#00B700
+hi MatchParen guibg=#283028
 
-hi MatchParen guibg=#293028
+" set to paper green
+hi NonText guifg=#B0C555
 
-hi ModeMsg gui=bold guifg=#CCCC00
-hi MoreMsg gui=bold guifg=#CCCC00
+" popup menu
+hi Pmenu cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#B0C555 guibg=#283028
+hi PmenuSel cterm=bold ctermfg=NONE ctermbg=NONE gui=bold guifg=#242624 guibg=#B0C555 
+hi PmenuSbar cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00FF00 guibg=NONE
+hi PmenuThumb cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00FF00 guibg=NONE
 
-hi NonText guifg=#FFFFFF
-
-"""
-hi Pmenu cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00B700 guibg=NONE
-hi PmenuSel cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00B700 guibg=NONE
-hi PmenuSbar cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00B700 guibg=NONE
-hi PmenuThumb cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00B700 guibg=NONE
-
-hi Question gui=bold guifg=#CCCC00
+hi Question gui=bold guifg=#FFFF00
 hi QuickFixLine guifg=#FFFFFF
 
 hi Search gui=reverse
 
-hi SpecialKey guifg=#CCCC00
+hi SpecialKey guifg=#FFFF00
 
-hi SpellBad guifg=#CCCC00 gui=underline
-hi SpellCap guifg=#CCCC00 gui=underline
-hi SpellLocal guifg=#CCCC00 gui=underline
-hi SpellRare guifg=#CCCC00 gui=underline 
+hi SpellBad guifg=#FFFF00 gui=underline
+hi SpellCap guifg=#FFFF00 gui=underline
+hi SpellLocal guifg=#FFFF00 gui=underline
+hi SpellRare guifg=#FFFF00 gui=underline 
 
 hi StatusLine guifg=#50C0A0
 hi StatusLineNC guifg=#50C0A0
 hi StatusLineTerm cterm=NONE ctermfg=NONE
 hi StatusLineTermNC cterm=NONE ctermfg=NONE
 
-hi Terminal guifg=#CC00ff
 
-hi Title guifg=#CCCC00
+hi Title guifg=#FFFF00
 
 hi Visual guifg=#50C0A0
 hi VisualNOS guifg=#50C0A0
@@ -162,8 +165,7 @@ hi TabLine guifg=#50C0A0
 hi TabLineFill guifg=#50C0A0
 hi TabLineSel guifg=#50C0A0
 
-hi WarningMsg gui=bold guifg=#CCCC00
-hi WildMenu guifg=#CCCC00 guibg=#293028
-
+hi WarningMsg gui=bold guifg=#FFFF00
+hi WildMenu guifg=#FFFF00 guibg=#293028
 
 " gvim additional colors?
