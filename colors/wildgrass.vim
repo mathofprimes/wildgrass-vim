@@ -11,6 +11,7 @@ endif
 let g:colors_name = 'wildgrass'
 
 set termguicolors
+set background=dark
 
 " Palette {
 "     PAPER GREEN (done 1): #B0C550
