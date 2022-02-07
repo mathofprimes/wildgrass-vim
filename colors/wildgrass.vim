@@ -21,17 +21,18 @@ set termguicolors
 "    
 "     LIGHT GRAY GREEN: #757575
 
-"     BRIGHT YELLOW GREEN: #F0FF00
+"     BRIGHT YELLOW GREEN: #FEFF00
 "     CYAN GREEN: #00E090
-"     BRONZE GREEN: #909000
+"     BRONZE GREEN: #878700
 "     PURE GREEN: #00FF00
-"     SLATE GREEN: #55B095
-"     TURQUOISE GREEN: #009090 
+"     SLATE GREEN: #00C070
+"     TURQUOISE GREEN: #F00000 
 "     FADED GREEN: 5A8C35
 " }
 
 " SYNTAX GROUPS (see :h group-name):
 
+" light gray green
 hi Comment cterm=italic ctermfg=NONE ctermbg=NONE gui=italic guifg=#757575 guibg=NONE
 
 " cyan green 
@@ -47,13 +48,13 @@ hi Identifier cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00FF00 guibg=
 hi Function cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00FF00 guibg=NONE
 
 " bronze green
-hi Statement cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#909000 guibg=NONE
-hi Conditional cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#909000 guibg=NONE
-hi Repeat cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#909000 guibg=NONE
-hi Label cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#909000 guibg=NONE
-hi Operator cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#909000 guibg=NONE
-hi Keyword cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#909000 guibg=NONE
-hi Exception cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#909000 guibg=NONE
+hi Statement cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#878700 guibg=NONE
+hi Conditional cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#878700 guibg=NONE
+hi Repeat cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#878700 guibg=NONE
+hi Label cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#878700 guibg=NONE
+hi Operator cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#878700 guibg=NONE
+hi Keyword cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#878700 guibg=NONE
+hi Exception cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#878700 guibg=NONE
 
 " faded green
 hi PreProc cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#5A8C35 guibg=NONE
@@ -62,54 +63,48 @@ hi Define cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#5A8C35 guibg=NONE
 hi Macro cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#5A8C35 guibg=NONE
 hi PreCondit cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#5A8C35 guibg=NONE
 
-" types (#55B095, slate green)
-hi Type cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#55B095 guibg=NONE
-hi StorageClass cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#55B095 guibg=NONE
-hi Structure guifg=#55B095
-hi Typedef guifg=#55B095
+" slate green
+hi Type cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00C070 guibg=NONE
+hi StorageClass cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00C070 guibg=NONE
+hi Structure cterm =NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00C070 guibg=NONE
+hi Typedef cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00C070 guibg=NONE
 
-" specials (#FFFF00, yellow)
-hi Special cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00FF00 guibg=NONE
-hi SpecialChar cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00FF00 guibg=NONE
-hi Tag cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00FF00 guibg=NONE
-hi Deliminator cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00FF00 guibg=NONE
-hi SpecialComment cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00FF00 guibg=NONE
-hi Debug cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00FF00 guibg=NONE
+" specials (#FEFF00, yellow)
+hi Special cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#FEFF00 guibg=NONE
+hi SpecialChar cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#FEFF00 guibg=NONE
+hi Tag cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#FEFF00 guibg=NONE
+hi Deliminator cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#FEFF00 guibg=NONE
+hi SpecialComment cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#FEFF00 guibg=NONE
+hi Debug cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#FEFF00 guibg=NONE
 
 " others (#50C0A0, blue green)
-hi Underlined guifg=#50C0A0
-hi Ignore guifg=#50C0A0
-hi Error guifg=#50C0A0
-hi Todo guifg=#50C0A0
+hi Underlined cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#50C0A0 guibg=NONE
+hi Ignore cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#50C0A0 guibg=NONE
+hi Error cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#50C0A0 guibg=NONE
+hi Todo cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#50C0A0 guibg=NONE
 
 " HIGHLIGHTING GROUPS (see :h hi-groups): 
-" Organized in a way that makes sense
 
 " main colors
 hi Normal cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#BCC952 guibg=#242523
 hi Terminal cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#CC00FF guibg=NONE
 
-
-hi Conceal guifg=#50C0A0
+hi Conceal cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#50C0A0 guibg=NONE
 hi CursorIM cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00FF00 guibg=NONE
-hi Cursor gui=reverse
+hi Cursor cterm=reverse ctermfg=NONE ctermbg=NONE gui=reverse guifg=NONE guibg=NONE
 hi lCursor cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00FF00 guibg=NONE
 
 hi Directory cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00FF00
-hi DiffAdd guifg=#55B095
-hi DiffChange guifg=#55B095
-hi DiffDelete guifg=#55B095
-hi DiffText cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#55B095 guibg=#55B095
+hi DiffAdd cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00C070 guibg=NONE
+hi DiffChange cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00C070 guibg=NONE
+hi DiffDelete cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00C070 guibg=NONE
+hi DiffText cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#111111 guibg=#00C070
 
-
-" yellow green
-
-" messages and errors
-hi ModeMsg gui=bold guifg=#FFFF00
-hi MoreMsg gui=bold guifg=#FFFF00
-hi ErrorMsg cterm=bold ctermfg=NONE ctermbg=NONE gui=bold guifg=#FFFF00 guibg=NONE
-
-hi IncSearch gui=reverse
+" errors, messages, warnings
+hi ModeMsg cterm=NONE ctermfg=NONE ctermbg=NONE gui=bold guifg=#FEFF00 guibg=NONE
+hi MoreMsg cterm=NONE ctermfg=NONE ctermbg=NONE gui=bold guifg=#FEFF00 guibg=NONE
+hi ErrorMsg cterm=bold ctermfg=NONE ctermbg=NONE gui=bold guifg=#FEFF00 guibg=NONE
+hi WarningMsg cterm=NONE ctermfg=NONE ctermbg=NONE gui=bold guifg=#FEFF00 guibg=NONE
 
 " column-, line-related groups
 hi ColorColumn cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#262826 guibg=NONE
@@ -127,10 +122,15 @@ hi FoldColumn cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#50C0A0 guibg=
 hi SignColumn cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#50C0A0 guibg=NONE
 hi VertSplit cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#50C0A0 guibg=NONE
 
-hi MatchParen guibg=#283028
+" various code highlighting
+hi IncSearch cterm=NONE ctermfg=NONE ctermbg=NONE gui=reverse guifg=NONE guibg=NONE
+hi MatchParen cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=#283028
+hi Search cterm=NONE ctermfg=NONE ctermbg=NONE gui=reverse guifg=NONE guibg=NONE
+hi Visual cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#50C0A0 guibg=NONE
+hi VisualNOS cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#50C0A0 guibg=NONE
 
 " set to paper green
-hi NonText guifg=#B0C555
+hi NonText cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#B0C555 guibg=NONE
 
 " popup menu
 hi Pmenu cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#B0C555 guibg=#283028
@@ -138,35 +138,29 @@ hi PmenuSel cterm=bold ctermfg=NONE ctermbg=NONE gui=bold guifg=#242624 guibg=#B
 hi PmenuSbar cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00FF00 guibg=NONE
 hi PmenuThumb cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00FF00 guibg=NONE
 
-hi Question gui=bold guifg=#FFFF00
-hi QuickFixLine guifg=#FFFFFF
+hi Question cterm=NONE ctermfg=NONE ctermfg=NONE gui=bold guifg=#FEFF00 guibg=NONE
+hi QuickFixLine cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#FFFFFF guibg=NONE
 
-hi Search gui=reverse
-
-hi SpecialKey guifg=#FFFF00
+hi SpecialKey cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#FEFF00 guibg=NONE
 
 " spelling errors
-hi SpellBad cterm=underline ctermfg=NONE ctermbg=NONE gui=underline guifg=NONE guibg=NONE guisp=#FFFF00 
+hi SpellBad cterm=underline ctermfg=NONE ctermbg=NONE gui=underline guifg=NONE guibg=NONE guisp=#FEFF00 
 hi SpellCap cterm=NONE ctermfg=NONE ctermbg=NONE gui=underline guifg=NONE guibg=NONE
 hi SpellLocal cterm=NONE ctermfg=NONE ctermbg=NONE gui=underline guifg=NONE guibg=NONE
-hi SpellRare cterm=NONE ctermfg=NONE ctermbg=NONE gui=underline guifg=NONE guibg=NONE 
+hi SpellRare cterm=NONE ctermfg=NONE ctermbg=NONE gui=underline guifg=NONE guibg=NONE
 
-hi StatusLine guifg=#50C0A0
-hi StatusLineNC guifg=#50C0A0
-hi StatusLineTerm cterm=NONE ctermfg=NONE
+" statusline
+hi StatusLine cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#50C0A0 guibg=NONE
+hi StatusLineNC ctermfg=NONE ctermbg=NONE gui=NONE gui=NONE guifg=#50C0A0 guibg=NONE
+hi StatusLineTerm cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
 hi StatusLineTermNC cterm=NONE ctermfg=NONE
 
+hi Title cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#FEFF00 guifg=NONE
 
-hi Title guifg=#FFFF00
+hi TabLine cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#50C0A0 guibg=NONE
+hi TabLineFill cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#50C0A0 guibg=NONE
+hi TabLineSel cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#50C0A0 guibg=NONE
 
-hi Visual guifg=#50C0A0
-hi VisualNOS guifg=#50C0A0
+hi WildMenu cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#FEFF00 guibg=#293028
 
-hi TabLine guifg=#50C0A0
-hi TabLineFill guifg=#50C0A0
-hi TabLineSel guifg=#50C0A0
-
-hi WarningMsg gui=bold guifg=#FFFF00
-hi WildMenu guifg=#FFFF00 guibg=#293028
-
-" gvim additional colors?
+" gvim colors
