@@ -11,6 +11,8 @@ endif
 let g:colors_name = 'wildgrass'
 
 set termguicolors
+
+" temporary, until I figure out light mode palette
 set background=dark
 
 " Palette {
@@ -86,20 +88,20 @@ hi Todo cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#008580 guibg=NONE g
 
 " HIGHLIGHTING GROUPS (see :h hi-groups): 
 
-" main colors
-hi Normal cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#BCC952 guibg=#242523
-hi Terminal cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#CC00FF guibg=NONE guisp=NONE
+" main colors (done 1)
+hi Normal cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#B0C550 guibg=#242624 guisp=NONE
+hi Terminal cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#B0C550 guibg=#242624 guisp=NONE
 
 hi Conceal cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#008580 guibg=NONE guisp=NONE
 hi CursorIM cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00FF00 guibg=NONE guisp=NONE
 hi Cursor cterm=reverse ctermfg=NONE ctermbg=NONE gui=reverse guifg=NONE guibg=NONE guisp=NONE
 hi lCursor cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00FF00 guibg=NONE guisp=NONE
 
-hi Directory cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00FF00
+hi Directory cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00FF00 guisp=NONE
 hi DiffAdd cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#6B9C6D guibg=NONE guisp=NONE
 hi DiffChange cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#6B9C6D guibg=NONE guisp=NONE
 hi DiffDelete cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#6B9C6D guibg=NONE guisp=NONE
-hi DiffText cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#111111 guibg=#6B9C6D
+hi DiffText cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#111111 guibg=#6B9C6D guisp=NONE
 
 " errors, messages, warnings
 hi ModeMsg cterm=NONE ctermfg=NONE ctermbg=NONE gui=bold guifg=#FDFF00 guibg=NONE guisp=NONE
@@ -123,21 +125,21 @@ hi FoldColumn cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#008580 guibg=
 hi SignColumn cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#008580 guibg=NONE guisp=NONE
 hi VertSplit cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#008580 guibg=NONE guisp=NONE
 
-" various code highlighting
-hi IncSearch cterm=NONE ctermfg=NONE ctermbg=NONE gui=reverse guifg=NONE guibg=NONE guisp=NONE
-hi MatchParen cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=#303230
-hi Search cterm=NONE ctermfg=NONE ctermbg=NONE gui=reverse guifg=NONE guibg=NONE guisp=NONE
-hi Visual cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#008580 guibg=NONE guisp=NONE
-hi VisualNOS cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#008580 guibg=NONE guisp=NONE
+" various code highlighting (done 1)
+hi IncSearch cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#242624 guibg=#FDFF00 guisp=NONE
+hi MatchParen cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=#303230 guisp=NONE
+hi Search cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#242624 guibg=#00FF00 guisp=NONE
+hi Visual cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=#303230 guisp=NONE
+hi VisualNOS cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=#303230 guisp=NONE
 
 " misc other text (such as ~@k) (done)
 hi NonText cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#B0C550 guibg=NONE guisp=NONE
 
-" popup menu
-hi Pmenu cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#B0C550 guibg=#303230
-hi PmenuSel cterm=bold ctermfg=NONE ctermbg=NONE gui=bold guifg=#242624 guibg=#B0C550 
-hi PmenuSbar cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00FF00 guibg=NONE guisp=NONE
-hi PmenuThumb cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00FF00 guibg=NONE guisp=NONE
+" popup menu (done 1)
+hi Pmenu cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#B0C550 guibg=#303230 guisp=NONE
+hi PmenuSel cterm=bold ctermfg=NONE ctermbg=NONE gui=bold guifg=#242624 guibg=#B0C550 guisp=NONE 
+hi PmenuSbar cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#B0C550 guibg=NONE guisp=NONE
+hi PmenuThumb cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#B0C550 guibg=NONE guisp=NONE
 
 hi Question cterm=NONE ctermfg=NONE ctermfg=NONE gui=bold guifg=#FDFF00 guibg=NONE guisp=NONE
 hi QuickFixLine cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#FFFFFF guibg=NONE guisp=NONE
@@ -154,14 +156,14 @@ hi SpellRare cterm=NONE ctermfg=NONE ctermbg=NONE gui=underline guifg=NONE guibg
 hi StatusLine cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#008580 guibg=NONE guisp=NONE
 hi StatusLineNC ctermfg=NONE ctermbg=NONE gui=NONE gui=NONE guifg=#008580 guibg=NONE guisp=NONE
 hi StatusLineTerm cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE guisp=NONE
-hi StatusLineTermNC cterm=NONE ctermfg=NONE
+hi StatusLineTermNC cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#FFFFFF guibg=NONE guisp=NONE
 
-hi Title cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#FDFF00 guifg=NONE
+hi Title cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#FDFF00 guibg=NONE guisp=NONE
 
 hi TabLine cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#008580 guibg=NONE guisp=NONE
 hi TabLineFill cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#008580 guibg=NONE guisp=NONE
 hi TabLineSel cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#008580 guibg=NONE guisp=NONE
 
-hi WildMenu cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#FDFF00 guibg=#293028
+hi WildMenu cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#FDFF00 guibg=#293028 guisp=NONE
 
 " gvim colors
