@@ -12,7 +12,7 @@ let g:colors_name="wildgrass"
 
 set termguicolors
 
-" temporary, until I figure out light mode palette
+" temporary, until light mode is implemented
 set background=dark
 
 " begin to flush out full color scheme
@@ -20,33 +20,33 @@ set background=dark
 
 " Palette {
 "     Used for mostly UI {
-"         PAPYRUS 1 GREEN 1: #B0C550
-"         PAPYRUS 1 GREEN 2: 
+"         PAPYRUS GREEN 1: #50600E
+"         PAPYRUS GREEN 2: #708510
 "         
-"         PAPYRUS 2 GREEN 1:
-"         PAPYRUS 2 GREEN 2
+"         PAPYRUS GREEN 3: #90A530
+"         PAPYRUS GREEN 4: #B0C550
 "    
-"         DARK GRAY 1 GREEN 1: #242524
-"         DARK GRAY 1 GREEN 2: #282928
+"         DARK GRAY GREEN 1: #242524
+"         DARK GRAY GREEN 2: #282928
 "         
-"         DARK GRAY 2 GREEN 1: #303230
-"         DARK GRAY 2 GREEN 2
+"         DARK GRAY GREEN 3: #303230
+"         DARK GRAY GREEN 4: #323432
 "        
-"         LIGHT GRAY 1 GREEN 1: #5B5C5A
-"         LIGHT GRAY 1 GREEN 2: #8B8C8A
+"         LIGHT GRAY GREEN 1: #5B5C5A
+"         LIGHT GRAY GREEN 2: #7B7C7A
 "         
-"         LIGHT GRAY 2 GREEN 1: #ABACAA
-"         LIGHT GRAY 2 GREEN 2:
+"         LIGHT GRAY GREEN 3: #9B9C9A
+"         LIGHT GRAY GREEN 4: #ABACAA
 "
 "         CYAN 1: #00DDDD
 "         CYAN 2: #00FFFF
 "
 "         YELLOW 1: #DDDD00
-"         YELLOW 2: #90CF00
+"         YELLOW 2: #FFFF00
 "     }
 "     
 "     Used mostly for syntax {
-"         PURE GREEN 1: #00DD00 replace with pure green
+"         PURE GREEN 1: #00DD00
 "         PURE GREEN 2: #00FF00
 "         
 "         SEA GREEN 1: #00B55F
@@ -120,10 +120,10 @@ hi SpecialComment cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#90CF00 gu
 hi Debug cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#90CF00 guibg=NONE guisp=NONE
 
 " turquoise green (done 1) 
-hi Underlined cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#008580 guibg=NONE guisp=NONE
-hi Ignore cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#008580 guibg=NONE guisp=NONE
-hi Error cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#008580 guibg=NONE guisp=NONE
-hi Todo cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#008580 guibg=NONE guisp=NONE
+hi Underlined cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#009590 guibg=NONE guisp=NONE
+hi Ignore cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#009590 guibg=NONE guisp=NONE
+hi Error cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#009590 guibg=NONE guisp=NONE
+hi Todo cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#009590 guibg=NONE guisp=NONE
 
 " HIGHLIGHTING GROUPS (see :h hi-groups): 
 
@@ -131,7 +131,7 @@ hi Todo cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#008580 guibg=NONE g
 hi Normal cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#B0C550 guibg=#242524 guisp=NONE
 hi Terminal cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#B0C550 guibg=#242524 guisp=NONE
 
-hi Conceal cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#008580 guibg=NONE guisp=NONE
+hi Conceal cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#009590 guibg=NONE guisp=NONE
 hi CursorIM cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00FF00 guibg=NONE guisp=NONE
 hi Cursor cterm=reverse ctermfg=NONE ctermbg=NONE gui=reverse guifg=NONE guibg=NONE guisp=NONE
 hi lCursor cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00FF00 guibg=NONE guisp=NONE
@@ -159,10 +159,10 @@ hi EndOfBuffer cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#5B5C5A guibg
 hi LineNr cterm=bold ctermfg=NONE ctermbg=NONE gui=bold guifg=#00FF00 guibg=#242524 guisp=NONE
 hi LineNrAbove cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#5B5C5A guibg=#282928 guisp=NONE
 hi LineNrBelow cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#5B5C5A guibg=#282928 guisp=NONE
-hi Folded cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#008580 guibg=NONE guisp=NONE
-hi FoldColumn cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#008580 guibg=NONE guisp=NONE
-hi SignColumn cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#008580 guibg=NONE guisp=NONE
-hi VertSplit cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#008580 guibg=NONE guisp=NONE
+hi Folded cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#009590 guibg=NONE guisp=NONE
+hi FoldColumn cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#009590 guibg=NONE guisp=NONE
+hi SignColumn cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#009590 guibg=NONE guisp=NONE
+hi VertSplit cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#009590 guibg=NONE guisp=NONE
 
 " various code highlighting (done 1)
 hi IncSearch cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#242524 guibg=#90CF00 guisp=NONE
@@ -171,7 +171,7 @@ hi Search cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#242524 guibg=#00F
 hi Visual cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=#303230 guisp=NONE
 hi VisualNOS cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=#303230 guisp=NONE
 
-" misc other text (such as ~@k) (done)
+" other text (such as ~@k)
 hi NonText cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#B0C550 guibg=NONE guisp=NONE
 
 " popup menu (done 1)
@@ -188,20 +188,20 @@ hi SpecialKey cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#90CF00 guibg=
 " spelling errors (done 1)
 hi SpellBad cterm=underline ctermfg=NONE ctermbg=NONE gui=underline guifg=NONE guibg=NONE guisp=NONE guisp=#90CF00 
 hi SpellCap cterm=undercurl ctermfg=NONE ctermbg=NONE gui=undercurl guifg=NONE guibg=NONE guisp=NONE guisp=#00D57F
-hi SpellLocal cterm=NONE ctermfg=NONE ctermbg=NONE gui=underline guifg=NONE guibg=NONE guisp=NONE guisp=#008580 
+hi SpellLocal cterm=NONE ctermfg=NONE ctermbg=NONE gui=underline guifg=NONE guibg=NONE guisp=NONE guisp=#009590 
 hi SpellRare cterm=NONE ctermfg=NONE ctermbg=NONE gui=underline guifg=NONE guibg=NONE guisp=NONE guisp=#00FF00
 
 " statusline
-hi StatusLine cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#008580 guibg=NONE guisp=NONE
-hi StatusLineNC ctermfg=NONE ctermbg=NONE gui=NONE gui=NONE guifg=#008580 guibg=NONE guisp=NONE
+hi StatusLine cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#009590 guibg=NONE guisp=NONE
+hi StatusLineNC ctermfg=NONE ctermbg=NONE gui=NONE gui=NONE guifg=#009590 guibg=NONE guisp=NONE
 hi StatusLineTerm cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE guisp=NONE
 hi StatusLineTermNC cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#FFFFFF guibg=NONE guisp=NONE
 
 hi Title cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#90CF00 guibg=NONE guisp=NONE
 
-hi TabLine cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#008580 guibg=NONE guisp=NONE
-hi TabLineFill cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#008580 guibg=NONE guisp=NONE
-hi TabLineSel cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#008580 guibg=NONE guisp=NONE
+hi TabLine cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#009590 guibg=NONE guisp=NONE
+hi TabLineFill cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#009590 guibg=NONE guisp=NONE
+hi TabLineSel cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#009590 guibg=NONE guisp=NONE
 
 hi WildMenu cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#90CF00 guibg=#293028 guisp=NONE
 
