@@ -1,4 +1,4 @@
-# Wildgrass
+# Wildgrass:
 
 Wildgrass is a colorscheme consisting of only green--that is, the RGB of every color is such that G > B and G > R. It comes with a light variation (soft green background with gray text) and a dark variation (dark gray background with soft green text). 
 
