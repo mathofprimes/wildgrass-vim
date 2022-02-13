@@ -12,8 +12,18 @@ Wildgrass is a colorscheme consisting of only green--that is, the RGB of every c
 
 ## Pathogen:
 
+Simply clone Wildgrass into the directory where you keep your plugins. For example, 
+
+```
+cd ~/.vim/bundle/ && git clone https://github.com/mathofprimes/wildgrass.git
+```
+
 ## Vim-Plug:
 
+Add ```Plug 'mathofprimes/wildgrass'``` to you're .vimrc file and run ```:PlugInstall``` in Vim.
+
 ## Vundle: 
+
+Add ```Plugin 'mathofprimes/wildgrass'``` to you're .vimrc file and run ```:PluginInstall``` in Vim.
 
 # Usage:
