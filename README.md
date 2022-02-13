@@ -6,7 +6,7 @@ Wildgrass is a colorscheme consisting of only green--that is, the RGB of every c
 
 # Screenshots:
 
-![Screenshot from 2022-02-09 01-25-40](https://user-images.githubusercontent.com/74194607/153134278-e09f53d8-a6fa-44ca-bca2-085777b4c4e6.png)
+![Screenshot from 2022-02-13 00-46-35](https://user-images.githubusercontent.com/74194607/153742045-236d9ce2-3b43-4a98-8aa9-7c5422f00c93.png)
 
 # Installation:
 
