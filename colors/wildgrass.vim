@@ -166,44 +166,47 @@ hi SignColumn     cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#B0C550 gu
 hi VertSplit      cterm=bold ctermfg=NONE ctermbg=NONE gui=bold guifg=#ABACAA guibg=#242524 guisp=NONE
 
 " various code highlighting 
-hi IncSearch cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#242524 guibg=#90CF00 guisp=NONE
-hi MatchParen cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=#303230 guisp=NONE
-hi Search cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#242524 guibg=#00FF00 guisp=NONE
-hi Visual cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=#303230 guisp=NONE
-hi VisualNOS cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=#303230 guisp=NONE
+hi IncSearch      cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#242524 guibg=#00FFFE guisp=NONE
+hi MatchParen     cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=#303230 guisp=NONE
+hi Search         cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#242524 guibg=#FEFF00 guisp=NONE
+hi Visual         cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=#303230 guisp=NONE
+hi VisualNOS      cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=#303230 guisp=NONE
 
-" popup menu (done 1)
-hi Pmenu cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#B0C550 guibg=#303230 guisp=NONE
-hi PmenuSel cterm=bold ctermfg=NONE ctermbg=NONE gui=bold guifg=#242524 guibg=#B0C550 guisp=NONE 
-hi PmenuSbar cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#B0C550 guibg=NONE guisp=NONE
-hi PmenuThumb cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#B0C550 guibg=NONE guisp=NONE
+" popup menu
+hi Pmenu          cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#B0C550 guibg=#303230 guisp=NONE
+hi PmenuSel       cterm=bold ctermfg=NONE ctermbg=NONE gui=bold guifg=#242524 guibg=#B0C550 guisp=NONE 
+hi PmenuSbar      cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#B0C550 guibg=NONE guisp=NONE
+hi PmenuThumb     cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#B0C550 guibg=NONE guisp=NONE
 
-hi Question cterm=NONE ctermfg=NONE ctermfg=NONE gui=bold guifg=#90CF00 guibg=NONE guisp=NONE
-hi QuickFixLine cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#FFFFFF guibg=NONE guisp=NONE
+" question, quickfixline
+hi Question       cterm=NONE ctermfg=NONE ctermfg=NONE gui=bold guifg=#FEFF00 guibg=#262726 guisp=NONE
+hi QuickFixLine   cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00FFFE guibg=#262726 guisp=NONE
 
-hi SpecialKey cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#90CF00 guibg=NONE guisp=NONE
+" specialkey
+hi SpecialKey     cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#90CF00 guibg=NONE guisp=NONE
 
-" spelling errors (done 1)
-hi SpellBad cterm=underline ctermfg=NONE ctermbg=NONE gui=underline guifg=NONE guibg=NONE guisp=NONE guisp=#90CF00 
-hi SpellCap cterm=undercurl ctermfg=NONE ctermbg=NONE gui=undercurl guifg=NONE guibg=NONE guisp=NONE guisp=#00D57F
-hi SpellLocal cterm=NONE ctermfg=NONE ctermbg=NONE gui=underline guifg=NONE guibg=NONE guisp=NONE guisp=#009590 
-hi SpellRare cterm=NONE ctermfg=NONE ctermbg=NONE gui=underline guifg=NONE guibg=NONE guisp=NONE guisp=#00FF00
+" spelling, spelling errors
+hi SpellBad         cterm=underline ctermfg=NONE ctermbg=NONE gui=underline guifg=NONE guibg=NONE guisp=NONE guisp=#FFFE00 
+hi SpellCap         cterm=undercurl ctermfg=NONE ctermbg=NONE gui=undercurl guifg=NONE guibg=NONE guisp=NONE guisp=#00FFFE
+hi SpellLocal       cterm=NONE ctermfg=NONE ctermbg=NONE gui=underline guifg=NONE guibg=NONE guisp=NONE guisp=#009590 
+hi SpellRare        cterm=NONE ctermfg=NONE ctermbg=NONE gui=underline guifg=NONE guibg=NONE guisp=NONE guisp=#00FF00
 
 " statusline
-hi StatusLine cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#009590 guibg=NONE guisp=NONE
-hi StatusLineNC ctermfg=NONE ctermbg=NONE gui=NONE gui=NONE guifg=#009590 guibg=NONE guisp=NONE
-hi StatusLineTerm cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=NONE guisp=NONE
-hi StatusLineTermNC cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#FFFFFF guibg=NONE guisp=NONE
+hi StatusLine       cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#009590 guibg=NONE guisp=NONE
+hi StatusLineNC     ctermfg=NONE ctermbg=NONE gui=NONE gui=NONE guifg=#009590 guibg=NONE guisp=NONE
+hi StatusLineTerm   cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#009590 guibg=NONE guisp=NONE
+hi StatusLineTermNC cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#009590 guibg=NONE guisp=NONE
 
-hi Title cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#90CF00 guibg=NONE guisp=NONE
+" title
+hi Title            cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#90CF00 guibg=NONE guisp=NONE
 
-hi TabLine cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#009590 guibg=NONE guisp=NONE
-hi TabLineFill cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#009590 guibg=NONE guisp=NONE
-hi TabLineSel cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#009590 guibg=NONE guisp=NONE
+" tablines
+hi TabLine          cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#009590 guibg=NONE guisp=NONE
+hi TabLineFill      cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#009590 guibg=NONE guisp=NONE
+hi TabLineSel       cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#009590 guibg=NONE guisp=NONE
 
-hi WildMenu cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#90CF00 guibg=#293028 guisp=NONE
+" wildmenu
+hi WildMenu         cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#90CF00 guibg=#293029 guisp=NONE
 
 " other text (such as ~@k)
-hi NonText cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#B0C550 guibg=NONE guisp=NONE
-
-" gvim colors
+hi NonText          cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#B0C550 guibg=NONE guisp=NONE
