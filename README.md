@@ -34,8 +34,18 @@ Add ```Plugin 'mathofprimes/wildgrass'``` to you're .vimrc file and run ```:Plug
 
 # Usage:
 
-After installation, add the following to your vimrc to use:
+After installation, add
 
 ```
 colorscheme wildgrass
-set background=<dark or light>
+set background=dark
+```
+
+to your .vimrc file to enable dark mode, or
+
+```
+colorscheme wildgrass
+set background=light
+```
+
+to enable light mode.
