@@ -6,7 +6,13 @@ Wildgrass is a colorscheme consisting of only green--that is, the RGB of every c
 
 # Screenshots:
 
-![Screenshot from 2022-02-13 00-46-35](https://user-images.githubusercontent.com/74194607/153742045-236d9ce2-3b43-4a98-8aa9-7c5422f00c93.png)
+## Light Mode (Early Look):
+
+![Screenshot from 2022-02-17 02-16-22](https://user-images.githubusercontent.com/74194607/154425307-27df4991-bd5b-4a3e-8f21-a756604712d7.png)
+
+## Dark Mode: 
+
+![Screenshot from 2022-02-17 02-17-04](https://user-images.githubusercontent.com/74194607/154425356-dd9c45de-8a74-43ba-914e-07a39adc9e1c.png)
 
 # Installation:
 
@@ -27,3 +33,9 @@ Add ```Plug 'mathofprimes/wildgrass'``` to you're .vimrc file and run ```:PlugIn
 Add ```Plugin 'mathofprimes/wildgrass'``` to you're .vimrc file and run ```:PluginInstall``` in Vim.
 
 # Usage:
+
+After installation, add the following to your vimrc to use:
+
+```
+colorscheme wildgrass
+set background=<dark or light>
