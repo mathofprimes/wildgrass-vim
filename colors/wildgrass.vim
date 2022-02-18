@@ -110,6 +110,16 @@ if &background == 'dark'
     hi Terminal cterm=NONE ctermfg=NONE ctermbg=NONE 
     hi Terminal gui=NONE guifg=#B0B950 guibg=#202320 guisp=NONE
     
+    " cursors
+    hi Conceal cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi Conceal gui=NONE guifg=#202F29 guibg=NONE guisp=NONE
+    hi Cursor cterm=reverse ctermfg=NONE ctermbg=NONE 
+    hi Cursor gui=reverse guifg=NONE guibg=NONE guisp=NONE
+    hi CursorIM cterm=reverse ctermfg=NONE ctermbg=NONE 
+    hi CursorIM gui=reverse guifg=NONE guibg=NONE guisp=NONE
+    hi lCursor cterm=reverse ctermfg=NONE ctermbg=NONE 
+    hi lCursor gui=reverse guifg=NONE guibg=NONE guisp=NONE
+    
     " column, line, rows, splits
     hi ColorColumn cterm=NONE ctermfg=NONE ctermbg=NONE 
     hi ColorColumn gui=NONE guifg=NONE guibg=#232521 guisp=NONE
@@ -118,28 +128,41 @@ if &background == 'dark'
     hi CursorLine cterm=NONE ctermfg=NONE ctermbg=NONE
     hi CursorLine gui=NONE guifg=NONE guibg=#202723 guisp=NONE
     hi CursorLineNr cterm=NONE ctermfg=NONE ctermbg=NONE 
-    hi CursorLineNr gui=NONE guifg=#B0B950 guibg=#232523 guisp=NONE
+    hi CursorLineNr gui=NONE guifg=#B0B950 guibg=#202723 guisp=NONE
     hi CursorLineSign cterm=NONE ctermfg=NONE ctermbg=NONE 
-    hi CursorLineSign gui=NONE guifg=NONE guibg=#293029 guisp=NONE
+    hi CursorLineSign gui=NONE guifg=#9B9C9A guibg=#202B26 guisp=NONE
     hi CursorLineFold cterm=NONE ctermfg=NONE ctermbg=NONE 
-    hi CursorLineFold gui=NONE guifg=NONE guibg=#293029 guisp=NONE
+    hi CursorLineFold gui=NONE guifg=#9B9C9A guibg=#202B26 guisp=NONE
     hi EndOfBuffer cterm=NONE ctermfg=NONE ctermbg=NONE 
     hi EndOfBuffer gui=NONE guifg=#B0B950 guibg=#202320 guisp=NONE
     hi LineNr cterm=bold ctermfg=NONE ctermbg=NONE 
-    hi LineNr gui=bold guifg=#B0B950 guibg=#242524 guisp=NONE
+    hi LineNr gui=bold guifg=#B0B950 guibg=#202723 guisp=NONE
     hi LineNrAbove cterm=NONE ctermfg=NONE ctermbg=NONE 
     hi LineNrAbove gui=NONE guifg=#5B5C5A guibg=#202F29 guisp=NONE
     hi LineNrBelow cterm=NONE ctermfg=NONE ctermbg=NONE 
     hi LineNrBelow gui=NONE guifg=#9B9C9A guibg=#202B26 guisp=NONE
     hi Folded cterm=NONE ctermfg=NONE ctermbg=NONE 
-    hi Folded gui=NONE guifg=#009590 guibg=#293029 guisp=NONE
+    hi Folded gui=NONE guifg=#9B9C9A guibg=#202B26 guisp=NONE
     hi FoldColumn cterm=NONE ctermfg=NONE ctermbg=NONE 
-    hi FoldColumn gui=NONE guifg=#009590 guibg=#293029 guisp=NONE
+    hi FoldColumn gui=NONE guifg=#9B9C9A guibg=#293029 guisp=NONE
     hi SignColumn cterm=NONE ctermfg=NONE ctermbg=NONE 
-    hi SignColumn gui=NONE guifg=#B0B950 guibg=#262726 guisp=NONE
+    hi SignColumn gui=NONE guifg=#9B9C9A guibg=#202B26 guisp=NONE
     hi VertSplit cterm=bold ctermfg=NONE ctermbg=NONE 
-    hi VertSplit gui=bold guifg=#6A6C6B guibg=#232423 guisp=NONE
+    hi VertSplit gui=bold guifg=#9B9C9A guibg=#202B26 guisp=NONE
+
+    " code highlighting 
+    hi IncSearch cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi IncSearch gui=NONE guifg=#202320 guibg=#00FFFE guisp=NONE
+    hi Search cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi Search gui=NONE guifg=#202320 guibg=#FEFF00 guisp=NONE
+    hi MatchParen cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi MatchParen gui=NONE guifg=#202320 guibg=#B0B950 guisp=NONE
+    hi Visual cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi Visual gui=NONE guifg=NONE guibg=#202F29 guisp=NONE
+    hi VisualNOS cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi VisualNOS gui=NONE guifg=NONE guibg=#202F29 guisp=NONE
 else
+    
     " SYNTAX GROUPS (see :h group-name):
 
     " commenting
@@ -228,7 +251,7 @@ else
     hi Todo cterm=NONE ctermfg=NONE ctermbg=NONE 
     hi Todo gui=NONE guifg=#007570 guibg=NONE guisp=NONE
     
-    " HIGHLIGHTING GROUPS (see :h hi-groups): 
+    " HIGHLIGHTING GROUPS (see :h highlight-groups): 
     
     " main colors
     hi Normal cterm=NONE ctermfg=NONE ctermbg=NONE 
@@ -236,6 +259,16 @@ else
     hi Terminal cterm=NONE ctermfg=NONE ctermbg=NONE 
     hi Terminal gui=NONE guifg=#232423 guibg=#B0B950 guisp=NONE
    
+    " cursors
+    hi Conceal cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi Conceal gui=NONE guifg=#202F29 guibg=NONE guisp=NONE
+    hi Cursor cterm=reverse ctermfg=NONE ctermbg=NONE 
+    hi Cursor gui=reverse guifg=NONE guibg=NONE guisp=NONE
+    hi CursorIM cterm=reverse ctermfg=NONE ctermbg=NONE 
+    hi CursorIM gui=reverse guifg=NONE guibg=NONE guisp=NONE
+    hi lCursor cterm=reverse ctermfg=NONE ctermbg=NONE 
+    hi lCursor gui=reverse guifg=NONE guibg=NONE guisp=NONE
+    
     " column, line, row groups
     hi ColorColumn cterm=NONE ctermfg=NONE ctermbg=NONE 
     hi ColorColumn gui=NONE guifg=NONE guibg=#90B650 guisp=NONE
@@ -244,38 +277,44 @@ else
     hi CursorLine cterm=NONE ctermfg=NONE ctermbg=NONE
     hi CursorLine gui=NONE guifg=NONE guibg=#90B650 guisp=NONE
     hi CursorLineNr cterm=NONE ctermfg=NONE ctermbg=NONE 
-    hi CursorLineNr gui=NONE guifg=#232423 guibg=#90B650 guisp=NONE
+    hi CursorLineNr gui=NONE guifg=#202320 guibg=#90B650 guisp=NONE
     hi CursorLineSign cterm=NONE ctermfg=NONE ctermbg=NONE 
-    hi CursorLineSign gui=NONE guifg=NONE guibg=#293029 guisp=NONE
+    hi CursorLineSign gui=NONE guifg=#202320 guibg=#90B650 guisp=NONE
     hi CursorLineFold cterm=NONE ctermfg=NONE ctermbg=NONE 
-    hi CursorLineFold gui=NONE guifg=NONE guibg=#293029 guisp=NONE
+    hi CursorLineFold gui=NONE guifg=#3B3C3A guibg=#60B350 guisp=NONE
     hi EndOfBuffer cterm=NONE ctermfg=NONE ctermbg=NONE 
-    hi EndOfBuffer gui=NONE guifg=#B0B950 guibg=#323332 guisp=NONE
+    hi EndOfBuffer gui=NONE guifg=#202320 guibg=#B0B950 guisp=NONE
     hi LineNr cterm=bold ctermfg=NONE ctermbg=NONE 
-    hi LineNr gui=bold guifg=#232423 guibg=#B0B950 guisp=NONE
+    hi LineNr gui=bold guifg=#202320 guibg=#90B650 guisp=NONE
     hi LineNrAbove cterm=NONE ctermfg=NONE ctermbg=NONE 
     hi LineNrAbove gui=NONE guifg=#7B7C7A guibg=#30B050 guisp=NONE
     hi LineNrBelow cterm=NONE ctermfg=NONE ctermbg=NONE 
-    hi LineNrBelow gui=NONE guifg=#5B5C5A guibg=#60B350 guisp=NONE
+    hi LineNrBelow gui=NONE guifg=#3B3C3A guibg=#60B350 guisp=NONE
     hi Folded cterm=NONE ctermfg=NONE ctermbg=NONE 
-    hi Folded gui=NONE guifg=#009590 guibg=#293029 guisp=NONE
+    hi Folded gui=NONE guifg=#3B3C3A guibg=#60B350 guisp=NONE
     hi FoldColumn cterm=NONE ctermfg=NONE ctermbg=NONE 
-    hi FoldColumn gui=NONE guifg=#009590 guibg=#293029 guisp=NONE
+    hi FoldColumn gui=NONE guifg=#3B3C3A guibg=#60B350 guisp=NONE
     hi SignColumn cterm=NONE ctermfg=NONE ctermbg=NONE 
-    hi SignColumn gui=NONE guifg=#B0B950 guibg=#262726 guisp=NONE
+    hi SignColumn gui=NONE guifg=#3B3C3A guibg=#60B350 guisp=NONE
     hi VertSplit cterm=bold ctermfg=NONE ctermbg=NONE 
-    hi VertSplit gui=bold guifg=#6A6C6B guibg=#232423 guisp=NONE
+    hi VertSplit gui=bold guifg=#3B3C3A guibg=#60B350 guisp=NONE
 
+    " code highlighting 
+    hi IncSearch cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi IncSearch gui=NONE guifg=#202320 guibg=#00DDDC guisp=NONE
+    hi Search cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi Search gui=NONE guifg=#202320 guibg=#DCDD00 guisp=NONE
+    hi MatchParen cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi MatchParen gui=NONE guifg=#B0B950 guibg=#202320 guisp=NONE
+    hi Visual cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi Visual gui=NONE guifg=NONE guibg=#30B050 guisp=NONE
+    hi VisualNOS cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi VisualNOS gui=NONE guifg=NONE guibg=#30B050 guisp=NONE
 endif
 
 " The rest need to be added to the if else statement,
 " but are dark mode colors
 
-" cursor related
-hi Conceal        cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#283028 guibg=NONE guisp=NONE
-hi Cursor         cterm=reverse ctermfg=NONE ctermbg=NONE gui=reverse guifg=NONE guibg=NONE guisp=NONE
-hi CursorIM       cterm=reverse ctermfg=NONE ctermbg=NONE gui=reverse guifg=NONE guibg=NONE guisp=NONE
-hi lCursor        cterm=reverse ctermfg=NONE ctermbg=NONE gui=reverse guifg=NONE guibg=NONE guisp=NONE
 
 " directories
 hi Directory      cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#90CC90 guibg=NONE guisp=NONE
@@ -291,14 +330,6 @@ hi ModeMsg        cterm=NONE ctermfg=NONE ctermbg=NONE gui=bold guifg=#90CF00 gu
 hi MoreMsg        cterm=NONE ctermfg=NONE ctermbg=NONE gui=bold guifg=#90CF00 guibg=NONE guisp=NONE
 hi ErrorMsg       cterm=bold ctermfg=NONE ctermbg=NONE gui=bold guifg=#90CF00 guibg=NONE guisp=NONE
 hi WarningMsg     cterm=NONE ctermfg=NONE ctermbg=NONE gui=bold guifg=#90CF00 guibg=NONE guisp=NONE
-
-
-" various code highlighting 
-hi IncSearch      cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#232423 guibg=#00FFFE guisp=NONE
-hi MatchParen     cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=#323332 guisp=NONE
-hi Search         cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#232423 guibg=#FEFF00 guisp=NONE
-hi Visual         cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=#323332 guisp=NONE
-hi VisualNOS      cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=NONE guibg=#323332 guisp=NONE
 
 " popup menu
 hi Pmenu          cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#B0B950 guibg=#323332 guisp=NONE
