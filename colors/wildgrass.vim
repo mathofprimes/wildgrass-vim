@@ -150,6 +150,20 @@ if &background == 'dark'
     hi VertSplit cterm=bold ctermfg=NONE ctermbg=NONE 
     hi VertSplit gui=bold guifg=#9B9C9A guibg=#202B26 guisp=NONE
 
+    " directories
+    hi Directory cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi Directory gui=NONE guifg=#90CC90 guibg=NONE guisp=NONE
+
+    " diffs
+    hi DiffAdd cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi DiffAdd gui=NONE guifg=#009590 guibg=#202F29 guisp=NONE
+    hi DiffChange cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi DiffChange gui=NONE guifg=#009590 guibg=#202B26 guisp=NONE
+    hi DiffDelete cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi DiffDelete gui=NONE guifg=#009590 guibg=#202723 guisp=NONE
+    hi DiffText cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi DiffText gui=NONE guifg=#009590 guibg=#202320 guisp=NONE
+    
     " code highlighting 
     hi IncSearch cterm=NONE ctermfg=NONE ctermbg=NONE 
     hi IncSearch gui=NONE guifg=#202320 guibg=#00FFFE guisp=NONE
@@ -161,6 +175,68 @@ if &background == 'dark'
     hi Visual gui=NONE guifg=NONE guibg=#202F29 guisp=NONE
     hi VisualNOS cterm=NONE ctermfg=NONE ctermbg=NONE 
     hi VisualNOS gui=NONE guifg=NONE guibg=#202F29 guisp=NONE
+
+    " errors, messages, warnings
+    hi ModeMsg cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi ModeMsg gui=bold guifg=#FEFF00 guibg=NONE guisp=NONE
+    hi MoreMsg cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi MoreMsg gui=bold guifg=#FEFF00 guibg=NONE guisp=NONE
+    hi ErrorMsg cterm=bold ctermfg=NONE ctermbg=NONE 
+    hi ErrorMsg gui=bold guifg=#FEFF00 guibg=NONE guisp=NONE
+    hi WarningMsg cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi WarningMsg gui=bold guifg=#FEFF00 guibg=NONE guisp=NONE
+
+    " popup menu
+    hi Pmenu cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi Pmenu gui=NONE guifg=#B0B950 guibg=#202F29 guisp=NONE
+    hi PmenuSel cterm=bold ctermfg=NONE ctermbg=NONE 
+    hi PmenuSel gui=bold guifg=#202B26 guibg=#B0B950 guisp=NONE 
+    hi PmenuSbar cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi PmenuSbar gui=NONE guifg=#B0B950 guibg=NONE guisp=NONE
+    hi PmenuThumb cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi PmenuThumb gui=NONE guifg=#B0B950 guibg=NONE guisp=NONE
+
+    " statusline
+    hi StatusLine cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi StatusLine gui=NONE guifg=#009590 guibg=NONE guisp=NONE
+    hi StatusLineNC cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi StatusLineNC gui=NONE gui=NONE guifg=#009590 guibg=NONE guisp=NONE
+    hi StatusLineTerm cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi StatusLineTerm gui=NONE guifg=#009590 guibg=NONE guisp=NONE
+    hi StatusLineTermNC cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi StatusLineTermNC gui=NONE guifg=#009590 guibg=NONE guisp=NONE
+
+    " spelling, spelling errors
+    hi SpellBad cterm=underline ctermfg=NONE ctermbg=NONE 
+    hi SpellBad gui=underline guifg=NONE guibg=NONE guisp=NONE guisp=#FFFE00 
+    hi SpellCap cterm=undercurl ctermfg=NONE ctermbg=NONE 
+    hi SpellCap gui=undercurl guifg=NONE guibg=NONE guisp=NONE guisp=#00FFFE
+    hi SpellLocal cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi SpellLocal gui=underline guifg=NONE guibg=NONE guisp=NONE guisp=#009590 
+    hi SpellRare cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi SpellRare gui=underline guifg=NONE guibg=NONE guisp=NONE guisp=#00FF00
+
+    " tablines
+    hi TabLine cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi TabLine gui=NONE guifg=#009590 guibg=NONE guisp=NONE
+    hi TabLineFill cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi TabLineFill gui=NONE guifg=#009590 guibg=NONE guisp=NONE
+    hi TabLineSel cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi TabLineSel gui=NONE guifg=#009590 guibg=NONE guisp=NONE
+    
+    " misc
+    hi Question cterm=NONE ctermfg=NONE ctermfg=NONE 
+    hi Question gui=bold guifg=#FEFF00 guibg=#202B26 guisp=NONE
+    hi QuickFixLine cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi QuickFixLine gui=NONE guifg=#00FFFE guibg=#202B26 guisp=NONE
+    hi SpecialKey cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi SpecialKey gui=NONE guifg=#90CF00 guibg=NONE guisp=NONE
+    hi Title cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi Title gui=NONE guifg=#90CF00 guibg=NONE guisp=NONE
+    hi WildMenu cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi WildMenu gui=NONE guifg=#90CF00 guibg=#202F29 guisp=NONE
+    hi NonText cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi NonText gui=NONE guifg=#B0B950 guibg=NONE guisp=NONE
 else
     
     " SYNTAX GROUPS (see :h group-name):
@@ -299,6 +375,20 @@ else
     hi VertSplit cterm=bold ctermfg=NONE ctermbg=NONE 
     hi VertSplit gui=bold guifg=#3B3C3A guibg=#60B350 guisp=NONE
 
+    " directories
+    hi Directory cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi Directory gui=NONE guifg=#60AA60 guibg=NONE guisp=NONE
+
+    " diffs
+    hi DiffAdd cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi DiffAdd gui=NONE guifg=#007570 guibg=#30B050 guisp=NONE
+    hi DiffChange cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi DiffChange gui=NONE guifg=#007570 guibg=#60B350 guisp=NONE
+    hi DiffDelete cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi DiffDelete gui=NONE guifg=#007570 guibg=#90B650 guisp=NONE
+    hi DiffText cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi DiffText gui=NONE guifg=#007570 guibg=#B0B950 guisp=NONE
+    
     " code highlighting 
     hi IncSearch cterm=NONE ctermfg=NONE ctermbg=NONE 
     hi IncSearch gui=NONE guifg=#202320 guibg=#00DDDC guisp=NONE
@@ -310,54 +400,66 @@ else
     hi Visual gui=NONE guifg=NONE guibg=#30B050 guisp=NONE
     hi VisualNOS cterm=NONE ctermfg=NONE ctermbg=NONE 
     hi VisualNOS gui=NONE guifg=NONE guibg=#30B050 guisp=NONE
+
+    " errors, messages, warnings
+    hi ModeMsg cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi ModeMsg gui=bold guifg=#DCDD00 guibg=NONE guisp=NONE
+    hi MoreMsg cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi MoreMsg gui=bold guifg=#DCDD00 guibg=NONE guisp=NONE
+    hi ErrorMsg cterm=bold ctermfg=NONE ctermbg=NONE 
+    hi ErrorMsg gui=bold guifg=#DCDD00 guibg=NONE guisp=NONE
+    hi WarningMsg cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi WarningMsg gui=bold guifg=#DCDD00 guibg=NONE guisp=NONE
+
+    " popup menu
+    hi Pmenu cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi Pmenu gui=NONE guifg=#202320 guibg=#30B050 guisp=NONE
+    hi PmenuSel cterm=bold ctermfg=NONE ctermbg=NONE 
+    hi PmenuSel gui=bold guifg=#202320 guibg=#60B350 guisp=NONE 
+    hi PmenuSbar cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi PmenuSbar gui=NONE guifg=#202320 guibg=NONE guisp=NONE
+    hi PmenuThumb cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi PmenuThumb gui=NONE guifg=#202320 guibg=NONE guisp=NONE
+
+    " statusline
+    hi StatusLine cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi StatusLine gui=NONE guifg=#007570 guibg=NONE guisp=NONE
+    hi StatusLineNC cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi StatusLineNC gui=NONE gui=NONE guifg=#007570 guibg=NONE guisp=NONE
+    hi StatusLineTerm cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi StatusLineTerm gui=NONE guifg=#007570 guibg=NONE guisp=NONE
+    hi StatusLineTermNC cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi StatusLineTermNC gui=NONE guifg=#007570 guibg=NONE guisp=NONE
+    
+    " spelling, spelling errors
+    hi SpellBad cterm=underline ctermfg=NONE ctermbg=NONE 
+    hi SpellBad gui=underline guifg=NONE guibg=NONE guisp=NONE guisp=#DCDD00 
+    hi SpellCap cterm=undercurl ctermfg=NONE ctermbg=NONE 
+    hi SpellCap gui=undercurl guifg=NONE guibg=NONE guisp=NONE guisp=#00DDDC
+    hi SpellLocal cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi SpellLocal gui=underline guifg=NONE guibg=NONE guisp=NONE guisp=#007570 
+    hi SpellRare cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi SpellRare gui=underline guifg=NONE guibg=NONE guisp=NONE guisp=#006000
+
+    " tablines
+    hi TabLine cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi TabLine gui=NONE guifg=#007570 guibg=NONE guisp=NONE
+    hi TabLineFill cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi TabLineFill gui=NONE guifg=#007570 guibg=NONE guisp=NONE
+    hi TabLineSel cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi TabLineSel gui=NONE guifg=#007570 guibg=NONE guisp=NONE
+    
+    " misc
+    hi Question cterm=NONE ctermfg=NONE ctermfg=NONE 
+    hi Question gui=bold guifg=#DCDD00 guibg=#202B26 guisp=NONE
+    hi QuickFixLine cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi QuickFixLine gui=NONE guifg=#00DDDC guibg=#202B26 guisp=NONE
+    hi SpecialKey cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi SpecialKey gui=NONE guifg=#60AF00 guibg=NONE guisp=NONE
+    hi Title cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi Title gui=NONE guifg=#60AF00 guibg=NONE guisp=NONE
+    hi WildMenu cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi WildMenu gui=NONE guifg=#60AF00 guibg=#202F29 guisp=NONE
+    hi NonText cterm=NONE ctermfg=NONE ctermbg=NONE 
+    hi NonText gui=NONE guifg=#202320 guibg=NONE guisp=NONE
 endif
-
-" The rest need to be added to the if else statement,
-" but are dark mode colors
-
-
-" directories
-hi Directory      cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#90CC90 guibg=NONE guisp=NONE
-
-" diffs
-hi DiffAdd        cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#B0B950 guibg=#262726 guisp=NONE
-hi DiffChange     cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#B0B950 guibg=#262726 guisp=NONE
-hi DiffDelete     cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#B0B950 guibg=#262726 guisp=NONE
-hi DiffText       cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#B0B950 guibg=#262726 guisp=NONE
-
-" errors, messages, warnings
-hi ModeMsg        cterm=NONE ctermfg=NONE ctermbg=NONE gui=bold guifg=#90CF00 guibg=NONE guisp=NONE
-hi MoreMsg        cterm=NONE ctermfg=NONE ctermbg=NONE gui=bold guifg=#90CF00 guibg=NONE guisp=NONE
-hi ErrorMsg       cterm=bold ctermfg=NONE ctermbg=NONE gui=bold guifg=#90CF00 guibg=NONE guisp=NONE
-hi WarningMsg     cterm=NONE ctermfg=NONE ctermbg=NONE gui=bold guifg=#90CF00 guibg=NONE guisp=NONE
-
-" popup menu
-hi Pmenu          cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#B0B950 guibg=#323332 guisp=NONE
-hi PmenuSel       cterm=bold ctermfg=NONE ctermbg=NONE gui=bold guifg=#232423 guibg=#B0B950 guisp=NONE 
-hi PmenuSbar      cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#B0B950 guibg=NONE guisp=NONE
-hi PmenuThumb     cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#B0B950 guibg=NONE guisp=NONE
-
-" misc
-hi Question       cterm=NONE ctermfg=NONE ctermfg=NONE gui=bold guifg=#FEFF00 guibg=#262726 guisp=NONE
-hi QuickFixLine   cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#00FFFE guibg=#262726 guisp=NONE
-hi SpecialKey     cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#90CF00 guibg=NONE guisp=NONE
-hi Title            cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#90CF00 guibg=NONE guisp=NONE
-hi WildMenu         cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#90CF00 guibg=#293029 guisp=NONE
-hi NonText          cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#B0B950 guibg=NONE guisp=NONE
-
-" spelling, spelling errors
-hi SpellBad         cterm=underline ctermfg=NONE ctermbg=NONE gui=underline guifg=NONE guibg=NONE guisp=NONE guisp=#FFFE00 
-hi SpellCap         cterm=undercurl ctermfg=NONE ctermbg=NONE gui=undercurl guifg=NONE guibg=NONE guisp=NONE guisp=#00FFFE
-hi SpellLocal       cterm=NONE ctermfg=NONE ctermbg=NONE gui=underline guifg=NONE guibg=NONE guisp=NONE guisp=#009590 
-hi SpellRare        cterm=NONE ctermfg=NONE ctermbg=NONE gui=underline guifg=NONE guibg=NONE guisp=NONE guisp=#00FF00
-
-" statusline
-hi StatusLine       cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#009590 guibg=NONE guisp=NONE
-hi StatusLineNC     ctermfg=NONE ctermbg=NONE gui=NONE gui=NONE guifg=#009590 guibg=NONE guisp=NONE
-hi StatusLineTerm   cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#009590 guibg=NONE guisp=NONE
-hi StatusLineTermNC cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#009590 guibg=NONE guisp=NONE
-
-" tablines
-hi TabLine          cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#009590 guibg=NONE guisp=NONE
-hi TabLineFill      cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#009590 guibg=NONE guisp=NONE
-hi TabLineSel       cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE guifg=#009590 guibg=NONE guisp=NONE
