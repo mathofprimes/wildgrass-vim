@@ -8,11 +8,11 @@ Wildgrass is a colorscheme consisting of only green--that is, the RGB of every c
 
 ## Light Mode:
 
-![Screenshot from 2022-02-19 00-57-15](https://user-images.githubusercontent.com/74194607/154788506-00ad5cf2-7f1d-4fe9-bbe8-b468f062e682.png)
+![Screenshot from 2022-02-20 00-53-51](https://user-images.githubusercontent.com/74194607/154830539-78837ecd-9be8-4531-b41e-d5f3a0eb723f.png)
 
 ## Dark Mode: 
 
-![Screenshot from 2022-02-19 00-57-50](https://user-images.githubusercontent.com/74194607/154788514-2bc51bcf-93d4-4033-a249-7f141cd45f24.png)
+![Screenshot from 2022-02-20 00-53-25](https://user-images.githubusercontent.com/74194607/154830545-c1f8f870-6a6c-4118-95fe-302781c11be7.png)
 
 # Installation:
 
