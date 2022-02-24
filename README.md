@@ -26,11 +26,19 @@ cd ~/.vim/bundle/ && git clone https://github.com/mathofprimes/wildgrass.git
 
 ## Vim-Plug:
 
-Add ```Plug 'mathofprimes/wildgrass'``` to you're .vimrc file and run ```:PlugInstall``` in Vim.
+Add 
+
+```Plug 'mathofprimes/wildgrass'``` 
+
+to you're .vimrc file and run ```:PlugInstall``` in Vim.
 
 ## Vundle: 
 
-Add ```Plugin 'mathofprimes/wildgrass'``` to you're .vimrc file and run ```:PluginInstall``` in Vim.
+Add 
+
+```Plugin 'mathofprimes/wildgrass'``` 
+
+to you're .vimrc file and run ```:PluginInstall``` in Vim.
 
 # Usage:
 
