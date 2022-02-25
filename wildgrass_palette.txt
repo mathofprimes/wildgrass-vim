@@ -1,35 +1,35 @@
 Palette {
 	Used for mostly UI {
-		PAPYRUS 1: #A0B060
-		PAPYRUS 2: #A4B460
-                PAPYRUS 3: #A8B860
-		PAPYRUS 4: #BCCC60
+		PAPYRUS 1: #A4A868
+		PAPYRUS 2: #A8AC66
+                PAPYRUS 3: #ACB024
+		PAPYRUS 4: #B0B462
                 
                     
-	    	DARK GRAY 1: #243420
-		DARK GRAY 2: #283820
-        	DARK GRAY 3: #2C3C20
-        	DARK GRAY 4: #304020
+	    	DARK GRAY 1: #242822
+		DARK GRAY 2: #282C24
+        	DARK GRAY 3: #2C3026
+        	DARK GRAY 4: #303428
         	
-        	LIGHT GRAY 1: #6F706F
-        	LIGHT GRAY 1: #8F908F
+        	LIGHT GRAY 1: #5E605E
+        	LIGHT GRAY 1: #7E807E
         	
-       		LIGHT GRAY 2: #7F807F 
-       		LIGHT GRAY 2: #9FA09F
+       		LIGHT GRAY 2: #6E706E
+       		LIGHT GRAY 2: #8E908E
        
-       	        CYAN 1: 0006665
-	       	CYAN 2: #00FFFE
+       	        CYAN 1: 0006664
+	       	CYAN 2: #00EEEC
 
-	        YELLOW 1: #656600
-        	YELLOW 2: #FEFF00
+	        YELLOW 1: #646600
+        	YELLOW 2: #ECEE00
 	}
 
 	Used mostly for code {	
 		GREEN: #008000
 		GREEN: #00A000
 		
-		JADE: #008040 
-		JADE: #00A060
+		JADE: #00A060 
+		JADE: #00C080
 	       	
 		BRONZE: #7E8000
 	        BRONZE: #9EA000
@@ -46,7 +46,7 @@ Palette {
                 SLATE: #40807E
                 SLATE #60A09E
                 
-                BROWNED: #7E8040 
-        	BROWNED: #9EA060                      
+                EARTH: #7E8040 
+        	EARTH: #9EA060                      
 	}
 }
