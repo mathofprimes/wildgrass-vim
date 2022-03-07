@@ -1,5 +1,11 @@
 " colorscheme file for wildgrass
 
+let s:configuration = wildgrass#get_configuration
+let s:varient = wildgrass#get_varient(s:configuration.style)
+
+
+
+
 hi clear
 
 if exists('syntax_on')
@@ -10,7 +16,7 @@ if has('termguicolors')
     set termguicolors
 endif
 
-let g:colors_name = 'wildgrass'
+set g:colors_name = 'wildgrass'
 
 " SYNTAX GROUPS (see :h group-name):
 
@@ -30,8 +36,9 @@ hi Identifier cterm=NONE ctermfg=NONE ctermbg=NONE
 hi Identifier gui=NONE guifg=#00A000 guibg=NONE guisp=NONE
 hi link Function Identifier 
 
-hi Statement cterm=NONE ctermfg=NONE ctermbg=NONE 
-hi Statement gui=NONE guifg=#8EA000 guibg=NONE guisp=NONE
+call wildgrass#hl('Statement', s:varient.syn2, s:varient.none)
+"hi Statement cterm=NONE ctermfg=NONE ctermbg=NONE 
+"hi Statement gui=NONE guifg=#8EA000 guibg=NONE guisp=NONE
 hi link Conditional Statement 
 hi link Repeat Statement  
 hi link Label Statement
