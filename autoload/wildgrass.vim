@@ -1,4 +1,4 @@
-let s:colors = {
+let g:colors = {
     \ 'bg0':   ['#003000', 'NONE'],
     \ 'bg1':   ['#005000', 'NONE'],
     \ 'bg2':   ['#007000', 'NONE'],
