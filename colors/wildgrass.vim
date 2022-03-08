@@ -14,6 +14,8 @@ set g:colors_name = 'wildgrass'
 
 " SYNTAX GROUPS (see :h group-name):
 
+call s:hl('Normal', s:colors.sp0, s:colors.mode2, s:colors.syn8, s:colors.sp0)
+
 " comments (light gray) 
 hi Comment cterm=italic ctermfg=NONE ctermbg=NONE 
 hi Comment gui=italic guifg=#4E604C guibg=NONE guisp=NONE
@@ -70,8 +72,8 @@ if &background == 'dark'
     " HIGHLIGHTING GROUPS (see :h hi-groups):
     
     " modes
-    hi Normal cterm=NONE ctermfg=NONE ctermbg=NONE 
-    hi Normal gui=NONE guifg=#64C864 guibg=#142814 guisp=NONE
+    "hi Normal cterm=NONE ctermfg=NONE ctermbg=NONE 
+    "hi Normal gui=NONE guifg=#64C864 guibg=#142814 guisp=NONE
     hi Terminal cterm=NONE ctermfg=NONE ctermbg=NONE 
     hi Terminal gui=NONE guifg=#64C864 guibg=#142814 guisp=NONE
     hi Visual cterm=NONE ctermfg=NONE ctermbg=NONE 
