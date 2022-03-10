@@ -10,30 +10,26 @@ if has('termguicolors')
     set termguicolors
 endif
 
-set g:colors_name = 'wildgrass'
+let g:colors_name = 'wildgrass'
+
+let s:palette = wildgrass#palette
 
 " SYNTAX GROUPS (see :h group-name):
 
-" call s:hl('Normal', g:colors.sp0, g:colors.mode2, g:colors.syn8, g:colors.sp0)
+" comments 
+call wildgrass#HL('Comment', s:palette.ot0, s:palette.sn0, s:palette.ot0, s:palette.ot0)
 
-" comments (light gray) 
-hi Comment cterm=italic ctermfg=NONE ctermbg=NONE 
-hi Comment gui=italic guifg=#4E604C guibg=NONE guisp=NONE
-
-hi Constant cterm=NONE ctermfg=NONE ctermbg=NONE 
-hi Constant gui=NONE guifg=#00A066 guibg=NONE guisp=NONE
+call wildgrass#HL('Constant', s:palette.ot0, s:palette.sn1, s:palette.ot0, s:palette.ot0)
 hi link String Constant  
 hi link Character Constant  
 hi link Number Constant 
 hi link Boolean Constant
 hi link Float Constant
 
-hi Identifier cterm=NONE ctermfg=NONE ctermbg=NONE 
-hi Identifier gui=NONE guifg=#00A000 guibg=NONE guisp=NONE
+call wildgrass#HL('Identifier', s:palette.ot0, s:palette.sn2, s:palette.ot0, s:palette.ot0)
 hi link Function Identifier 
 
-hi Statement cterm=NONE ctermfg=NONE ctermbg=NONE 
-hi Statement gui=NONE guifg=#8EA000 guibg=NONE guisp=NONE
+call wildgrass#HL('Statement', s:palette.ot0, s:palette.sn3, s:palette.ot0, s:palette.ot0)
 hi link Conditional Statement 
 hi link Repeat Statement  
 hi link Label Statement
@@ -41,29 +37,25 @@ hi link Operator Statement
 hi link Keyword Statement 
 hi link Exception Statement 
 
-hi PreProc cterm=NONE ctermfg=NONE ctermbg=NONE 
-hi PreProc gui=NONE guifg=#80A060 guibg=NONE guisp=NONE
+call wildgrass#HL('PreProc', s:palette.ot0, s:palette.sn4, s:palette.ot0, s:palette.ot0)
 hi link Include PreProc
 hi link Define PreProc
 hi link Macro PreProc
 hi link PreCondit PreProc
 
-hi Type cterm=NONE ctermfg=NONE ctermbg=NONE 
-hi Type gui=NONE guifg=#60A080 guibg=NONE guisp=NONE
+call wildgrass#HL('Type', s:palette.ot0, s:palette.sn5, s:palette.ot0, s:palette.ot0)
 hi link StorageClass Type
 hi link Structure Type 
 hi link Typedef Type 
 
-hi Special cterm=NONE ctermfg=NONE ctermbg=NONE 
-hi Special gui=NONE guifg=#9EA060 guibg=NONE guisp=NONE
+call wildgrass#HL('Special', s:palette.ot0, s:palette.sn6, s:palette.ot0, s:palette.ot0)
 hi link SpecialChar Special 
 hi link Tag Special
 hi link Deliminator Special
 hi link SpecialComment Special
 hi link Debug Special
 
-hi Underlined cterm=NONE ctermfg=NONE ctermbg=NONE 
-hi Underlined gui=NONE guifg=#00908F guibg=NONE guisp=NONE
+call wildgrass#HL('Underlined', s:palette.ot0, s:palette.sn7, s:palette.ot0, s:palette.ot0)
 hi link Ignore Underlined 
 hi link Error Underlined  
 hi link Todo Underlined
