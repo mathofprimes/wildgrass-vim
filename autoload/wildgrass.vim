@@ -50,7 +50,7 @@ elseif &background ==# 'light'
     let wildgrass#palette = {}
 endif
 
-# sets the colors of highlight groups
+" sets the colors of highlight groups
 function! wildgrass#HL(group, cg, fg, bg, sp)
     exec 'hi' a:group
             \ 'cterm='   . a:cg[1]
