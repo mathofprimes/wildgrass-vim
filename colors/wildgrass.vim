@@ -19,6 +19,7 @@ let s:palette = wildgrass#palette
 " comments 
 call wildgrass#HL('Comment', s:palette.ot0, s:palette.sn0, s:palette.ot0, s:palette.ot0)
 
+" characters
 call wildgrass#HL('Constant', s:palette.ot0, s:palette.sn1, s:palette.ot0, s:palette.ot0)
 hi link String Constant  
 hi link Character Constant  
@@ -60,18 +61,16 @@ hi link Ignore Underlined
 hi link Error Underlined  
 hi link Todo Underlined
 
+
+" HIGHLIGHTING GROUPS (see :h hi-groups):
+
+" modes
+call wildgrass#HL('Normal', s:palette.ot0, s:palette.txt, s:palette.bg0, s:palette.ot0)
+hi link Terminal Normal 
+call wildgrass#HL('Visual', s:palette.ot0, s:palette.ot0, s:palette.bg2, s:palette.ot0)
+hi link VisualNOS Visual 
+
 if &background == 'dark'    
-    " HIGHLIGHTING GROUPS (see :h hi-groups):
-    
-    " modes
-    hi Normal cterm=NONE ctermfg=NONE ctermbg=NONE 
-    hi Normal gui=NONE guifg=#64C864 guibg=#142814 guisp=NONE
-    hi Terminal cterm=NONE ctermfg=NONE ctermbg=NONE 
-    hi Terminal gui=NONE guifg=#64C864 guibg=#142814 guisp=NONE
-    hi Visual cterm=NONE ctermfg=NONE ctermbg=NONE 
-    hi Visual gui=NONE guifg=NONE guibg=#1D3A1D guisp=NONE
-    hi VisualNOS cterm=NONE ctermfg=NONE ctermbg=NONE 
-    hi VisualNOS gui=NONE guifg=NONE guibg=#1D3A1D guisp=NONE
    
     " cursors
     hi Cursor cterm=reverse ctermfg=NONE ctermbg=NONE 
