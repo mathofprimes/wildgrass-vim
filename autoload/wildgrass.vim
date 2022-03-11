@@ -1,15 +1,17 @@
 " default dark wildgrass palette, default light palette
 if &background ==# 'dark'
+    " bg = background, im = important, sn = syntax, ot = other
     let wildgrass#palette = {
-        \ 'bg0': ['#003000', 'NONE'],
-        \ 'bg1': ['#005000', 'NONE'],
-        \ 'bg2': ['#007000', 'NONE'],
-        \ 'bg3': ['#009000', 'NONE'],
+        \ 'bg0': ['#2F302F', 'NONE'],
+        \ 'bg1': ['#323332', 'NONE'],
+        \ 'bg2': ['#353635', 'NONE'],
+        \ 'bg3': ['#383938', 'NONE'],
+        \ 'txt': ['#DFE0DF', 'NONE'],
         \ 'im0': ['#184830', 'NONE'],
         \ 'im1': ['#304818', 'NONE'],
         \ 'im2': ['#00C0C0', 'NONE'],
         \ 'im3': ['#C0C000', 'NONE'],
-        \ 'sn0': ['#6E806E', 'NONE'],
+        \ 'sn0': ['#5F605F', 'NONE'],
         \ 'sn1': ['#00A000', 'NONE'],
         \ 'sn2': ['#8EA000', 'NONE'],
         \ 'sn3': ['#00A08E', 'NONE'],
@@ -25,10 +27,11 @@ if &background ==# 'dark'
         \ }
 elseif &background ==# 'light'
     let wildgrass#palette = {
-        \ 'bg0': ['#003000', 'NONE'],
-        \ 'bg1': ['#005000', 'NONE'],
-        \ 'bg2': ['#007000', 'NONE'],
-        \ 'bg3': ['#009000', 'NONE'],
+        \ 'bg0': ['#DFE0DF', 'NONE'],
+        \ 'bg1': ['#DCDDDC', 'NONE'],
+        \ 'bg2': ['#CFD0CF', 'NONE'],
+        \ 'bg3': ['#CCCDCC', 'NONE'],
+        \ 'txt': ['#2F302F', 'NONE'],
         \ 'im0': ['#184830', 'NONE'],
         \ 'im1': ['#304818', 'NONE'],
         \ 'im2': ['#00C0C0', 'NONE'],
@@ -47,8 +50,25 @@ elseif &background ==# 'light'
         \ 'ot2': ['underline', 'underline'],
         \ 'ot3': ['undercurl', 'undercurl']
         \ }
-    let wildgrass#palette = {}
 endif
+
+" add a message to tell user if they don't use
+" a valid variant
+
+let wildgrass#variant = 'gray'
+
+function! wildgrass#variant()
+    if wildgrass#variant ==# 'gray'
+        return wildgrass#palette
+    elseif wildgrass#variant ==# 'green'
+        let wildgrass#palette.bg0 = ['#003000', 'NONE']
+        let wildgrass#palette.bg1 = ['']
+        let wildgrass#palette.bg2 = ['']
+        let wildgrass#palette.bg3 = ['']
+        let wildgrass#palette.sp1 = ['']
+    elseif wildgrass#variant ==# ''
+    endif
+endfunction
 
 " sets the colors of highlight groups
 function! wildgrass#HL(group, cg, fg, bg, sp)
