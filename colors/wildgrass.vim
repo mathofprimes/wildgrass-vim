@@ -67,28 +67,34 @@ hi link Todo Underlined
 " modes
 call wildgrass#HL('Normal', s:palette.ot0, s:palette.txt, s:palette.bg0, s:palette.ot0)
 hi link Terminal Normal 
-call wildgrass#HL('Visual', s:palette.ot0, s:palette.ot0, s:palette.bg3, s:palette.ot0)
+call wildgrass#HL('Visual', s:palette.ot0, s:palette.ot0, s:palette.bg2, s:palette.ot0)
 hi link VisualNOS Visual 
+
+" cursors
+call wildgrass#HL('Cursor', s:palette.ot3, s:palette.ot0, s:palette.ot0, s:palette.ot0)
+hi link lCursor Cursor  
+hi link CursorIM Cursor
+hi link CursorColumn ColorColumn
+hi link CursorLine ColorColumn  
+hi CursorLineFold cterm=NONE ctermfg=NONE ctermbg=NONE 
+hi CursorLineFold gui=NONE guifg=#7E807E guibg=#1A341A guisp=NONE
+hi CursorLineNr cterm=NONE ctermfg=NONE ctermbg=NONE 
+hi CursorLineNr gui=NONE guifg=#64C864 guibg=#172E17 guisp=NONE
+hi CursorLineSign cterm=NONE ctermfg=NONE ctermbg=NONE 
+hi CursorLineSign gui=NONE guifg=#7E807E guibg=#1A341A guisp=NONE
+
+" columns, lines
+call wildgrass#HL('ColorColumn', s:palette.ot0, s:palette.ot0, s:palette.bg1, s:palette.ot0)
+hi link EndOfBuffer Normal  
+hi link LineNr Normal  
+call wildgrass#HL('LineNrAbove', s:palette.ot0, s:palette.im0, s:palette.ot0, s:palette.ot0)
+call wildgrass#HL('LineNrBelow', s:palette.ot0, s:palette.im1, s:palette.ot0, s:palette.ot0)
+hi SignColumn cterm=NONE ctermfg=NONE ctermbg=NONE 
+hi SignColumn gui=NONE guifg=#7E807E guibg=#1A341A guisp=NONE
+hi link VertSplit Normal 
 
 if &background == 'dark'    
    
-    " cursors
-    hi Cursor cterm=reverse ctermfg=NONE ctermbg=NONE 
-    hi Cursor gui=reverse guifg=NONE guibg=NONE guisp=NONE
-    hi lCursor cterm=reverse ctermfg=NONE ctermbg=NONE 
-    hi lCursor gui=reverse guifg=NONE guibg=NONE guisp=NONE
-    hi CursorIM cterm=reverse ctermfg=NONE ctermbg=NONE 
-    hi CursorIM gui=reverse guifg=NONE guibg=NONE guisp=NONE
-    hi CursorColumn cterm=NONE ctermfg=NONE ctermbg=NONE 
-    hi CursorColumn gui=NONE guifg=NONE guibg=#172E17 guisp=NONE
-    hi CursorLine cterm=NONE ctermfg=NONE ctermbg=NONE 
-    hi CursorLine gui=NONE guifg=NONE guibg=#172E17 guisp=NONE
-    hi CursorLineFold cterm=NONE ctermfg=NONE ctermbg=NONE 
-    hi CursorLineFold gui=NONE guifg=#7E807E guibg=#1A341A guisp=NONE
-    hi CursorLineNr cterm=NONE ctermfg=NONE ctermbg=NONE 
-    hi CursorLineNr gui=NONE guifg=#64C864 guibg=#172E17 guisp=NONE
-    hi CursorLineSign cterm=NONE ctermfg=NONE ctermbg=NONE 
-    hi CursorLineSign gui=NONE guifg=#7E807E guibg=#1A341A guisp=NONE
     
     " messages
     hi ErrorMsg cterm=bold ctermfg=NONE ctermbg=NONE 
@@ -164,21 +170,7 @@ if &background == 'dark'
     hi TabLineSel cterm=NONE ctermfg=NONE ctermbg=NONE 
     hi TabLineSel gui=NONE guifg=#00EEEC guibg=#1A341A guisp=NONE
     
-    " columns, lines
-    hi ColorColumn cterm=NONE ctermfg=NONE ctermbg=NONE 
-    hi ColorColumn gui=NONE guifg=NONE guibg=#172E17 guisp=NONE
-    hi EndOfBuffer cterm=NONE ctermfg=NONE ctermbg=NONE 
-    hi EndOfBuffer gui=NONE guifg=#64C864 guibg=#142814 guisp=NONE
-    hi LineNr cterm=bold ctermfg=NONE ctermbg=NONE 
-    hi LineNr gui=bold guifg=#64C864 guibg=#1D3A1D guisp=NONE
-    hi LineNrAbove cterm=NONE ctermfg=NONE ctermbg=NONE 
-    hi LineNrAbove gui=NONE guifg=#184830 guibg=NONE guisp=NONE
-    hi LineNrBelow cterm=NONE ctermfg=NONE ctermbg=NONE 
-    hi LineNrBelow gui=NONE guifg=#304818 guibg=NONE guisp=NONE 
-    hi SignColumn cterm=NONE ctermfg=NONE ctermbg=NONE 
-    hi SignColumn gui=NONE guifg=#7E807E guibg=#1A341A guisp=NONE
-    hi VertSplit cterm=bold ctermfg=NONE ctermbg=NONE 
-    hi VertSplit gui=bold guifg=#7E807E guibg=#1A341A guisp=NONE
+    " coloumns, lines
    
     " misc
     hi Conceal cterm=NONE ctermfg=NONE ctermbg=NONE 
