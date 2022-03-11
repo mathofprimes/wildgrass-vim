@@ -1,6 +1,7 @@
 " default dark wildgrass palette, default light palette
 if &background ==# 'dark'
-    " bg = background, im = important, sn = syntax, ot = other
+    " bg = background, txt = text im = important, 
+    " sn = syntax, ot = other
     let wildgrass#palette = {
         \ 'bg0': ['#2F302F', 'NONE'],
         \ 'bg1': ['#323332', 'NONE'],
@@ -12,18 +13,19 @@ if &background ==# 'dark'
         \ 'im2': ['#00C0C0', 'NONE'],
         \ 'im3': ['#C0C000', 'NONE'],
         \ 'sn0': ['#5F605F', 'NONE'],
-        \ 'sn1': ['#00A000', 'NONE'],
+        \ 'sn1': ['#00A060', 'NONE'],
         \ 'sn2': ['#8EA000', 'NONE'],
         \ 'sn3': ['#00A08E', 'NONE'],
         \ 'sn4': ['#00A060', 'NONE'],
         \ 'sn5': ['#80A060', 'NONE'],
         \ 'sn6': ['#60A080', 'NONE'],
         \ 'sn7': ['#60A09E', 'NONE'],
-        \ 'sn8': ['#9EA060', 'NONE'],
         \ 'ot0': ['NONE', 'NONE'],
         \ 'ot1': ['bold', 'bold'],
-        \ 'ot2': ['underline', 'underline'],
-        \ 'ot3': ['undercurl', 'undercurl']
+        \ 'ot2': ['italic', 'italic'],
+        \ 'ot3': ['reverse', 'reverse'],
+        \ 'ot4': ['underline', 'underline'],
+        \ 'ot5': ['undercurl', 'undercurl']
         \ }
 elseif &background ==# 'light'
     let wildgrass#palette = {
@@ -37,18 +39,19 @@ elseif &background ==# 'light'
         \ 'im2': ['#00C0C0', 'NONE'],
         \ 'im3': ['#C0C000', 'NONE'],
         \ 'sn0': ['#6E806E', 'NONE'],
-        \ 'sn1': ['#00A000', 'NONE'],
-        \ 'sn2': ['#8EA000', 'NONE'],
+        \ 'sn1': ['#008000', 'NONE'],
+        \ 'sn2': ['#6E8000', 'NONE'],
         \ 'sn3': ['#00A08E', 'NONE'],
         \ 'sn4': ['#00A060', 'NONE'],
         \ 'sn5': ['#80A060', 'NONE'],
         \ 'sn6': ['#60A080', 'NONE'],
         \ 'sn7': ['#60A09E', 'NONE'],
-        \ 'sn8': ['#9EA060', 'NONE'],
         \ 'ot0': ['NONE', 'NONE'],
         \ 'ot1': ['bold', 'bold'],
-        \ 'ot2': ['underline', 'underline'],
-        \ 'ot3': ['undercurl', 'undercurl']
+        \ 'ot2': ['italic', 'italic'],
+        \ 'ot3': ['reverse', 'reverse'],
+        \ 'ot4': ['underline', 'underline'],
+        \ 'ot5': ['undercurl', 'undercurl']
         \ }
 endif
 
