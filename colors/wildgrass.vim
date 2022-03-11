@@ -67,7 +67,7 @@ hi link Todo Underlined
 " modes
 call wildgrass#HL('Normal', s:palette.ot0, s:palette.txt, s:palette.bg0, s:palette.ot0)
 hi link Terminal Normal 
-call wildgrass#HL('Visual', s:palette.ot0, s:palette.ot0, s:palette.bg2, s:palette.ot0)
+call wildgrass#HL('Visual', s:palette.ot0, s:palette.ot0, s:palette.bg3, s:palette.ot0)
 hi link VisualNOS Visual 
 
 if &background == 'dark'    
