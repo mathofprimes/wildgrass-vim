@@ -12,7 +12,7 @@ endif
 
 let g:colors_name = 'wildgrass'
 
-let s:palette = wildgrass#palette
+let s:palette = wildgrass#gray#palette
 
 " SYNTAX GROUPS (see :h group-name):
 
