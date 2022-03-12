@@ -12,7 +12,7 @@ endif
 
 let g:colors_name = 'wildgrass'
 
-let s:palette = wildgrass#palette#gray
+let s:palette = wildgrass#gray#palette
 
 " sets the colors of highlight groups
 function! HL(group, cg, fg, bg, sp)
