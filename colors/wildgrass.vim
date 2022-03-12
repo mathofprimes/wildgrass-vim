@@ -12,15 +12,27 @@ endif
 
 let g:colors_name = 'wildgrass'
 
-let s:palette = wildgrass#gray#palette
+let s:palette = wildgrass#palette#gray
+
+" sets the colors of highlight groups
+function! HL(group, cg, fg, bg, sp)
+    exec 'hi' a:group
+            \ 'cterm='   . a:cg[1]
+            \ 'ctermfg=' . a:fg[1]
+            \ 'ctermbg=' . a:bg[1]
+            \ 'gui='     . a:cg[0]
+            \ 'guifg='   . a:fg[0]
+            \ 'guibg='   . a:bg[0]
+            \ 'guisp='   . a:sp[0]
+endfunction
 
 " SYNTAX GROUPS (see :h group-name):
 
 " comments (light gray) 
-call wildgrass#HL('Comment', s:palette.ot0, s:palette.sn0, s:palette.ot0, s:palette.ot0)
+call HL('Comment', s:palette.ot0, s:palette.sn0, s:palette.ot0, s:palette.ot0)
 
 " characters
-call wildgrass#HL('Constant', s:palette.ot0, s:palette.sn1, s:palette.ot0, s:palette.ot0)
+call HL('Constant', s:palette.ot0, s:palette.sn1, s:palette.ot0, s:palette.ot0)
 hi link String Constant  
 hi link Character Constant  
 hi link Number Constant 
@@ -28,10 +40,10 @@ hi link Boolean Constant
 hi link Float Constant
 
 " functions (green)
-call wildgrass#HL('Identifier', s:palette.ot0, s:palette.sn2, s:palette.ot0, s:palette.ot0)
+call HL('Identifier', s:palette.ot0, s:palette.sn2, s:palette.ot0, s:palette.ot0)
 hi link Function Identifier 
 
-call wildgrass#HL('Statement', s:palette.ot0, s:palette.sn3, s:palette.ot0, s:palette.ot0)
+call HL('Statement', s:palette.ot0, s:palette.sn3, s:palette.ot0, s:palette.ot0)
 hi link Conditional Statement 
 hi link Repeat Statement  
 hi link Label Statement
@@ -39,25 +51,25 @@ hi link Operator Statement
 hi link Keyword Statement 
 hi link Exception Statement 
 
-call wildgrass#HL('PreProc', s:palette.ot0, s:palette.sn4, s:palette.ot0, s:palette.ot0)
+call HL('PreProc', s:palette.ot0, s:palette.sn4, s:palette.ot0, s:palette.ot0)
 hi link Include PreProc
 hi link Define PreProc
 hi link Macro PreProc
 hi link PreCondit PreProc
 
-call wildgrass#HL('Type', s:palette.ot0, s:palette.sn5, s:palette.ot0, s:palette.ot0)
+call HL('Type', s:palette.ot0, s:palette.sn5, s:palette.ot0, s:palette.ot0)
 hi link StorageClass Type
 hi link Structure Type 
 hi link Typedef Type 
 
-call wildgrass#HL('Special', s:palette.ot0, s:palette.sn6, s:palette.ot0, s:palette.ot0)
+call HL('Special', s:palette.ot0, s:palette.sn6, s:palette.ot0, s:palette.ot0)
 hi link SpecialChar Special 
 hi link Tag Special
 hi link Deliminator Special
 hi link SpecialComment Special
 hi link Debug Special
 
-call wildgrass#HL('Underlined', s:palette.ot0, s:palette.sn7, s:palette.ot0, s:palette.ot0)
+call HL('Underlined', s:palette.ot0, s:palette.sn7, s:palette.ot0, s:palette.ot0)
 hi link Ignore Underlined 
 hi link Error Underlined  
 hi link Todo Underlined
@@ -66,17 +78,17 @@ hi link Todo Underlined
 " HIGHLIGHTING GROUPS (see :h hi-groups):
 
 " modes
-call wildgrass#HL('Normal', s:palette.ot0, s:palette.txt, s:palette.bg0, s:palette.ot0)
+call HL('Normal', s:palette.ot0, s:palette.txt, s:palette.bg0, s:palette.ot0)
 hi link Terminal Normal 
-call wildgrass#HL('Visual', s:palette.ot0, s:palette.ot0, s:palette.bg2, s:palette.ot0)
+call HL('Visual', s:palette.ot0, s:palette.ot0, s:palette.bg2, s:palette.ot0)
 hi link VisualNOS Visual 
 
 " cursors
-call wildgrass#HL('Cursor', s:palette.ot3, s:palette.ot0, s:palette.ot0, s:palette.ot0)
+call HL('Cursor', s:palette.ot3, s:palette.ot0, s:palette.ot0, s:palette.ot0)
 hi link lCursor Cursor  
 hi link CursorIM Cursor
-call wildgrass#HL('CursorColumn', s:palette.ot0, s:palette.ot0, s:palette.bg1, s:palette.ot0)
-call wildgrass#HL('CursorLine', s:palette.ot0, s:palette.ot0, s:palette.bg1, s:palette.ot0)
+call HL('CursorColumn', s:palette.ot0, s:palette.ot0, s:palette.bg1, s:palette.ot0)
+call HL('CursorLine', s:palette.ot0, s:palette.ot0, s:palette.bg1, s:palette.ot0)
 hi CursorLineFold cterm=NONE ctermfg=NONE ctermbg=NONE 
 hi CursorLineFold gui=NONE guifg=#7E807E guibg=#1A341A guisp=NONE
 hi CursorLineNr cterm=NONE ctermfg=NONE ctermbg=NONE 
@@ -85,11 +97,11 @@ hi CursorLineSign cterm=NONE ctermfg=NONE ctermbg=NONE
 hi CursorLineSign gui=NONE guifg=#7E807E guibg=#1A341A guisp=NONE
 
 " columns, lines
-call wildgrass#HL('ColorColumn', s:palette.ot0, s:palette.ot0, s:palette.bg1, s:palette.ot0)
+call HL('ColorColumn', s:palette.ot0, s:palette.ot0, s:palette.bg1, s:palette.ot0)
 hi link EndOfBuffer Normal  
 hi link LineNr Normal  
-call wildgrass#HL('LineNrAbove', s:palette.ot0, s:palette.im0, s:palette.ot0, s:palette.ot0)
-call wildgrass#HL('LineNrBelow', s:palette.ot0, s:palette.im1, s:palette.ot0, s:palette.ot0)
+call HL('LineNrAbove', s:palette.ot0, s:palette.im0, s:palette.ot0, s:palette.ot0)
+call HL('LineNrBelow', s:palette.ot0, s:palette.im1, s:palette.ot0, s:palette.ot0)
 hi SignColumn cterm=NONE ctermfg=NONE ctermbg=NONE 
 hi SignColumn gui=NONE guifg=#7E807E guibg=#1A341A guisp=NONE
 hi link VertSplit Normal 
