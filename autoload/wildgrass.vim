@@ -1,6 +1,6 @@
 function! wildgrass#gray()
     if &background ==# 'dark'
-        let variant_palette = {
+        let palette = {
             \ 'bg0': ['#2F302F', 'NONE'],
             \ 'bg1': ['#323332', 'NONE'],
             \ 'bg2': ['#353635', 'NONE'],
@@ -52,6 +52,7 @@ function! wildgrass#gray()
             \ 'ot5': ['undercurl', 'undercurl']
             \ }
     endif
+    return palette
 endfunction
 
 " sets the colors of highlight groups
