@@ -1,58 +1,46 @@
-function! wildgrass#gray()
+function! wildgrass#variant_palette(variant_name)
     if &background ==# 'dark'
-        let palette = {
-            \ 'bg0': ['#2F302F', 'NONE'],
-            \ 'bg1': ['#323332', 'NONE'],
-            \ 'bg2': ['#353635', 'NONE'],
-            \ 'bg3': ['#383938', 'NONE'],
-            \ 'txt': ['#DFE0DF', 'NONE'],
-            \ 'im0': ['#184830', 'NONE'],
-            \ 'im1': ['#304818', 'NONE'],
-            \ 'im2': ['#00C0C0', 'NONE'],
-            \ 'im3': ['#C0C000', 'NONE'],
-            \ 'sn0': ['#5F605F', 'NONE'],
-            \ 'sn1': ['#00A060', 'NONE'],
-            \ 'sn2': ['#8EA000', 'NONE'],
-            \ 'sn3': ['#00A08E', 'NONE'],
-            \ 'sn4': ['#00A060', 'NONE'],
-            \ 'sn5': ['#80A060', 'NONE'],
-            \ 'sn6': ['#60A080', 'NONE'],
-            \ 'sn7': ['#60A09E', 'NONE'],
-            \ 'ot0': ['NONE', 'NONE'],
+        let syntax = {
+            \ 'gray': ['#7F817F', 'NONE'],
+            \ 'jade': ['#019161', 'NONE'],
+            \ 'green': ['#019101', 'NONE'],
+            \ 'bronze': ['#8F9101', 'NONE'],
+            \ 'patina': ['#8F9141', 'NONE'],
+            \ 'slate': ['#41918F', 'NONE'],
+            \ 'faded': ['#619161', 'NONE'],
+            \ 'turquoise': ['#01918F', 'NONE'],
+            \ 'none': ['NONE', 'NONE'],
             \ 'ot1': ['bold', 'bold'],
             \ 'ot2': ['italic', 'italic'],
             \ 'ot3': ['reverse', 'reverse'],
             \ 'ot4': ['underline', 'underline'],
             \ 'ot5': ['undercurl', 'undercurl']
             \ }
+        if a:variant_name ==# 'gray'
+            let background = {
+                \ 'bg0': ['#2F312F', 'NONE'],
+                \ 'bg1': ['#33353F', 'NONE'],
+                \ 'bg2': ['#393B39', 'NONE'],
+                \ 'bg3': ['#3D3F3D', 'NONE'],
+                \ 'bg4': ['#', 'NONE'],
+                \ 'bg5': ['#', 'NONE'],
+                \ 'bg6': ['#', 'NONE'],
+                \ 'txt': ['#8F908F', 'NONE'],
+                \ 'bg7': ['#', 'NONE']
+                \ }
+        elseif a:variant_name == 'jade'
+            let background = {
+                \ 'bg0': ['#013121', 'NONE'],
+                \ 'bg1': ['#053525', 'NONE'],
+                \ 'bg2': ['#0B3B3B', 'NONE'], 
+                \ 'txt': ['#8F908F', 'NONE'],
+                \ 'bg3': ['#0F3F3F', 'NONE']
+                \ }
+        endif 
     elseif &background ==# 'light'
-        let palette = {
-            \ 'bg0': ['#DFE0DF', 'NONE'],
-            \ 'bg1': ['#DCDDDC', 'NONE'],
-            \ 'bg2': ['#CFD0CF', 'NONE'],
-            \ 'bg3': ['#CCCDCC', 'NONE'],
-            \ 'txt': ['#2F302F', 'NONE'],
-            \ 'im0': ['#184830', 'NONE'],
-            \ 'im1': ['#304818', 'NONE'],
-            \ 'im2': ['#00C0C0', 'NONE'],
-            \ 'im3': ['#C0C000', 'NONE'],
-            \ 'sn0': ['#6E806E', 'NONE'],
-            \ 'sn1': ['#008000', 'NONE'],
-            \ 'sn2': ['#6E8000', 'NONE'],
-            \ 'sn3': ['#00A08E', 'NONE'],
-            \ 'sn4': ['#00A060', 'NONE'],
-            \ 'sn5': ['#80A060', 'NONE'],
-            \ 'sn6': ['#60A080', 'NONE'],
-            \ 'sn7': ['#60A09E', 'NONE'],
-            \ 'ot0': ['NONE', 'NONE'],
-            \ 'ot1': ['bold', 'bold'],
-            \ 'ot2': ['italic', 'italic'],
-            \ 'ot3': ['reverse', 'reverse'],
-            \ 'ot4': ['underline', 'underline'],
-            \ 'ot5': ['undercurl', 'undercurl']
-            \ }
+        finish
     endif
-    return palette
+    return extend(background, syntax)
 endfunction
 
 " sets the colors of highlight groups
