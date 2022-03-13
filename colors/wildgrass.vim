@@ -12,15 +12,15 @@ endif
 
 let g:colors_name = 'wildgrass'
 
-let s:palette = wildgrass#gray()
+let s:palette = wildgrass#variant_palette('jade')
 
 " SYNTAX GROUPS (see :h group-name):
 
 " comments (light gray) 
-call wildgrass#HL('Comment', s:palette.ot0, s:palette.sn0, s:palette.ot0, s:palette.ot0)
+call wildgrass#HL('Comment', s:palette.none, s:palette.gray, s:palette.none, s:palette.none)
 
-" characters
-call wildgrass#HL('Constant', s:palette.ot0, s:palette.sn1, s:palette.ot0, s:palette.ot0)
+" characters (jade)
+call wildgrass#HL('Constant', s:palette.none, s:palette.jade, s:palette.none, s:palette.none)
 hi link String Constant  
 hi link Character Constant  
 hi link Number Constant 
@@ -28,10 +28,11 @@ hi link Boolean Constant
 hi link Float Constant
 
 " functions (green)
-call wildgrass#HL('Identifier', s:palette.ot0, s:palette.sn2, s:palette.ot0, s:palette.ot0)
+call wildgrass#HL('Identifier', s:palette.none, s:palette.green, s:palette.none, s:palette.none)
 hi link Function Identifier 
 
-call wildgrass#HL('Statement', s:palette.ot0, s:palette.sn3, s:palette.ot0, s:palette.ot0)
+" keywords (bronze)
+call wildgrass#HL('Statement', s:palette.none, s:palette.bronze, s:palette.none, s:palette.none)
 hi link Conditional Statement 
 hi link Repeat Statement  
 hi link Label Statement
@@ -39,25 +40,25 @@ hi link Operator Statement
 hi link Keyword Statement 
 hi link Exception Statement 
 
-call wildgrass#HL('PreProc', s:palette.ot0, s:palette.sn4, s:palette.ot0, s:palette.ot0)
+call wildgrass#HL('PreProc', s:palette.none, s:palette.patina, s:palette.none, s:palette.none)
 hi link Include PreProc
 hi link Define PreProc
 hi link Macro PreProc
 hi link PreCondit PreProc
 
-call wildgrass#HL('Type', s:palette.ot0, s:palette.sn5, s:palette.ot0, s:palette.ot0)
+call wildgrass#HL('Type', s:palette.none, s:palette.slate, s:palette.none, s:palette.none)
 hi link StorageClass Type
 hi link Structure Type 
 hi link Typedef Type 
 
-call wildgrass#HL('Special', s:palette.ot0, s:palette.sn6, s:palette.ot0, s:palette.ot0)
+call wildgrass#HL('Special', s:palette.none, s:palette.faded, s:palette.none, s:palette.none)
 hi link SpecialChar Special 
 hi link Tag Special
 hi link Deliminator Special
 hi link SpecialComment Special
 hi link Debug Special
 
-call wildgrass#HL('Underlined', s:palette.ot0, s:palette.sn7, s:palette.ot0, s:palette.ot0)
+call wildgrass#HL('Underlined', s:palette.none, s:palette.turquoise, s:palette.none, s:palette.none)
 hi link Ignore Underlined 
 hi link Error Underlined  
 hi link Todo Underlined
@@ -66,53 +67,41 @@ hi link Todo Underlined
 " HIGHLIGHTING GROUPS (see :h hi-groups):
 
 " modes
-call wildgrass#HL('Normal', s:palette.ot0, s:palette.txt, s:palette.bg0, s:palette.ot0)
+call wildgrass#HL('Normal', s:palette.none, s:palette.txt, s:palette.bg0, s:palette.none)
 hi link Terminal Normal 
-call wildgrass#HL('Visual', s:palette.ot0, s:palette.ot0, s:palette.bg2, s:palette.ot0)
+call wildgrass#HL('Visual', s:palette.none, s:palette.none, s:palette.bg2, s:palette.none)
 hi link VisualNOS Visual 
 
 " cursors
-call wildgrass#HL('Cursor', s:palette.ot3, s:palette.ot0, s:palette.ot0, s:palette.ot0)
+call wildgrass#HL('Cursor', s:palette.ot3, s:palette.none, s:palette.none, s:palette.none)
 hi link lCursor Cursor  
 hi link CursorIM Cursor
-call wildgrass#HL('CursorColumn', s:palette.ot0, s:palette.ot0, s:palette.bg1, s:palette.ot0)
-call wildgrass#HL('CursorLine', s:palette.ot0, s:palette.ot0, s:palette.bg1, s:palette.ot0)
-hi CursorLineFold cterm=NONE ctermfg=NONE ctermbg=NONE 
-hi CursorLineFold gui=NONE guifg=#7E807E guibg=#1A341A guisp=NONE
-hi CursorLineNr cterm=NONE ctermfg=NONE ctermbg=NONE 
-hi CursorLineNr gui=NONE guifg=#64C864 guibg=#172E17 guisp=NONE
-hi CursorLineSign cterm=NONE ctermfg=NONE ctermbg=NONE 
-hi CursorLineSign gui=NONE guifg=#7E807E guibg=#1A341A guisp=NONE
+call wildgrass#HL('CursorColumn', s:palette.none, s:palette.none, s:palette.bg1, s:palette.none)
+call wildgrass#HL('CursorLine', s:palette.none, s:palette.none, s:palette.bg1, s:palette.none)
+hi link CursorLineFold Normal
+hi link CursorLineNr Normal
+hi link CursorLineSign Normal
 
 " columns, lines
-call wildgrass#HL('ColorColumn', s:palette.ot0, s:palette.ot0, s:palette.bg1, s:palette.ot0)
+call wildgrass#HL('ColorColumn', s:palette.none, s:palette.none, s:palette.bg1, s:palette.none)
 hi link EndOfBuffer Normal  
 hi link LineNr Normal  
-call wildgrass#HL('LineNrAbove', s:palette.ot0, s:palette.im0, s:palette.ot0, s:palette.ot0)
-call wildgrass#HL('LineNrBelow', s:palette.ot0, s:palette.im1, s:palette.ot0, s:palette.ot0)
-hi SignColumn cterm=NONE ctermfg=NONE ctermbg=NONE 
-hi SignColumn gui=NONE guifg=#7E807E guibg=#1A341A guisp=NONE
+call wildgrass#HL('LineNrAbove', s:palette.none, s:palette.txt, s:palette.none, s:palette.none)
+call wildgrass#HL('LineNrBelow', s:palette.none, s:palette.gray, s:palette.none, s:palette.none)
+call wildgrass#HL('SignColumn', s:palette.none, s:palette.txt, s:palette.none, s:palette.none)
 hi link VertSplit Normal 
 
 " messages
-hi ErrorMsg cterm=bold ctermfg=NONE ctermbg=NONE 
-hi ErrorMsg gui=bold guifg=#ECEE00 guibg=NONE guisp=NONE
-hi ModeMsg cterm=NONE ctermfg=NONE ctermbg=NONE 
-hi ModeMsg gui=bold guifg=#00EEEC guibg=NONE guisp=NONE
-hi MoreMsg cterm=NONE ctermfg=NONE ctermbg=NONE 
-hi MoreMsg gui=bold guifg=#ECEE00 guibg=NONE guisp=NONE
-hi WarningMsg cterm=NONE ctermfg=NONE ctermbg=NONE 
-hi WarningMsg gui=bold guifg=#ECEE00 guibg=NONE guisp=NONE
+call wildgrass#HL('ErrorMsg', s:palette.none, s:palette.green, s:palette.none, s:palette.none)
+call wildgrass#HL('ModeMsg', s:palette.none, s:palette.turquoise, s:palette.none, s:palette.none)
+call wildgrass#HL('MoreMsg', s:palette.none, s:palette.green, s:palette.none, s:palette.none) 
+call wildgrass#HL('WarningMsg', s:palette.none, s:palette.green, s:palette.none, s:palette.none)
 
 " popup menu
-hi Pmenu cterm=NONE ctermfg=NONE ctermbg=NONE 
-hi Pmenu gui=NONE guifg=#64C864 guibg=#1D3A1D guisp=NONE
-hi PmenuSel cterm=bold ctermfg=NONE ctermbg=NONE 
-hi PmenuSel gui=bold guifg=#142814 guibg=#64C864 guisp=NONE 
-hi PmenuSbar cterm=NONE ctermfg=NONE ctermbg=NONE gui=NONE 
-hi PmenuSel guifg=NONE guibg=#7E807E guisp=NONE
-hi PmenuThumb cterm=NONE ctermfg=NONE ctermbg=NONE 
-hi PmenuThumb gui=NONE guifg=NONE guibg=#8E908E guisp=NONE
+call wildgrass#HL('Pmenu', s:palette.none, s:palette.none, s:palette.bg3, s:palette.none)
+call wildgrass#HL('PmenuSbar', s:palette.none, s:palette.txt, s:palette.none, s:palette.none)
+call wildgrass#HL('PmenuSel', s:palette.none, s:palette.bg0, s:palette.txt, s:palette.none)
+call wildgrass#HL('PmenuThumb', s:palette.none, s:palette.txt, s:palette.none, s:palette.none)
 
 " search
 hi IncSearch cterm=NONE ctermfg=NONE ctermbg=NONE 
