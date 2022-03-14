@@ -1,0 +1,77 @@
+Wildgrass consists of 16 variations of green,  
+
+
+0 2 4 6
+
+8 A C E 
+
+R:G:B == 1:1:1 > gray 0
+ 
+R:G:B == 0:4:3 > jade 1
+
+R:G:B == 0:4:1 > lime 2
+
+R:G:B == 1:1:0 > pear 3
+
+R:G:B == 2:2:1 > drab 4
+
+R:G:B == 1:2:2 > aqua 5
+
+R:G:B == 3:4:2 > sage 6
+
+R:G:B == 0:1:1 > teal 7
+
+In turn, there are 8 variations of wildgrass which use
+different shades of each variation of green for UI elemenets.
+
+Palette {
+	Used for mostly UI {		
+        LIGHT 1: #5EBC5E
+		LIGHT 2: #60C060
+		
+		LIGHT 3: #62C462
+		LIGHT 4: #64C864 
+        
+        DARK 1: #142814 > #20
+		DARK 2: #172E17
+        	
+        DARK 3: #1A341A
+        DARK 4: #1D3A1D 
+        
+	}
+
+	Used mostly for code {
+
+        LIGHT GRAY 1: #5F605F 
+        LIGHT GRAY 1: #7F807F
+        		
+        JADE: #00A060 
+		JADE: #00C080
+        
+        GREEN: #008000
+		GREEN: #00A000
+		
+		BRONZE: #6E8000 > #6E8000
+        BRONZE: #8EA000 > #8EA000
+		
+        TURQUOISE: #00807E > #00806E
+		TURQUOISE: #00A09E > #00A08E    	
+        	        
+        PATINA: #608040
+        PATINA: #80A060
+        
+        FADED: #408060
+        FADED: #60A080
+
+        SLATE: #40807E
+        SLATE #60A09E
+        
+        EARTH: #7E8040 
+        EARTH: #9EA060                      
+	}
+}
+
+
+wildgrass is a sixteen color palette, consisting of 8 monotones and 8 accent colors. Additionally, for each accent color 
+
+
