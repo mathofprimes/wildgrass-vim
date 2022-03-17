@@ -12,7 +12,8 @@ endif
 
 let g:colors_name = 'wildgrass'
 
-let s:p = wildgrass#variant_palette('jade')
+let s:config = wildgrass#palette_config()
+let s:p = wildgrass#variant_palette(s:config.background)
 
 " SYNTAX GROUPS (see :h group-name):
 
@@ -141,6 +142,6 @@ call wildgrass#HL('Directory', s:p.none, s:p.teal, s:p.none, s:p.none)
 
 call wildgrass#HL('NonText', s:p.none, s:p.bg4, s:p.none, s:p.none)
 call wildgrass#HL('Question', s:p.none, s:p.aqua, s:p.none, s:p.none)
-call wildgrass#HL('QuickFixLine', s:p.none, s:p.bg0, s:p.green, s:p.none)
+call wildgrass#HL('QuickFixLine', s:p.none, s:p.bg0, s:p.lime, s:p.none)
 call wildgrass#HL('SpecialKey', s:p.bold, s:p.teal, s:p.bg3, s:p.none)
 call wildgrass#HL('Title', s:p.none, s:p.pear, s:p.bg3, s:p.none)
