@@ -1,9 +1,15 @@
+function! wildgrass#palette_config()
+    return {
+        \ 'background': get(g:, 'variant_name', 'gray')
+        \ }
+endfunction
+
 function! wildgrass#variant_palette(variant_name)
     if &background ==# 'dark'
         let syntax = {
             \ 'gray': ['#6E706E', 'NONE'],
             \ 'jade': ['#008060', 'NONE'],
-            \ 'lime': ['#208000', 'NONE'],
+            \ 'lime': ['#008000', 'NONE'],
             \ 'pear': ['#7E8000', 'NONE'],
             \ 'drab': ['#7E8040', 'NONE'],
             \ 'aqua': ['#40807E', 'NONE'],
@@ -37,7 +43,7 @@ function! wildgrass#variant_palette(variant_name)
         let syntax = {
             \ 'gray': ['#6E706E', 'NONE'],
             \ 'jade': ['#006048', 'NONE'],
-            \ 'lime': ['#186000', 'NONE'],
+            \ 'lime': ['#006000', 'NONE'],
             \ 'pear': ['#5E6000', 'NONE'],
             \ 'drab': ['#5E6030', 'NONE'],
             \ 'aqua': ['#30605E', 'NONE'],
@@ -69,12 +75,12 @@ function! wildgrass#variant_palette(variant_name)
         endif
     endif
     let other = {
-            \ 'ot0': ['NONE', 'NONE'],
-            \ 'ot1': ['bold', 'bold'],
-            \ 'ot2': ['italic', 'italic'],
-            \ 'ot3': ['reverse', 'reverse'],
-            \ 'ot4': ['underline', 'underline'],
-            \ 'ot5': ['undercurl', 'undercurl']
+            \ 'none': ['NONE', 'NONE'],
+            \ 'bold': ['bold', 'bold'],
+            \ 'italic': ['italic', 'italic'],
+            \ 'reverse': ['reverse', 'reverse'],
+            \ 'underline': ['underline', 'underline'],
+            \ 'undercurl': ['undercurl', 'undercurl']
             \ }
     return extend(background, extend(syntax, other))
 endfunction
