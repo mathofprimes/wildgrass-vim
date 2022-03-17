@@ -1,24 +1,30 @@
 # Wildgrass:
 
-Wildgrass is a colorscheme consisting of only green--that is, the RGB of every color is such that G > B and G > R. It comes with a light variation (soft green background with dark gray green text) and a dark variation (dark gray green background with soft green text). 
+Wildgrass consists of just shades of green &mdash; more precisely, green is always the highest value in any color. It provides a dark and light variation and a few handy customization options.  
 
 # Palette:
 
+Colors are chosen for so that contrast is even and legible in both light and dark variations. Each color has an assigned name of either gray, jade, lime, pear, drab, aqua, sage, and teal. Wildgrass also contains 8 different background variations for each of these colors. The default background is gray, but this can be changed by adding, for example,
+
+```let g:variant_name = 'jade'```
+
+to your .vimrc file. **Note:** Development is ongoing, so only gray and jade are available. I'll update this README as more are added.
+
 # Screenshots:
 
-## Light Mode:
+## Light Mode / Jade:
 
-![Screenshot from 2022-02-24 21-48-20](https://user-images.githubusercontent.com/74194607/155644466-4d6a404f-2032-499a-a561-5ac4cf3e9a56.png)
+![Screenshot from 2022-03-16 23-54-28](https://user-images.githubusercontent.com/74194607/158734138-1d439eb5-15f5-4c97-8599-0dae0e35d8bf.png)
 
-## Dark Mode: 
+## Dark Mode / Jade: 
 
-![Screenshot from 2022-02-24 21-47-28](https://user-images.githubusercontent.com/74194607/155644492-3de33d78-af14-457c-9968-121384847878.png)
+![Screenshot from 2022-03-16 23-55-49](https://user-images.githubusercontent.com/74194607/158734146-82bb0686-18a1-46e0-821e-3f93d77e943e.png)
 
 # Installation:
 
 ## Pathogen:
 
-Simply clone Wildgrass into the directory where you keep your plugins. For example, 
+Simply clone into the directory where you keep your plugins. For example, 
 
 ```
 cd ~/.vim/bundle/ && git clone https://github.com/mathofprimes/wildgrass.git
