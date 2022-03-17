@@ -16,9 +16,17 @@ to your .vimrc file. **Note:** Development is ongoing, so only gray and jade are
 
 ![Screenshot from 2022-03-16 23-54-28](https://user-images.githubusercontent.com/74194607/158734138-1d439eb5-15f5-4c97-8599-0dae0e35d8bf.png)
 
+## Light Mode / Gray:
+
+![Screenshot from 2022-03-17 00-10-59](https://user-images.githubusercontent.com/74194607/158735717-c8f66410-cf5a-4db5-8b79-ea0afdd39dbd.png)
+
 ## Dark Mode / Jade: 
 
 ![Screenshot from 2022-03-16 23-55-49](https://user-images.githubusercontent.com/74194607/158734146-82bb0686-18a1-46e0-821e-3f93d77e943e.png)
+
+## Dark Mode / Gray:
+
+![Screenshot from 2022-03-17 00-10-41](https://user-images.githubusercontent.com/74194607/158735749-62c1b553-3d59-42fd-b29f-00ec085d150f.png)
 
 # Installation:
 
