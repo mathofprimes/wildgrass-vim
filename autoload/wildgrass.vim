@@ -1,11 +1,59 @@
-function! wildgrass#palette_config()
+function! wildgrass#config_dark()
     return {
-        \ 'background': get(g:, 'variant_name', 'gray')
+        \ 'variant_dark': get(g:, 'variant_dark', 'gray'),
         \ }
 endfunction
 
-function! wildgrass#variant_palette(variant_name)
+function! wildgrass#config_light()
+    return {
+        \ 'variant_light': get(g:, 'variant_light', 'gray'),
+        \ }
+endfunction
+
+function! wildgrass#variant_palette(variant_dark, variant_light)
+    if a:variant_dark ==# 'gray'
+        let background_dark = {
+            \ 'dk0': ['#262826', 'NONE'],
+            \ 'dk1': ['#303230', 'NONE'],
+            \ 'dk2': ['#343634', 'NONE'],
+            \ 'dk3': ['#383A38', 'NONE']
+            \ }
+    elseif a:variant_dark == 'jade'
+        let background_dark = {
+            \ 'dk0': ['#00281E', 'NONE'],
+            \ 'dk1': ['#003224', 'NONE'],
+            \ 'dk2': ['#003628', 'NONE'], 
+            \ 'dk3': ['#003A2C', 'NONE']
+            \ }
+    endif
+
+    if a:variant_light ==# 'gray'
+        let background_light = {
+            \ 'lt0': ['#A6A8A6', 'NONE'],
+            \ 'lt1': ['#B0B2B0', 'NONE'],
+            \ 'lt2': ['#B4B6B4', 'NONE'],
+            \ 'lt3': ['#B8BAB8', 'NONE'] 
+            \ }
+    elseif a:variant_light ==# 'jade'
+        let background_light = {
+            \ 'lt0': ['#00A87E', 'NONE'],
+            \ 'lt1': ['#00B284', 'NONE'],
+            \ 'lt2': ['#00B688', 'NONE'],
+            \ 'lt3': ['#00BA8C', 'NONE']
+            \ }
+    endif
+
     if &background ==# 'dark'
+        let background = {
+            \ 'bg0' : background_dark.dk0,
+            \ 'bg1' : background_dark.dk1,
+            \ 'bg2' : background_dark.dk2,
+            \ 'bg3' : background_dark.dk3,
+            \ 'bg4' : background_light.lt0,
+            \ 'bg5' : background_light.lt1,
+            \ 'bg6' : background_light.lt2,
+            \ 'bg7' : background_light.lt3
+            \ }
         let syntax = {
             \ 'gray': ['#6E706E', 'NONE'],
             \ 'jade': ['#008060', 'NONE'],
@@ -14,32 +62,25 @@ function! wildgrass#variant_palette(variant_name)
             \ 'drab': ['#7E8040', 'NONE'],
             \ 'aqua': ['#40807E', 'NONE'],
             \ 'sage': ['#608040', 'NONE'],
-            \ 'teal': ['#00807E', 'NONE']
+            \ 'teal': ['#00807E', 'NONE'],
+            \ 'none': ['NONE', 'NONE'],
+            \ 'bold': ['bold', 'bold'],
+            \ 'italic': ['italic', 'italic'],
+            \ 'reverse': ['reverse', 'reverse'],
+            \ 'underline': ['underline', 'underline'],
+            \ 'undercurl': ['undercurl', 'undercurl']
             \ }
-        if a:variant_name ==# 'gray'
-            let background = {
-                \ 'bg0': ['#262826', 'NONE'],
-                \ 'bg1': ['#303230', 'NONE'],
-                \ 'bg2': ['#343634', 'NONE'],
-                \ 'bg3': ['#383A38', 'NONE'],
-                \ 'bg4': ['#A6A8A6', 'NONE'],
-                \ 'bg5': ['#B0B2B0', 'NONE'],
-                \ 'bg6': ['#B4B6B4', 'NONE'],
-                \ 'bg7': ['#B8BAB8', 'NONE']
-                \ }
-        elseif a:variant_name == 'jade'
-            let background = {
-                \ 'bg0': ['#00281E', 'NONE'],
-                \ 'bg1': ['#003224', 'NONE'],
-                \ 'bg2': ['#003628', 'NONE'], 
-                \ 'bg3': ['#003A2C', 'NONE'],
-                \ 'bg4': ['#00A87E', 'NONE'],
-                \ 'bg5': ['#00B284', 'NONE'],
-                \ 'bg6': ['#00B688', 'NONE'],
-                \ 'bg7': ['#00BA8C', 'NONE']
-                \ }
-        endif 
     elseif &background ==# 'light'
+        let background = {
+            \ 'bg0' : background_light.lt0,
+            \ 'bg1' : background_light.lt1,
+            \ 'bg2' : background_light.lt2,
+            \ 'bg3' : background_light.lt3,
+            \ 'bg4' : background_dark.dk0,
+            \ 'bg5' : background_dark.dk1,
+            \ 'bg6' : background_dark.dk2,
+            \ 'bg7' : background_dark.dk3 
+            \ } 
         let syntax = {
             \ 'gray': ['#6E706E', 'NONE'],
             \ 'jade': ['#006048', 'NONE'],
@@ -49,32 +90,6 @@ function! wildgrass#variant_palette(variant_name)
             \ 'aqua': ['#30605E', 'NONE'],
             \ 'sage': ['#486030', 'NONE'],
             \ 'teal': ['#00605E', 'NONE'],
-            \ }
-        if a:variant_name ==# 'gray'
-            let background = {
-                \ 'bg0': ['#A6A8A6', 'NONE'],
-                \ 'bg1': ['#B0B2B0', 'NONE'],
-                \ 'bg2': ['#B4B6B4', 'NONE'],
-                \ 'bg3': ['#B8BAB8', 'NONE'],
-                \ 'bg4': ['#262826', 'NONE'],
-                \ 'bg5': ['#303230', 'NONE'],
-                \ 'bg6': ['#343634', 'NONE'],
-                \ 'bg7': ['#383A38', 'NONE']
-                \ }
-        elseif a:variant_name ==# 'jade'
-            let background = {
-                \ 'bg0': ['#00A87E', 'NONE'],
-                \ 'bg1': ['#00B284', 'NONE'],
-                \ 'bg2': ['#00B688', 'NONE'],
-                \ 'bg3': ['#00BA8C', 'NONE'],
-                \ 'bg4': ['#00281E', 'NONE'],
-                \ 'bg5': ['#003224', 'NONE'],
-                \ 'bg6': ['#003628', 'NONE'], 
-                \ 'bg7': ['#003A2C', 'NONE']
-                \ }
-        endif
-    endif
-    let other = {
             \ 'none': ['NONE', 'NONE'],
             \ 'bold': ['bold', 'bold'],
             \ 'italic': ['italic', 'italic'],
@@ -82,7 +97,8 @@ function! wildgrass#variant_palette(variant_name)
             \ 'underline': ['underline', 'underline'],
             \ 'undercurl': ['undercurl', 'undercurl']
             \ }
-    return extend(background, extend(syntax, other))
+    endif
+    return extend(background, syntax)
 endfunction
 
 " sets the colors of highlight groups
