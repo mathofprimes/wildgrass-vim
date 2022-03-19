@@ -12,8 +12,7 @@ endif
 
 let g:colors_name = 'wildgrass'
 
-let s:config = wildgrass#palette_config()
-let s:p = wildgrass#variant_palette(s:config.background)
+let s:p = wildgrass#variant_palette(wildgrass#config_dark().variant_dark, wildgrass#config_light().variant_light)
 
 " SYNTAX GROUPS (see :h group-name):
 
@@ -30,7 +29,7 @@ hi link Float Constant
 
 " functions (lime)
 call wildgrass#HL('Identifier', s:p.none, s:p.lime, s:p.none, s:p.none)
-hi link Function Identifier 
+call wildgrass#HL('Function', s:p.none, s:p.lime, s:p.none, s:p.none)
 
 " keywords (pear)
 call wildgrass#HL('Statement', s:p.none, s:p.pear, s:p.none, s:p.none)
@@ -120,10 +119,10 @@ call wildgrass#HL('DiffDelete', s:p.bold, s:p.drab, s:p.bg2, s:p.none)
 call wildgrass#HL('DiffText', s:p.bold, s:p.bg4, s:p.bg2, s:p.none) 
 
 " spellcheckers
-call wildgrass#HL('SpellBad', s:p.underline, s:p.pear, s:p.none, s:p.none)
-call wildgrass#HL('SpellCap', s:p.underline, s:p.lime, s:p.none, s:p.none)
-call wildgrass#HL('SpellLocal', s:p.underline, s:p.drab, s:p.none, s:p.none)
-call wildgrass#HL('SpellRare', s:p.underline, s:p.jade, s:p.none, s:p.none)
+call wildgrass#HL('SpellBad', s:p.underline, s:p.none, s:p.none, s:p.pear)
+call wildgrass#HL('SpellCap', s:p.underline, s:p.none, s:p.none, s:p.lime)
+call wildgrass#HL('SpellLocal', s:p.underline, s:p.none, s:p.none, s:p.drab)
+call wildgrass#HL('SpellRare', s:p.underline, s:p.none, s:p.none, s:p.jade)
 
 " statuslines
 call wildgrass#HL('StatusLine', s:p.none, s:p.bg4, s:p.bg3, s:p.none)
