@@ -4,9 +4,10 @@ Wildgrass consists of just shades of green &mdash; more precisely, green is alwa
 
 # Palette:
 
-Colors are chosen for so that contrast is even and legible in both light and dark variations. Each color has an assigned name of either gray, jade, lime, pear, drab, aqua, sage, and teal. Wildgrass also contains 8 different background variations for each of these colors. The default background is gray, but this can be changed by adding, for example,
+Colors are chosen for so that contrast is even and legible in both light and dark variations. Each color has an assigned name of either gray, jade, lime, pear, drab, aqua, sage, and teal. Wildgrass also contains 8 different background variations for each of these colors, and you can change if light and dark mode use different colors from each other. The default backgrounds for light and dark are gray, but this can be changed by adding, for example,
 
-```let g:variant_name = 'jade'```
+```let g:variant_dark = 'jade'```
+```let g:variant_light = 'gray'```
 
 to your .vimrc file. **Note:** Development is ongoing, so only gray and jade are available. I'll update this README as more are added.
 
