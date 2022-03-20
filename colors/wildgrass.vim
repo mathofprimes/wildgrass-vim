@@ -12,26 +12,22 @@ endif
 
 let g:colors_name = 'wildgrass'
 
-let s:p = wildgrass#variant_palette(wildgrass#config_dark().variant_dark, wildgrass#config_light().variant_light)
+let s:p = wildgrass#custom_variant(wildgrass#config().variant_dark, wildgrass#config().variant_light)
 
 " SYNTAX GROUPS (see :h group-name):
 
-" comments (light gray) 
 call wildgrass#HL('Comment', s:p.none, s:p.gray, s:p.none, s:p.none)
 
-" characters (jade)
 call wildgrass#HL('Constant', s:p.none, s:p.jade, s:p.none, s:p.none)
-hi link String Constant  
+call wildgrass#HL('String', s:p.none, s:p.jade, s:p.none, s:p.none)
 hi link Character Constant  
 hi link Number Constant 
 hi link Boolean Constant
 hi link Float Constant
 
-" functions (lime)
 call wildgrass#HL('Identifier', s:p.none, s:p.lime, s:p.none, s:p.none)
 call wildgrass#HL('Function', s:p.none, s:p.lime, s:p.none, s:p.none)
 
-" keywords (pear)
 call wildgrass#HL('Statement', s:p.none, s:p.pear, s:p.none, s:p.none)
 hi link Conditional Statement 
 hi link Repeat Statement  
@@ -88,7 +84,7 @@ call wildgrass#HL('LineNr', s:p.none, s:p.bg7, s:p.none, s:p.none)
 call wildgrass#HL('LineNrAbove', s:p.none, s:p.gray, s:p.none, s:p.none)
 call wildgrass#HL('LineNrBelow', s:p.none, s:p.aqua, s:p.none, s:p.none)
 call wildgrass#HL('SignColumn', s:p.none, s:p.bg4, s:p.none, s:p.none)
-hi link VertSplit Normal 
+call wildgrass#HL('VertSplit', s:p.none, s:p.bg4, s:p.none, s:p.none) 
 
 " messages
 call wildgrass#HL('ErrorMsg', s:p.none, s:p.pear, s:p.none, s:p.none)
@@ -104,7 +100,7 @@ call wildgrass#HL('PmenuThumb', s:p.none, s:p.bg4, s:p.none, s:p.none)
 
 " search
 call wildgrass#HL('IncSearch', s:p.none, s:p.bg7, s:p.pear, s:p.none)
-call wildgrass#HL('MatchParen', s:p.none, s:p.bg7, s:p.none, s:p.none)
+call wildgrass#HL('MatchParen', s:p.bold, s:p.bg7, s:p.none, s:p.none)
 call wildgrass#HL('Search', s:p.none, s:p.bg7, s:p.teal, s:p.none)
 hi link WildMenu IncSearch
 
@@ -138,7 +134,6 @@ call wildgrass#HL('TabLineSel', s:p.none, s:p.bg4, s:p.bg3, s:p.none)
 " misc
 call wildgrass#HL('Conceal', s:p.none, s:p.lime, s:p.none, s:p.none)
 call wildgrass#HL('Directory', s:p.none, s:p.teal, s:p.none, s:p.none)
-
 call wildgrass#HL('NonText', s:p.none, s:p.bg4, s:p.none, s:p.none)
 call wildgrass#HL('Question', s:p.none, s:p.aqua, s:p.none, s:p.none)
 call wildgrass#HL('QuickFixLine', s:p.none, s:p.bg0, s:p.lime, s:p.none)
