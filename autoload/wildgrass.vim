@@ -1,58 +1,68 @@
-function! wildgrass#config_dark()
+function! wildgrass#config()
     return {
         \ 'variant_dark': get(g:, 'variant_dark', 'gray'),
-        \ }
-endfunction
-
-function! wildgrass#config_light()
-    return {
         \ 'variant_light': get(g:, 'variant_light', 'gray'),
+        \ 'variant_contrast': get(g:, 'variant_contrast', 'high')
         \ }
 endfunction
 
-function! wildgrass#variant_palette(variant_dark, variant_light)
-    if a:variant_dark ==# 'gray'
-        let background_dark = {
+function! wildgrass#custom_variant(dark, light)
+    if a:dark ==# 'gray'
+        let colors_dk = {
             \ 'dk0': ['#262826', 'NONE'],
             \ 'dk1': ['#303230', 'NONE'],
             \ 'dk2': ['#343634', 'NONE'],
             \ 'dk3': ['#383A38', 'NONE']
             \ }
-    elseif a:variant_dark == 'jade'
-        let background_dark = {
+    elseif a:dark ==# 'jade'
+        let colors_dk = {
             \ 'dk0': ['#00281E', 'NONE'],
             \ 'dk1': ['#003224', 'NONE'],
             \ 'dk2': ['#003628', 'NONE'], 
             \ 'dk3': ['#003A2C', 'NONE']
             \ }
+    elseif a:dark ==# 'lime'
+        let colors_dk = {
+            \ 'dk0': ['#002800', 'NONE'],
+            \ 'dk1': ['#003200', 'NONE'],
+            \ 'dk2': ['#003600', 'NONE'],
+            \ 'dk3': ['#003A00', 'NONE']
+            \ }
     endif
 
-    if a:variant_light ==# 'gray'
-        let background_light = {
-            \ 'lt0': ['#A6A8A6', 'NONE'],
-            \ 'lt1': ['#B0B2B0', 'NONE'],
-            \ 'lt2': ['#B4B6B4', 'NONE'],
-            \ 'lt3': ['#B8BAB8', 'NONE'] 
+    if a:light ==# 'gray'
+        let colors_lt = {
+            \ 'lt0': ['#B8BAB8', 'NONE'], 
+            \ 'lt1': ['#B4B6B4', 'NONE'],
+            \ 'lt2': ['#B0B2B0', 'NONE'],
+            \ 'lt3': ['#A6A8A6', 'NONE']
             \ }
-    elseif a:variant_light ==# 'jade'
-        let background_light = {
-            \ 'lt0': ['#00A87E', 'NONE'],
-            \ 'lt1': ['#00B284', 'NONE'],
-            \ 'lt2': ['#00B688', 'NONE'],
-            \ 'lt3': ['#00BA8C', 'NONE']
+    elseif a:light ==# 'jade'
+        let colors_lt = {
+            \ 'lt0': ['#00BA8C', 'NONE'],
+            \ 'lt1': ['#00B688', 'NONE'],
+            \ 'lt2': ['#00B284', 'NONE'],
+            \ 'lt3': ['#00A87E', 'NONE']
+            \ }
+    elseif a:light ==# 'lime'
+        let colors_lt = {
+            \ 'lt0': ['#00BA00', 'NONE'],
+            \ 'lt1': ['#00B600', 'NONE'],
+            \ 'lt2': ['#00B200', 'NONE'],
+            \ 'lt3': ['#00A800', 'NONE']
             \ }
     endif
 
     if &background ==# 'dark'
-        let background = {
-            \ 'bg0' : background_dark.dk0,
-            \ 'bg1' : background_dark.dk1,
-            \ 'bg2' : background_dark.dk2,
-            \ 'bg3' : background_dark.dk3,
-            \ 'bg4' : background_light.lt0,
-            \ 'bg5' : background_light.lt1,
-            \ 'bg6' : background_light.lt2,
-            \ 'bg7' : background_light.lt3
+        let custom = {
+            \ 'bg0': colors_dk.dk0,
+            \ 'bg1': colors_dk.dk1,
+            \ 'bg2': colors_dk.dk2,
+            \ 'bg3': colors_dk.dk3,
+            \ 'bg4': colors_lt.lt0,
+            \ 'bg5': colors_lt.lt1,
+            \ 'bg6': colors_lt.lt2,
+            \ 'bg7': colors_lt.lt3
             \ }
         let syntax = {
             \ 'gray': ['#6E706E', 'NONE'],
@@ -62,24 +72,18 @@ function! wildgrass#variant_palette(variant_dark, variant_light)
             \ 'drab': ['#7E8040', 'NONE'],
             \ 'aqua': ['#40807E', 'NONE'],
             \ 'sage': ['#608040', 'NONE'],
-            \ 'teal': ['#00807E', 'NONE'],
-            \ 'none': ['NONE', 'NONE'],
-            \ 'bold': ['bold', 'bold'],
-            \ 'italic': ['italic', 'italic'],
-            \ 'reverse': ['reverse', 'reverse'],
-            \ 'underline': ['underline', 'underline'],
-            \ 'undercurl': ['undercurl', 'undercurl']
+            \ 'teal': ['#00807E', 'NONE'] 
             \ }
     elseif &background ==# 'light'
-        let background = {
-            \ 'bg0' : background_light.lt0,
-            \ 'bg1' : background_light.lt1,
-            \ 'bg2' : background_light.lt2,
-            \ 'bg3' : background_light.lt3,
-            \ 'bg4' : background_dark.dk0,
-            \ 'bg5' : background_dark.dk1,
-            \ 'bg6' : background_dark.dk2,
-            \ 'bg7' : background_dark.dk3 
+        let custom = {
+            \ 'bg0': colors_lt.lt0,
+            \ 'bg1': colors_lt.lt1,
+            \ 'bg2': colors_lt.lt2,
+            \ 'bg3': colors_lt.lt3,
+            \ 'bg4': colors_dk.dk0,
+            \ 'bg5': colors_dk.dk1,
+            \ 'bg6': colors_dk.dk2,
+            \ 'bg7': colors_dk.dk3 
             \ } 
         let syntax = {
             \ 'gray': ['#6E706E', 'NONE'],
@@ -89,16 +93,18 @@ function! wildgrass#variant_palette(variant_dark, variant_light)
             \ 'drab': ['#5E6030', 'NONE'],
             \ 'aqua': ['#30605E', 'NONE'],
             \ 'sage': ['#486030', 'NONE'],
-            \ 'teal': ['#00605E', 'NONE'],
-            \ 'none': ['NONE', 'NONE'],
-            \ 'bold': ['bold', 'bold'],
-            \ 'italic': ['italic', 'italic'],
-            \ 'reverse': ['reverse', 'reverse'],
-            \ 'underline': ['underline', 'underline'],
-            \ 'undercurl': ['undercurl', 'undercurl']
+            \ 'teal': ['#00605E', 'NONE'] 
             \ }
     endif
-    return extend(background, syntax)
+    let other = {
+        \ 'none': ['NONE', 'NONE'],
+        \ 'bold': ['bold', 'bold'],
+        \ 'italic': ['italic', 'italic'],
+        \ 'reverse': ['reverse', 'reverse'],
+        \ 'underline': ['underline', 'underline'],
+        \ 'undercurl': ['undercurl', 'undercurl']
+        \ }
+    return extend(custom, extend(syntax, other))
 endfunction
 
 " sets the colors of highlight groups
