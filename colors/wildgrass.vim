@@ -12,17 +12,17 @@ endif
 
 let g:colors_name = 'wildgrass'
 
-let s:p = wildgrass#custom_variant(wildgrass#config().variant_dark, wildgrass#config().variant_light)
+let s:c = wildgrass#config()
+let s:p = wildgrass#variant(s:c.variant_dark, s:c.variant_light)
 
 " SYNTAX GROUPS (see :h group-name):
 
 call wildgrass#HL('Comment', s:p.none, s:p.gray, s:p.none, s:p.none)
-
 call wildgrass#HL('Constant', s:p.none, s:p.jade, s:p.none, s:p.none)
 call wildgrass#HL('String', s:p.none, s:p.jade, s:p.none, s:p.none)
-hi link Character Constant  
-hi link Number Constant 
-hi link Boolean Constant
+call wildgrass#HL('Character', s:p.none, s:p.jade, s:p.none, s:p.none)
+call wildgrass#HL('Number', s:p.none, s:p.jade, s:p.none, s:p.none)
+call wildgrass#HL('Boolean', s:p.none, s:p.jade, s:p.none, s:p.none)
 hi link Float Constant
 
 call wildgrass#HL('Identifier', s:p.none, s:p.lime, s:p.none, s:p.none)
