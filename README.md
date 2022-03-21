@@ -6,29 +6,22 @@ Wildgrass consists of just shades of green &mdash; more precisely, green is alwa
 
 Colors are chosen for so that contrast is even and legible in both light and dark variations. Each color has an assigned name of either gray, jade, lime, pear, drab, aqua, sage, and teal. Wildgrass also contains 8 different background variations for each of these colors, and you can change if light and dark mode use different colors from each other. The default backgrounds for light and dark are gray, but this can be changed by adding, for example,
 
-```let g:variant_dark = 'jade'
+```
+let g:variant_dark = 'jade'
 let g:variant_light = 'gray'
 ```
 
-to your .vimrc file. **Note:** Development is ongoing, so only gray, jade, and lime are available. I'll update this README as more are added.
+to your .vimrc file.
 
 # Screenshots:
 
-## Light Mode / Jade:
+## Light Mode / Drab and Gray:
 
-![Screenshot from 2022-03-16 23-54-28](https://user-images.githubusercontent.com/74194607/158734138-1d439eb5-15f5-4c97-8599-0dae0e35d8bf.png)
+![Screenshot from 2022-03-20 20-31-30](https://user-images.githubusercontent.com/74194607/159192799-d03a2835-a307-4115-908d-16d07c65e93a.png)
 
-## Light Mode / Gray:
+## Dark Mode / Drab and Gray
 
-![Screenshot from 2022-03-17 00-10-59](https://user-images.githubusercontent.com/74194607/158735717-c8f66410-cf5a-4db5-8b79-ea0afdd39dbd.png)
-
-## Dark Mode / Jade: 
-
-![Screenshot from 2022-03-16 23-55-49](https://user-images.githubusercontent.com/74194607/158734146-82bb0686-18a1-46e0-821e-3f93d77e943e.png)
-
-## Dark Mode / Gray:
-
-![Screenshot from 2022-03-17 00-10-41](https://user-images.githubusercontent.com/74194607/158735749-62c1b553-3d59-42fd-b29f-00ec085d150f.png)
+![Screenshot from 2022-03-20 20-31-05](https://user-images.githubusercontent.com/74194607/159192812-93d92bd8-08c3-41a7-bf0c-8df72793224f.png)
 
 # Installation:
 
