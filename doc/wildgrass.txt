@@ -1,1 +1,27 @@
-*wildgrass* Wildgrass: A completely green colorscheme for Vim 
+*wildgrass* Wildgrass: A configurable colorscheme for Vim using just green.
+
+===========================================================================
+Introduction                                       *wildgrass-introduction*
+===========================================================================
+
+Wildgrass is a 16 color palette consisting entirely of shades of green — 
+that is, green is always the highest value in the RGB of any color. There
+are 8 different colors for syntax, and 4 light colors and 4 dark colors for
+UI elements and text. Each shade has one of the assigned names — gray, jade, 
+lime, pear, drab, aqua, sage, and teal. 
+
+===========================================================================
+Setting Variants                                       *wildgrass-variants*
+===========================================================================
+Each assigned color name can be used to set the background for wildgrass
+in either light or dark mode. For example, to have a jade background in
+dark mode and a drab background in light mode, set the following variables
+in your .vimrc file:
+
+let g:variant_dark = 'jade'
+let g:variant_light = 'drab'
+
+This won't just change the backgrounds for each mode, it will also change 
+the dark mode to use light drab for text and UI elements, as well as change
+the light mode to use jade for text and UI elements. By default, each
+background is set to gray.
