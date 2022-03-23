@@ -23,41 +23,41 @@ call wildgrass#HL('String', s:p.none, s:p.jade, s:p.none, s:p.none)
 call wildgrass#HL('Character', s:p.none, s:p.jade, s:p.none, s:p.none)
 call wildgrass#HL('Number', s:p.none, s:p.jade, s:p.none, s:p.none)
 call wildgrass#HL('Boolean', s:p.none, s:p.jade, s:p.none, s:p.none)
-hi link Float Constant
+call wildgrass#HL('Float', s:p.none, s:p.jade, s:p.none, s:p.none)
 
 call wildgrass#HL('Identifier', s:p.none, s:p.lime, s:p.none, s:p.none)
 call wildgrass#HL('Function', s:p.none, s:p.lime, s:p.none, s:p.none)
 
 call wildgrass#HL('Statement', s:p.none, s:p.pear, s:p.none, s:p.none)
-hi link Conditional Statement 
-hi link Repeat Statement  
-hi link Label Statement
-hi link Operator Statement 
-hi link Keyword Statement 
-hi link Exception Statement 
+call wildgrass#HL('Conditional', s:p.none, s:p.pear, s:p.none, s:p.none)
+call wildgrass#HL('Repeat', s:p.none, s:p.pear, s:p.none, s:p.none)
+call wildgrass#HL('Label', s:p.none, s:p.pear, s:p.none, s:p.none)
+call wildgrass#HL('Operator', s:p.none, s:p.pear, s:p.none, s:p.none)
+call wildgrass#HL('Keyword', s:p.none, s:p.pear, s:p.none, s:p.none)
+call wildgrass#HL('Exception', s:p.none, s:p.pear, s:p.none, s:p.none)
 
 call wildgrass#HL('PreProc', s:p.none, s:p.drab, s:p.none, s:p.none)
-hi link Include PreProc
-hi link Define PreProc
-hi link Macro PreProc
-hi link PreCondit PreProc
+call wildgrass#HL('Include', s:p.none, s:p.drab, s:p.none, s:p.none)
+call wildgrass#HL('Define', s:p.none, s:p.drab, s:p.none, s:p.none)
+call wildgrass#HL('Macro', s:p.none, s:p.drab, s:p.none, s:p.none)
+call wildgrass#HL('PreCondit', s:p.none, s:p.drab, s:p.none, s:p.none)
 
 call wildgrass#HL('Type', s:p.none, s:p.aqua, s:p.none, s:p.none)
-hi link StorageClass Type
-hi link Structure Type 
-hi link Typedef Type 
+call wildgrass#HL('StorageClass', s:p.none, s:p.aqua, s:p.none, s:p.none)
+call wildgrass#HL('Structure', s:p.none, s:p.aqua, s:p.none, s:p.none)
+call wildgrass#HL('Typedef', s:p.none, s:p.aqua, s:p.none, s:p.none)
 
 call wildgrass#HL('Special', s:p.none, s:p.sage, s:p.none, s:p.none)
-hi link SpecialChar Special 
-hi link Tag Special
-hi link Deliminator Special
-hi link SpecialComment Special
-hi link Debug Special
+call wildgrass#HL('SpecialChar', s:p.none, s:p.sage, s:p.none, s:p.none)
+call wildgrass#HL('Tag', s:p.none, s:p.sage, s:p.none, s:p.none)
+call wildgrass#HL('Deliminator', s:p.none, s:p.sage, s:p.none, s:p.none)
+call wildgrass#HL('SpecialComment', s:p.none, s:p.sage, s:p.none, s:p.none)
+call wildgrass#HL('Debug', s:p.none, s:p.sage, s:p.none, s:p.none)
 
 call wildgrass#HL('Underlined', s:p.none, s:p.teal, s:p.none, s:p.none)
-hi link Ignore Underlined 
-hi link Error Underlined  
-hi link Todo Underlined
+call wildgrass#HL('Ignore', s:p.none, s:p.teal, s:p.none, s:p.none)
+call wildgrass#HL('Error', s:p.none, s:p.teal, s:p.none, s:p.none)
+call wildgrass#HL('Todo', s:p.none, s:p.teal, s:p.none, s:p.none)
 
 " HIGHLIGHTING GROUPS (see :h hi-groups):
 
