@@ -2,7 +2,6 @@ function! wildgrass#config()
     return {
         \ 'variant_dark': get(g:, 'variant_dark', 'gray'),
         \ 'variant_light': get(g:, 'variant_light', 'gray'),
-        \ 'variant_contrast': get(g:, 'variant_contrast', 'high')
         \ }
 endfunction
 
@@ -10,58 +9,58 @@ function! wildgrass#variant(dark, light)
     if a:dark ==# 'gray'
         let variant_dk = {
             \ 'dk0': ['#262826', 'NONE'],
-            \ 'dk1': ['#303230', 'NONE'],
-            \ 'dk2': ['#343634', 'NONE'],
-            \ 'dk3': ['#383A38', 'NONE']
+            \ 'dk1': ['#2A2C2A', 'NONE'],
+            \ 'dk2': ['#2E302E', 'NONE'],
+            \ 'dk3': ['#323432', 'NONE']
             \ }
     elseif a:dark ==# 'jade'
         let variant_dk = {
-            \ 'dk0': ['#002820', 'NONE'],
-            \ 'dk1': ['#003224', 'NONE'],
-            \ 'dk2': ['#003628', 'NONE'], 
-            \ 'dk3': ['#003A2C', 'NONE']
+            \ 'dk0': ['#002814', 'NONE'],
+            \ 'dk1': ['#002C16', 'NONE'],
+            \ 'dk2': ['#003018', 'NONE'], 
+            \ 'dk3': ['#00341A', 'NONE']
             \ }
     elseif a:dark ==# 'lime'
         let variant_dk = {
-            \ 'dk0': ['#002800', 'NONE'],
-            \ 'dk1': ['#003200', 'NONE'],
-            \ 'dk2': ['#003600', 'NONE'],
-            \ 'dk3': ['#003A00', 'NONE']
+            \ 'dk0': ['#0A280A', 'NONE'],
+            \ 'dk1': ['#0B2C0B', 'NONE'],
+            \ 'dk2': ['#0C300C', 'NONE'],
+            \ 'dk3': ['#0D340D', 'NONE']
             \ }
     elseif a:dark ==# 'pear'
         let variant_dk = {
-            \ 'dk0': ['#262800', 'NONE'],
-            \ 'dk1': ['#303200', 'NONE'],
-            \ 'dk2': ['#343600', 'NONE'],
-            \ 'dk3': ['#383A00', 'NONE']
+            \ 'dk0': ['#26280A', 'NONE'],
+            \ 'dk1': ['#2A2C0B', 'NONE'],
+            \ 'dk2': ['#2E300C', 'NONE'],
+            \ 'dk3': ['#32340D', 'NONE']
             \ }
     elseif a:dark ==# 'drab'
         let variant_dk = {
             \ 'dk0': ['#262814', 'NONE'],
-            \ 'dk1': ['#303216', 'NONE'],
-            \ 'dk2': ['#34361A', 'NONE'],
-            \ 'dk3': ['#383A1C', 'NONE']
+            \ 'dk1': ['#2A2C16', 'NONE'],
+            \ 'dk2': ['#2E3018', 'NONE'],
+            \ 'dk3': ['#32341A', 'NONE']
             \ }
     elseif a:dark ==# 'aqua'
         let variant_dk = {
             \ 'dk0': ['#142826', 'NONE'],
-            \ 'dk1': ['#163230', 'NONE'],
-            \ 'dk2': ['#1A3634', 'NONE'],
-            \ 'dk3': ['#1C3A38', 'NONE']
+            \ 'dk1': ['#162C2A', 'NONE'],
+            \ 'dk2': ['#18302E', 'NONE'],
+            \ 'dk3': ['#1A3432', 'NONE']
             \ }
     elseif a:dark ==# 'sage'
         let variant_dk = {
-            \ 'dk0': ['#142814', 'NONE'],
-            \ 'dk1': ['#163216', 'NONE'],
-            \ 'dk2': ['#1A361A', 'NONE'],
-            \ 'dk3': ['#1C3A1C', 'NONE']
+            \ 'dk0': ['#26281E', 'NONE'],
+            \ 'dk1': ['#2A2C21', 'NONE'],
+            \ 'dk2': ['#2E3024', 'NONE'], 
+            \ 'dk3': ['#323427', 'NONE']
             \ }
     elseif a:dark ==# 'teal'
         let variant_dk = {
-            \ 'dk0': ['#002826', 'NONE'],
-            \ 'dk1': ['#003230', 'NONE'],
-            \ 'dk2': ['#003634', 'NONE'],
-            \ 'dk3': ['#003A34', 'NONE']
+            \ 'dk0': ['#0A2826', 'NONE'],
+            \ 'dk1': ['#0B2C2A', 'NONE'],
+            \ 'dk2': ['#0C302E', 'NONE'],
+            \ 'dk3': ['#0D3432', 'NONE']
             \ }
     endif
 
@@ -80,7 +79,7 @@ function! wildgrass#variant(dark, light)
             \ }
     elseif a:light ==# 'lime'
         let variant_lt = {
-            \ 'lt0': ['#00BA00', 'NONE'],
+            \ 'lt0': ['#2EBA2E', 'NONE'],
             \ 'lt1': ['#00B600', 'NONE'],
             \ 'lt2': ['#00B200', 'NONE'],
             \ 'lt3': ['#00A800', 'NONE']
@@ -99,14 +98,14 @@ function! wildgrass#variant(dark, light)
             \ 'lt2': ['#B0B25A', 'NONE'],
             \ 'lt3': ['#A6A85C', 'NONE']
             \ }
-    elseif a:dark ==# 'aqua'
+    elseif a:light ==# 'aqua'
         let variant_lt = {
             \ 'lt0': ['#54BAB8', 'NONE'],
             \ 'lt1': ['#56B6B4', 'NONE'],
             \ 'lt2': ['#5AB2B0', 'NONE'],
             \ 'lt3': ['#5CA8A6', 'NONE']
             \ }
-    elseif a:dark ==# 'sage'
+    elseif a:light ==# 'sage'
         let variant_lt = {
             \ 'lt0': ['#54BA54', 'NONE'],
             \ 'lt1': ['#56B656', 'NONE'],
@@ -135,8 +134,8 @@ function! wildgrass#variant(dark, light)
             \ }
         let syntax = {
             \ 'gray': ['#5E605E', 'NONE'],
-            \ 'jade': ['#008060', 'NONE'],
-            \ 'lime': ['#008000', 'NONE'],
+            \ 'jade': ['#008050', 'NONE'],
+            \ 'lime': ['#208020', 'NONE'],
             \ 'pear': ['#7E8000', 'NONE'],
             \ 'drab': ['#7E8040', 'NONE'],
             \ 'aqua': ['#40807E', 'NONE'],
