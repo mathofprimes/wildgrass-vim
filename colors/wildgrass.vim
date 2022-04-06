@@ -63,14 +63,14 @@ call wildgrass#HL('Todo', s:p.none, s:p.teal, s:p.none, s:p.none)
 
 " modes
 call wildgrass#HL('Normal', s:p.none, s:p.bg4, s:p.bg0, s:p.none)
-hi link Terminal Normal 
+call wildgrass#HL('Terminal', s:p.none, s:p.bg4, s:p.bg0, s:p.none)
 call wildgrass#HL('Visual', s:p.none, s:p.none, s:p.bg2, s:p.none)
-hi link VisualNOS Visual 
+call wildgrass#HL('VisualNos', s:p.none, s:p.none, s:p.bg2, s:p.none)
 
 " cursors
 call wildgrass#HL('Cursor', s:p.reverse, s:p.none, s:p.none, s:p.none)
-hi link lCursor Cursor  
-hi link CursorIM Cursor
+call wildgrass#HL('lCursor', s:p.reverse, s:p.none, s:p.none, s:p.none)
+call wildgrass#HL('CursorIM', s:p.reverse, s:p.none, s:p.none, s:p.none)
 call wildgrass#HL('CursorColumn', s:p.none, s:p.none, s:p.bg1, s:p.none)
 call wildgrass#HL('CursorLine', s:p.none, s:p.none, s:p.bg1, s:p.none)
 hi link CursorLineFold Normal
@@ -79,10 +79,10 @@ hi link CursorLineSign Normal
 
 " columns, lines
 call wildgrass#HL('ColorColumn', s:p.none, s:p.none, s:p.bg1, s:p.none)
-hi link EndOfBuffer Normal  
+call wildgrass#HL('EndOfBuffer', s:p.none, s:p.bg4, s:p.bg0, s:p.none)
 call wildgrass#HL('LineNr', s:p.none, s:p.bg7, s:p.none, s:p.none)
 call wildgrass#HL('LineNrAbove', s:p.none, s:p.gray, s:p.none, s:p.none)
-call wildgrass#HL('LineNrBelow', s:p.none, s:p.aqua, s:p.none, s:p.none)
+call wildgrass#HL('LineNrBelow', s:p.none, s:p.gray, s:p.none, s:p.none)
 call wildgrass#HL('SignColumn', s:p.none, s:p.bg4, s:p.none, s:p.none)
 call wildgrass#HL('VertSplit', s:p.none, s:p.bg4, s:p.none, s:p.none) 
 
