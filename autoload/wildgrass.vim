@@ -77,7 +77,7 @@ function! wildgrass#variant(dark, light)
             \ 'lt1': ['#00B688', 'NONE'],
             \ 'lt3': ['#00A880', 'NONE']
             \ }
-    elseif a:light ==# 'lime'
+elseif a:light ==# 'lime'
         let variant_lt = {
             \ 'lt0': ['#2EBA2E', 'NONE'],
             \ 'lt1': ['#00B600', 'NONE'],
@@ -130,9 +130,7 @@ function! wildgrass#variant(dark, light)
             \ 'bg4': variant_lt.lt0,
             \ 'bg5': variant_lt.lt1,
             \ 'bg6': variant_lt.lt2,
-            \ 'bg7': variant_lt.lt3
-            \ }
-        let syntax = {
+            \ 'bg7': variant_lt.lt3,
             \ 'gray': ['#5E605E', 'NONE'],
             \ 'jade': ['#008050', 'NONE'],
             \ 'lime': ['#208020', 'NONE'],
@@ -151,9 +149,7 @@ function! wildgrass#variant(dark, light)
             \ 'bg4': variant_dk.dk0,
             \ 'bg5': variant_dk.dk1,
             \ 'bg6': variant_dk.dk2,
-            \ 'bg7': variant_dk.dk3 
-            \ } 
-        let syntax = {
+            \ 'bg7': variant_dk.dk3, 
             \ 'gray': ['#3E403E', 'NONE'],
             \ 'jade': ['#006048', 'NONE'],
             \ 'lime': ['#006000', 'NONE'],
@@ -172,7 +168,7 @@ function! wildgrass#variant(dark, light)
         \ 'underline': ['underline', 'underline'],
         \ 'undercurl': ['undercurl', 'undercurl']
         \ }
-    return extend(variant, extend(syntax, other))
+    return extend(variant, other)
 endfunction
 
 " sets the variant of highlight groups
@@ -185,4 +181,46 @@ function! wildgrass#HL(group, cg, fg, bg, sp)
             \ 'guifg='   . a:fg[0]
             \ 'guibg='   . a:bg[0]
             \ 'guisp='   . a:sp[0]
+endfunction
+
+" this function will eventually replace wildgrass#variant()
+" as the colorscheme is updated to support soft/medium/hard
+" options. Rather than having to use list out colors and select
+" them based on the user's configuration, this function generates
+" them, making the plugin code much more manageable.
+function! wildgrass#generator(r, g, b, variant, contrast)
+    for i in [0, 1, 2, 3, 4]
+        let dark = {'dark'. i: '#' . printf('%X', r) 
+                                 \ . printf('%X', g) 
+                                 \ . printf('%X', b)
+                                 \ }
+    endfor
+
+    for i in [0, 1, 2, 3, 4]
+        let light = {'light'. i: '#' . printf('%X', r)
+                                   \ . printf('%X', g) 
+                                   \ . printf('%X', b) 
+                                   \ }
+    endfor
+
+    if &background ==# 'dark'
+        " something here
+    elseif &background ==# 'light'
+        " something here
+    endif
+endfunction
+
+" this function will eventually replace wildgrass#HL()
+" as the colorscheme is updated to support soft/medium/hard
+" options
+function! wildgrass#hl(contrast, group, gui, fgd, bgd, spl)
+    if a:contrast == 'soft'
+    exec 'hi' a:group
+        \ 'cterm   = NONE'
+        \ 'ctermfg = NONE'
+        \ 'ctermbg = NONE'
+        \ 'gui='   . a:gui[]
+        \ 'guifg=' . a:fgd[]
+        \ 'guibg=' . a:bgd[]
+        \ 'guisp=' . a:spl[]
 endfunction
