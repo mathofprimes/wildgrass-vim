@@ -11,7 +11,9 @@ let g:variant_dark = 'jade'
 let g:variant_light = 'gray'
 ```
 
-to your .vimrc file.
+to your .vimrc file. 
+
+In the future, I plan to add soft/medium/hard options to adjust contrast, which will require some rewriting to make the code for this plugin more maintainable &mdash; so be on the lookout for that.
 
 # Screenshots:
 
