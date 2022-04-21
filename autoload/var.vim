@@ -12,7 +12,7 @@ function wildgrass#variant(dark, light, contrast)
     " ratio of red/green/blue each color has
     let RGB = {
         \ 'gray': [4, 4, 4],
-        \ 'jade': [0, 4, 2],
+        \ 'jade': [1, 4, 2],
         \ 'lime': [1, 4, 1],
         \ 'pear': [4, 4, 2],
         \ 'drab': [4, 4, 2],
@@ -20,32 +20,27 @@ function wildgrass#variant(dark, light, contrast)
         \ 'sage': [3, 4, 3],
         \ 'teal': [1, 4, 4]
         \ }
-    
+
     " check contrast
     if a:contrast ==# 'soft'
-        let soft_dark = 1
-        let soft_dark_ = 0
-        let light_contrast= 1
-        let light_palette_contrast = 1
+        let contrast_level = 1
     elseif a:contrast ==# 'medium'
-        let dark_contrast = 2
-        let dark_palette_contrast = 2
-        let light_contrast= 2
-        let light_palette_contrast = 2
+        let contrast_level = 0
     elseif a:contrast ==# 'hard'
-        let dark_contrast = 3
-        let dark_palette_contrast = 3
-        let light_contrast= 3
-        let light_palette_contrast = 3
+        let contrast_level = 1
     endif
     
     " what colors users choose for dark/light mode
     exec 'let RGB_dark = RGB.' . a:dark 
     exec 'let RGB_light = RGB.' . a:light
+
+    for i in ['0', '1', '2', '3']
+        let dark['dk' . i] = {} 
+    endfor
    
 
     " generate dict of dark colors
-    let x = dark_contrast
+    let x = 5 * (4 + contrast_level)
     let dark = { 'dk0': '#' . printf('%X', x * RGB_dark[0])
                           \ . printf('%X', x * RGB_dark[1])
                           \ . printf('%X', x * RGB_dark[2]),               
@@ -61,7 +56,7 @@ function wildgrass#variant(dark, light, contrast)
                \ }
                 
     " generate dict of light colors
-    let y = light_contrast 
+    let y = 5 * (8 + contrast_level) 
     let light = { 'lt0': '#' . printf('%X', y * RGB_light[0])
                            \ . printf('%X', y * RGB_light[1])
                            \ . printf('%X', y * RGB_light[2]),
@@ -76,14 +71,33 @@ function wildgrass#variant(dark, light, contrast)
                            \ . printf('%X', y * RGB_light[2])
                 \ }
     
-    for k in ['gray', 'jade', 'lime', 'pear', 'drab', 'aqua', 'sage', 'teal']
-        let z = dark_palette_contrast
-        let palette = {k: '#' . printf('%X', z * RGB.jade[0])
-                            \ . printf('%X', z * RGB.jade[1])
-                            \ . printf('%X', z * RGB.jade[2])
-                            \ }
-    endfor
-    
+    let z = 5 * (6 + contrast_level)
+    let palette = { 'gray': '#' . printf('%X', z * RGB.gray[0])
+                              \ . printf('%X', z * RGB.gray[1])
+                              \ . printf('%X', z * RGB.gray[2]),
+                  \ 'jade': '#' . printf('%X', z * RGB.jade[0])
+                              \ . printf('%X', z * RGB.jade[1])
+                              \ . printf('%X', z * RGB.jade[2]),
+                  \ 'lime': '#' . printf('%X', z * RGB.lime[0])
+                              \ . printf('%X', z * RGB.lime[1])
+                              \ . printf('%X', z * RGB.lime[2]),
+                  \ 'pear': '#' . printf('%X', z * RGB.pear[0])
+                              \ . printf('%X', z * RGB.pear[1])
+                              \ . printf('%X', z * RGB.pear[2]),
+                  \ 'drab': '#' . printf('%X', z * RGB.drab[0])
+                              \ . printf('%X', z * RGB.drab[1])
+                              \ . printf('%X', z * RGB.drab[2]),
+                  \ 'aqua': '#' . printf('%X', z * RGB.aqua[0])
+                              \ . printf('%X', z * RGB.aqua[1])
+                              \ . printf('%X', z * RGB.aqua[2]),
+                  \ 'sage': '#' . printf('%X', z * RGB.sage[0])
+                              \ . printf('%X', z * RGB.sage[1])
+                              \ . printf('%X', z * RGB.sage[2]),
+                  \ 'teal': '#' . printf('%X', z * RGB.teal[0])
+                              \ . printf('%X', z * RGB.teal[1])
+                              \ . printf('%X', z * RGB.teal[2])
+                              \ }
+
     " check if dark or light mode set
     if &background ==# 'dark'
         let background = {
@@ -98,7 +112,7 @@ function wildgrass#variant(dark, light, contrast)
             \ }
         let variant = extend(background, palette)
     elseif &background ==# 'light'
-        let variant = {
+        let background = {
             \ 'bg0': light.lt0,
             \ 'bg1': light.lt1,
             \ 'bg2': light.lt2,
@@ -111,18 +125,17 @@ function wildgrass#variant(dark, light, contrast)
         let variant = extend(background, palette)
     endif
     let other = {
-        \ 'none': ['NONE', 'NONE'],
-        \ 'bold': ['bold', 'bold'],
-        \ 'italic': ['italic', 'italic'],
-        \ 'reverse': ['reverse', 'reverse'],
-        \ 'underline': ['underline', 'underline'],
-        \ 'undercurl': ['undercurl', 'undercurl']
+        \ 'none': 'NONE',
+        \ 'bold': 'bold',
+        \ 'italic': 'italic',
+        \ 'reverse': 'reverse',
+        \ 'underline': 'underline',
+        \ 'undercurl': 'undercurl'
         \ }
     return extend(variant, other)
 endfunction
 
-function! wildgrass#HL(contrast, group, gui, fgd, bgd, spl)
-    if a:contrast == 'soft'
+function! wildgrass#HL(group, gui, fgd, bgd, spl)
     exec 'hi' a:group
         \ 'cterm   = NONE'
         \ 'ctermfg = NONE'
