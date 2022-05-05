@@ -12,8 +12,8 @@ endif
 
 let g:colors_name = 'wildgrass'
 
-let s:c = wildgrass#config()
-let s:p = wildgrass#variant(s:c.variant_dark, s:c.variant_light)
+let s:c = wildgrass#configuration()
+let s:p = wildgrass#variant(s:c.variant_dark, s:c.variant_light, s:c.variant_contrast)
 
 " SYNTAX GROUPS (see :h group-name):
 
