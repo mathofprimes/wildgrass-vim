@@ -1,226 +1,173 @@
-function! wildgrass#config()
+" user configuration options
+function wildgrass#configuration() 
     return {
-        \ 'variant_dark': get(g:, 'variant_dark', 'gray'),
-        \ 'variant_light': get(g:, 'variant_light', 'gray'),
+        \ 'variant_dark': get(g:, 'variant_dark', 'sage'),
+        \ 'variant_light': get(g:, 'variant_light', 'sage'),
+        \ 'variant_contrast': get(g:, 'variant_contrast', 'medium')
         \ }
 endfunction
 
-function! wildgrass#variant(dark, light)
-    if a:dark ==# 'gray'
-        let variant_dk = {
-            \ 'dk0': ['#262826', 'NONE'],
-            \ 'dk1': ['#2A2C2A', 'NONE'],
-            \ 'dk2': ['#2E302E', 'NONE'],
-            \ 'dk3': ['#323432', 'NONE']
-            \ }
-    elseif a:dark ==# 'jade'
-        let variant_dk = {
-            \ 'dk0': ['#002814', 'NONE'],
-            \ 'dk1': ['#002C16', 'NONE'],
-            \ 'dk2': ['#003018', 'NONE'], 
-            \ 'dk3': ['#00341A', 'NONE']
-            \ }
-    elseif a:dark ==# 'lime'
-        let variant_dk = {
-            \ 'dk0': ['#0A280A', 'NONE'],
-            \ 'dk1': ['#0B2C0B', 'NONE'],
-            \ 'dk2': ['#0C300C', 'NONE'],
-            \ 'dk3': ['#0D340D', 'NONE']
-            \ }
-    elseif a:dark ==# 'pear'
-        let variant_dk = {
-            \ 'dk0': ['#26280A', 'NONE'],
-            \ 'dk1': ['#2A2C0B', 'NONE'],
-            \ 'dk2': ['#2E300C', 'NONE'],
-            \ 'dk3': ['#32340D', 'NONE']
-            \ }
-    elseif a:dark ==# 'drab'
-        let variant_dk = {
-            \ 'dk0': ['#262814', 'NONE'],
-            \ 'dk1': ['#2A2C16', 'NONE'],
-            \ 'dk2': ['#2E3018', 'NONE'],
-            \ 'dk3': ['#32341A', 'NONE']
-            \ }
-    elseif a:dark ==# 'aqua'
-        let variant_dk = {
-            \ 'dk0': ['#142826', 'NONE'],
-            \ 'dk1': ['#162C2A', 'NONE'],
-            \ 'dk2': ['#18302E', 'NONE'],
-            \ 'dk3': ['#1A3432', 'NONE']
-            \ }
-    elseif a:dark ==# 'sage'
-        let variant_dk = {
-            \ 'dk0': ['#26281E', 'NONE'],
-            \ 'dk1': ['#2A2C21', 'NONE'],
-            \ 'dk2': ['#2E3024', 'NONE'], 
-            \ 'dk3': ['#323427', 'NONE']
-            \ }
-    elseif a:dark ==# 'teal'
-        let variant_dk = {
-            \ 'dk0': ['#0A2826', 'NONE'],
-            \ 'dk1': ['#0B2C2A', 'NONE'],
-            \ 'dk2': ['#0C302E', 'NONE'],
-            \ 'dk3': ['#0D3432', 'NONE']
-            \ }
-    endif
+" generates and returns user's palette
+function wildgrass#variant(dark, light, contrast)
+    " ratio of red/green/blue each color has
+    let RGB = {
+        \ 'gray': [4, 4, 4],
+        \ 'jade': [0, 4, 2],
+        \ 'lime': [1, 4, 1],
+        \ 'pear': [4, 4, 0],
+        \ 'drab': [4, 4, 2],
+        \ 'aqua': [2, 4, 4],
+        \ 'sage': [3, 4, 3],
+        \ 'teal': [0, 4, 4]
+        \ }
 
-    if a:light ==# 'gray'
-        let variant_lt = {
-            \ 'lt0': ['#B8BAB8', 'NONE'], 
-            \ 'lt1': ['#B4B6B4', 'NONE'],
-            \ 'lt2': ['#B0B2B0', 'NONE'],
-            \ 'lt3': ['#A6A8A6', 'NONE']
-            \ }
-    elseif a:light ==# 'jade'
-        let variant_lt = {
-            \ 'lt0': ['#00BA8C', 'NONE'],
-            \ 'lt1': ['#00B688', 'NONE'],
-            \ 'lt3': ['#00A880', 'NONE']
-            \ }
-elseif a:light ==# 'lime'
-        let variant_lt = {
-            \ 'lt0': ['#2EBA2E', 'NONE'],
-            \ 'lt1': ['#00B600', 'NONE'],
-            \ 'lt2': ['#00B200', 'NONE'],
-            \ 'lt3': ['#00A800', 'NONE']
-            \ }
-    elseif a:light ==# 'pear'
-        let variant_lt = {
-            \ 'lt0': ['#B8BA00', 'NONE'],
-            \ 'lt1': ['#B4B600', 'NONE'],
-            \ 'lt2': ['#B0B200', 'NONE'],
-            \ 'lt3': ['#A6A800', 'NONE']
-            \ }
-    elseif a:light ==# 'drab'
-        let variant_lt = {
-            \ 'lt0': ['#B8BA54', 'NONE'],
-            \ 'lt1': ['#B4B656', 'NONE'],
-            \ 'lt2': ['#B0B25A', 'NONE'],
-            \ 'lt3': ['#A6A85C', 'NONE']
-            \ }
-    elseif a:light ==# 'aqua'
-        let variant_lt = {
-            \ 'lt0': ['#54BAB8', 'NONE'],
-            \ 'lt1': ['#56B6B4', 'NONE'],
-            \ 'lt2': ['#5AB2B0', 'NONE'],
-            \ 'lt3': ['#5CA8A6', 'NONE']
-            \ }
-    elseif a:light ==# 'sage'
-        let variant_lt = {
-            \ 'lt0': ['#54BA54', 'NONE'],
-            \ 'lt1': ['#56B656', 'NONE'],
-            \ 'lt2': ['#5AB25A', 'NONE'],
-            \ 'lt3': ['#5CA85C', 'NONE']
-            \ }
-    elseif a:light ==# 'teal'
-        let variant_lt = {
-            \ 'lt0': ['#00BAB8', 'NONE'], 
-            \ 'lt1': ['#00B6B4', 'NONE'],
-            \ 'lt2': ['#00B2B0', 'NONE'],
-            \ 'lt3': ['#00A8A6', 'NONE']
-            \ }
+    " check contrast
+    if a:contrast ==# 'soft'
+        let contrast_level = 1
+    elseif a:contrast ==# 'medium'
+        let contrast_level = 0
+    elseif a:contrast ==# 'hard'
+        let contrast_level = 1
     endif
+    
+    " colors for dark/light mode
+    exec 'let RGB_dark = RGB.' . a:dark 
+    exec 'let RGB_light = RGB.' . a:light
+   
+    " init dark colors dict
+    let dark = {}
+    let x = 5 * (2 + contrast_level)
+    
+    for i in ['0', '1', '2', '3']
+        " check red
+        if len(printf('%X', x * RGB_dark[0])) < 2
+            let red = printf('%02X', x * RGB_dark[0]) 
+        else
+            let red = printf('%X', x * RGB_dark[0])
+        endif
+        
+        " check green
+        if len(printf('%X', x * RGB_dark[1])) < 2
+            let green = printf('%02X', x * RGB_dark[1])
+        else
+            let green = printf('%X', x * RGB_dark[1])
+        endif
+        
+        " check blue
+        if len(printf('%X', x * RGB_dark[2])) < 2
+            let blue = printf('%02X', x * RGB_dark[2])
+        else
+            let blue = printf('%X', x * RGB_dark[2])
+        endif 
 
+        let dark['dk' . i] = '#' . red . green . blue
+    endfor
+
+    " init light colors dict
+    let light = {}
+    let y = 5 * (8 + contrast_level) 
+    
+    for j in ['0', '1', '2', '3']
+        " check red
+        if len(printf('%X', y * RGB_light[0])) < 2
+            let red = printf('%02X', y * RGB_light[0]) 
+        else
+            let red = printf('%X', y * RGB_light[0])
+        endif
+        
+        " check green
+        if len(printf('%X', y * RGB_light[1])) < 2
+            let green = printf('%02X', y * RGB_light[1])
+        else
+            let green = printf('%X', y * RGB_light[1])
+        endif
+        
+        " check blue
+        if len(printf('%X', y * RGB_light[2])) < 2
+            let blue = printf('%02X', y * RGB_light[2])
+        else
+            let blue = printf('%X', y * RGB_light[2])
+        endif
+
+        let light['lt' . j] = '#' . red . green . blue
+    endfor
+    
+    " init palette colors dict
+    let palette = {}
+    let z = 5 * (6 + contrast_level)
+
+    for key in keys(RGB)
+
+        exec 'let color = RGB.' . key
+        
+        " check red
+        if len(printf('%X', z * color[0])) < 2
+            let red = printf('%02X', z * color[0]) 
+        else
+            let red = printf('%X', z * color[0])
+        endif
+        
+        " check green
+        if len(printf('%X', z * color[1])) < 2
+            let green = printf('%02X', z * color[1])
+        else
+            let green = printf('%X', z * color[1])
+        endif
+        
+        " check blue
+        if len(printf('%X', z * color[2])) < 2
+            let blue = printf('%02X', z * color[2])
+        else
+            let blue = printf('%X', z * color[2])
+        endif
+
+        let palette[key] = '#' . red . green . blue
+    endfor
+    
+    " check if dark or light mode set
     if &background ==# 'dark'
-        let variant = {
-            \ 'bg0': variant_dk.dk0,
-            \ 'bg1': variant_dk.dk1,
-            \ 'bg2': variant_dk.dk2,
-            \ 'bg3': variant_dk.dk3,
-            \ 'bg4': variant_lt.lt0,
-            \ 'bg5': variant_lt.lt1,
-            \ 'bg6': variant_lt.lt2,
-            \ 'bg7': variant_lt.lt3,
-            \ 'gray': ['#5E605E', 'NONE'],
-            \ 'jade': ['#008050', 'NONE'],
-            \ 'lime': ['#208020', 'NONE'],
-            \ 'pear': ['#7E8000', 'NONE'],
-            \ 'drab': ['#7E8040', 'NONE'],
-            \ 'aqua': ['#40807E', 'NONE'],
-            \ 'sage': ['#608040', 'NONE'],
-            \ 'teal': ['#00807E', 'NONE'] 
+        let background = {
+            \ 'bg0': dark.dk0,
+            \ 'bg1': dark.dk1,
+            \ 'bg2': dark.dk2,
+            \ 'bg3': dark.dk3,
+            \ 'bg4': light.lt0,
+            \ 'bg5': light.lt1,
+            \ 'bg6': light.lt2,
+            \ 'bg7': light.lt3
             \ }
+        let variant = extend(background, palette)
     elseif &background ==# 'light'
-        let variant = {
-            \ 'bg0': variant_lt.lt0,
-            \ 'bg1': variant_lt.lt1,
-            \ 'bg2': variant_lt.lt2,
-            \ 'bg3': variant_lt.lt3,
-            \ 'bg4': variant_dk.dk0,
-            \ 'bg5': variant_dk.dk1,
-            \ 'bg6': variant_dk.dk2,
-            \ 'bg7': variant_dk.dk3, 
-            \ 'gray': ['#3E403E', 'NONE'],
-            \ 'jade': ['#006048', 'NONE'],
-            \ 'lime': ['#006000', 'NONE'],
-            \ 'pear': ['#5E6000', 'NONE'],
-            \ 'drab': ['#5E6030', 'NONE'],
-            \ 'aqua': ['#30605E', 'NONE'],
-            \ 'sage': ['#486030', 'NONE'],
-            \ 'teal': ['#00605E', 'NONE'] 
+        let background = {
+            \ 'bg0': light.lt0,
+            \ 'bg1': light.lt1,
+            \ 'bg2': light.lt2,
+            \ 'bg3': light.lt3,
+            \ 'bg4': dark.dk0,
+            \ 'bg5': dark.dk1,
+            \ 'bg6': dark.dk2,
+            \ 'bg7': dark.dk3 
             \ }
+        let variant = extend(background, palette)
     endif
     let other = {
-        \ 'none': ['NONE', 'NONE'],
-        \ 'bold': ['bold', 'bold'],
-        \ 'italic': ['italic', 'italic'],
-        \ 'reverse': ['reverse', 'reverse'],
-        \ 'underline': ['underline', 'underline'],
-        \ 'undercurl': ['undercurl', 'undercurl']
+        \ 'none': 'NONE',
+        \ 'bold': 'bold',
+        \ 'italic': 'italic',
+        \ 'reverse': 'reverse',
+        \ 'underline': 'underline',
+        \ 'undercurl': 'undercurl'
         \ }
     return extend(variant, other)
 endfunction
 
-" sets the variant of highlight groups
-function! wildgrass#HL(group, cg, fg, bg, sp)
-    exec 'hi' a:group
-            \ 'cterm='   . a:cg[1]
-            \ 'ctermfg=' . a:fg[1]
-            \ 'ctermbg=' . a:bg[1]
-            \ 'gui='     . a:cg[0]
-            \ 'guifg='   . a:fg[0]
-            \ 'guibg='   . a:bg[0]
-            \ 'guisp='   . a:sp[0]
-endfunction
-
-" this function will eventually replace wildgrass#variant()
-" as the colorscheme is updated to support soft/medium/hard
-" options. Rather than having to use list out colors and select
-" them based on the user's configuration, this function generates
-" them, making the plugin code much more manageable.
-function! wildgrass#generator(r, g, b, variant, contrast)
-    for i in [0, 1, 2, 3, 4]
-        let dark = {'dark'. i: '#' . printf('%X', r) 
-                                 \ . printf('%X', g) 
-                                 \ . printf('%X', b)
-                                 \ }
-    endfor
-
-    for i in [0, 1, 2, 3, 4]
-        let light = {'light'. i: '#' . printf('%X', r)
-                                   \ . printf('%X', g) 
-                                   \ . printf('%X', b) 
-                                   \ }
-    endfor
-
-    if &background ==# 'dark'
-        " something here
-    elseif &background ==# 'light'
-        " something here
-    endif
-endfunction
-
-" this function will eventually replace wildgrass#HL()
-" as the colorscheme is updated to support soft/medium/hard
-" options
-function! wildgrass#hl(contrast, group, gui, fgd, bgd, spl)
-    if a:contrast == 'soft'
+function! wildgrass#HL(group, gui, fgd, bgd, spl)
     exec 'hi' a:group
         \ 'cterm   = NONE'
         \ 'ctermfg = NONE'
         \ 'ctermbg = NONE'
-        \ 'gui='   . a:gui[]
-        \ 'guifg=' . a:fgd[]
-        \ 'guibg=' . a:bgd[]
-        \ 'guisp=' . a:spl[]
+        \ 'gui='   . a:gui
+        \ 'guifg=' . a:fgd
+        \ 'guibg=' . a:bgd
+        \ 'guisp=' . a:spl
 endfunction
