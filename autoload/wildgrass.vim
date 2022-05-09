@@ -12,7 +12,7 @@ function wildgrass#variant(dark, light, contrast)
     " ratio of red/green/blue each color has
     let RGB = {
         \ 'gray': [4, 4, 4],
-        \ 'jade': [0, 4, 2],
+        \ 'jade': [0, 4, 3],
         \ 'lime': [1, 4, 1],
         \ 'pear': [4, 4, 0],
         \ 'drab': [4, 4, 2],
@@ -38,90 +38,81 @@ function wildgrass#variant(dark, light, contrast)
     let dark = {}
     let x = 5 * (2 + contrast_level)
     
-    for i in ['0', '1', '2', '3']
+    for i in ['dk0', 'dk1', 'dk2', 'dk3']
+        let red = printf('%X', x * RGB_dark[0])
+        let green = printf('%X', x * RGB_dark[1])
+        let blue = printf('%X', x * RGB_dark[2])
+        
         " check red
-        if len(printf('%X', x * RGB_dark[0])) < 2
-            let red = printf('%02X', x * RGB_dark[0]) 
-        else
-            let red = printf('%X', x * RGB_dark[0])
+        if len(red) < 2
+            let red = printf('%02X', x * RGB_dark[0])
         endif
         
         " check green
-        if len(printf('%X', x * RGB_dark[1])) < 2
+        if len(green) < 2
             let green = printf('%02X', x * RGB_dark[1])
-        else
-            let green = printf('%X', x * RGB_dark[1])
         endif
         
         " check blue
-        if len(printf('%X', x * RGB_dark[2])) < 2
+        if len(blue) < 2
             let blue = printf('%02X', x * RGB_dark[2])
-        else
-            let blue = printf('%X', x * RGB_dark[2])
-        endif 
+        endif
 
-        let dark['dk' . i] = '#' . red . green . blue
+        let dark[i] = '#' . red . green . blue
     endfor
 
-    " init light colors dict
     let light = {}
     let y = 5 * (8 + contrast_level) 
     
-    for j in ['0', '1', '2', '3']
+    for i in ['lt0', 'lt1', 'lt2', 'lt3']
+        let red = printf('%X', y * RGB_light[0])
+        let green = printf('%X', y * RGB_light[1])
+        let blue = printf('%X', y * RGB_light[2])
+        
         " check red
-        if len(printf('%X', y * RGB_light[0])) < 2
-            let red = printf('%02X', y * RGB_light[0]) 
-        else
-            let red = printf('%X', y * RGB_light[0])
+        if len(red) < 2
+            let red = printf('%02X', y * RGB_light[0])
         endif
         
         " check green
-        if len(printf('%X', y * RGB_light[1])) < 2
+        if len(green) < 2
             let green = printf('%02X', y * RGB_light[1])
-        else
-            let green = printf('%X', y * RGB_light[1])
         endif
         
         " check blue
-        if len(printf('%X', y * RGB_light[2])) < 2
+        if len(blue) < 2
             let blue = printf('%02X', y * RGB_light[2])
-        else
-            let blue = printf('%X', y * RGB_light[2])
         endif
 
-        let light['lt' . j] = '#' . red . green . blue
+        let light[i] = '#' . red . green . blue
     endfor
     
-    " init palette colors dict
     let palette = {}
     let z = 5 * (6 + contrast_level)
 
-    for key in keys(RGB)
-
-        exec 'let color = RGB.' . key
+    for k in keys(RGB)
+        exec 'let RGB_palette = RGB.' . k
         
+        let red = printf('%X', z * RGB_palette[0])
+        let green = printf('%X', z * RGB_palette[1])
+        let blue = printf('%X', z * RGB_palette[2])
+
         " check red
-        if len(printf('%X', z * color[0])) < 2
-            let red = printf('%02X', z * color[0]) 
-        else
-            let red = printf('%X', z * color[0])
-        endif
-        
-        " check green
-        if len(printf('%X', z * color[1])) < 2
-            let green = printf('%02X', z * color[1])
-        else
-            let green = printf('%X', z * color[1])
-        endif
-        
-        " check blue
-        if len(printf('%X', z * color[2])) < 2
-            let blue = printf('%02X', z * color[2])
-        else
-            let blue = printf('%X', z * color[2])
+        if len(red) < 2
+            let red = printf('%02X', z * RGB_palette[0])
         endif
 
-        let palette[key] = '#' . red . green . blue
+        " check green
+        if len(green) < 2
+            let green = printf('%02X', z * RGB_palette[1])
+        endif
+
+        " check blue
+        if len(blue) < 2
+            let blue = printf('%02X', z * RGB_palette[2])
+        endif
+        
+        let palette[k] = '#' . red . green . blue
     endfor
     
     " check if dark or light mode set
