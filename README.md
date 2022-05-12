@@ -4,26 +4,21 @@ Wildgrass consists of just shades of green &mdash; more precisely, green is alwa
 
 # Palette:
 
-Colors are chosen for so that contrast is even and legible in both light and dark variations. Each color has an assigned name of either gray, jade, lime, pear, drab, aqua, sage, and teal. Wildgrass also contains 8 different background variations for each of these colors, and you can change if light and dark mode use different colors from each other. The default backgrounds for light and dark are gray, but this can be changed by adding, for example,
+Colors are chosen for so that contrast is even and legible in both light and dark variations. Each color has an assigned name of either gray, jade, lime, pear, drab, aqua, sage, and teal. Wildgrass also contains 8 different background variations for each of these colors, and you can change the background colors of light and dark mode independently of each other. You also have the options of soft/medium/hard to change the contrast of the background with text. The default backgrounds for light and dark are sage, and the default contrast is medium, but this can be changed by adding, for example,
 
 ```
 let g:variant_dark = 'jade'
 let g:variant_light = 'gray'
+let g:variant_contrast = 'hard'
 ```
 
 to your .vimrc file. 
 
-In the future, I plan to add soft/medium/hard options to adjust contrast, which will require some rewriting to make the code for this plugin more maintainable &mdash; so be on the lookout for that.
-
 # Screenshots:
 
-## Light Mode / Drab and Gray:
+This should give you a sense of what can be created with the available configuration options:
 
-![Screenshot from 2022-03-20 20-31-30](https://user-images.githubusercontent.com/74194607/159192799-d03a2835-a307-4115-908d-16d07c65e93a.png)
-
-## Dark Mode / Drab and Gray
-
-![Screenshot from 2022-03-20 20-31-05](https://user-images.githubusercontent.com/74194607/159192812-93d92bd8-08c3-41a7-bf0c-8df72793224f.png)
+![Screencast-from-05-12-2022-01_38_54-AM](https://user-images.githubusercontent.com/74194607/168000188-4a760143-9567-4d73-b181-0f907814d8f5.gif)
 
 # Installation:
 
