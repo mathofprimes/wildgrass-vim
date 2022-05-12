@@ -11,23 +11,44 @@ endfunction
 function wildgrass#variant(dark, light, contrast)
     " ratio of red/green/blue each color has
     let RGB = {
-        \ 'gray': [4, 4, 4],
-        \ 'jade': [0, 4, 3],
-        \ 'lime': [1, 4, 1],
-        \ 'pear': [4, 4, 0],
-        \ 'drab': [4, 4, 2],
-        \ 'aqua': [2, 4, 4],
-        \ 'sage': [3, 4, 3],
-        \ 'teal': [0, 4, 4]
+        \ 'gray': [5, 5, 5],
+        \ 'jade': [0, 5, 3],
+        \ 'lime': [0, 5, 1],
+        \ 'pear': [5, 5, 0],
+        \ 'drab': [5, 5, 2],
+        \ 'aqua': [2, 5, 5],
+        \ 'sage': [3, 5, 3],
+        \ 'teal': [0, 5, 5]
         \ }
 
     " check contrast
     if a:contrast ==# 'soft'
-        let contrast_level = 1
+        let x = 9
+        let y = 43
+        
+        if &background ==# 'dark'
+            let z = 25
+        elseif &background ==# 'light'
+            let z = 25
+        endif
     elseif a:contrast ==# 'medium'
-        let contrast_level = 0
+        let x = 8
+        let y = 42
+
+        if &background ==# 'dark'
+            let z = 26
+        elseif &background ==# 'light'
+            let z = 24
+        endif
     elseif a:contrast ==# 'hard'
-        let contrast_level = 1
+        let x = 7
+        let y = 41
+
+        if &background ==# 'dark'
+            let z = 27
+        elseif &background ==# 'light'
+            let z = 23
+        endif
     endif
     
     " colors for dark/light mode
@@ -36,59 +57,62 @@ function wildgrass#variant(dark, light, contrast)
    
     " init dark colors dict
     let dark = {}
-    let x = 5 * (2 + contrast_level)
+    let count_dk = 0
     
     for i in ['dk0', 'dk1', 'dk2', 'dk3']
-        let red = printf('%X', x * RGB_dark[0])
-        let green = printf('%X', x * RGB_dark[1])
-        let blue = printf('%X', x * RGB_dark[2])
+        let red = printf('%X', (x + count_dk) * RGB_dark[0])
+        let green = printf('%X', (x + count_dk) * RGB_dark[1])
+        let blue = printf('%X', (x + count_dk) * RGB_dark[2])
         
         " check red
         if len(red) < 2
-            let red = printf('%02X', x * RGB_dark[0])
+            let red = printf('%02X', (x + count_dk) * RGB_dark[0])
         endif
         
         " check green
         if len(green) < 2
-            let green = printf('%02X', x * RGB_dark[1])
+            let green = printf('%02X', (x + count_dk) * RGB_dark[1])
         endif
         
         " check blue
         if len(blue) < 2
-            let blue = printf('%02X', x * RGB_dark[2])
+            let blue = printf('%02X', (x + count_dk) * RGB_dark[2])
         endif
+
+        let count_dk += 1
 
         let dark[i] = '#' . red . green . blue
     endfor
 
     let light = {}
-    let y = 5 * (8 + contrast_level) 
+    let count_lt = 0
     
     for i in ['lt0', 'lt1', 'lt2', 'lt3']
-        let red = printf('%X', y * RGB_light[0])
-        let green = printf('%X', y * RGB_light[1])
-        let blue = printf('%X', y * RGB_light[2])
+        let red = printf('%X', (y + count_lt) * RGB_light[0])
+        let green = printf('%X', (y + count_lt) * RGB_light[1])
+        let blue = printf('%X', (y + count_lt) * RGB_light[2])
         
         " check red
         if len(red) < 2
-            let red = printf('%02X', y * RGB_light[0])
+            let red = printf('%02X', (y + count_lt) * RGB_light[0])
         endif
         
         " check green
         if len(green) < 2
-            let green = printf('%02X', y * RGB_light[1])
+            let green = printf('%02X', (y + count_lt) * RGB_light[1])
         endif
         
         " check blue
         if len(blue) < 2
-            let blue = printf('%02X', y * RGB_light[2])
+            let blue = printf('%02X', (y + count_lt) * RGB_light[2])
         endif
+
+        let count_lt -= 1
 
         let light[i] = '#' . red . green . blue
     endfor
     
     let palette = {}
-    let z = 5 * (6 + contrast_level)
 
     for k in keys(RGB)
         exec 'let RGB_palette = RGB.' . k
