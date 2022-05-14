@@ -11,14 +11,14 @@ endfunction
 function wildgrass#variant(dark, light, contrast)
     " ratio of red/green/blue each color has
     let RGB = {
-        \ 'gray': [5, 5, 5],
-        \ 'jade': [0, 5, 3],
-        \ 'lime': [0, 5, 1],
-        \ 'pear': [5, 5, 0],
-        \ 'drab': [5, 5, 2],
-        \ 'aqua': [2, 5, 5],
-        \ 'sage': [3, 5, 3],
-        \ 'teal': [0, 5, 5]
+        \ 'gray': [4, 5, 4, -7],
+        \ 'jade': [0, 5, 3, 0],
+        \ 'lime': [0, 5, 1, 3],
+        \ 'pear': [4, 5, 1, -3],
+        \ 'drab': [4, 5, 3, 0],
+        \ 'aqua': [3, 5, 4, 0],
+        \ 'sage': [3, 5, 3, 0],
+        \ 'teal': [1, 5, 4, 0]
         \ }
 
     " check contrast
@@ -117,23 +117,23 @@ function wildgrass#variant(dark, light, contrast)
     for k in keys(RGB)
         exec 'let RGB_palette = RGB.' . k
         
-        let red = printf('%X', z * RGB_palette[0])
-        let green = printf('%X', z * RGB_palette[1])
-        let blue = printf('%X', z * RGB_palette[2])
+        let red = printf('%X', (z + RGB_palette[3]) * RGB_palette[0])
+        let green = printf('%X', (z + RGB_palette[3]) * RGB_palette[1])
+        let blue = printf('%X', (z + RGB_palette[3]) * RGB_palette[2])
 
         " check red
         if len(red) < 2
-            let red = printf('%02X', z * RGB_palette[0])
+            let red = printf('%02X', (z + RGB_palette[3]) * RGB_palette[0])
         endif
 
         " check green
         if len(green) < 2
-            let green = printf('%02X', z * RGB_palette[1])
+            let green = printf('%02X', (z + RGB_palette[3]) * RGB_palette[1])
         endif
 
         " check blue
         if len(blue) < 2
-            let blue = printf('%02X', z * RGB_palette[2])
+            let blue = printf('%02X', (z + RGB_palette[3]) * RGB_palette[2])
         endif
         
         let palette[k] = '#' . red . green . blue
