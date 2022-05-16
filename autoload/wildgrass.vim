@@ -11,25 +11,25 @@ endfunction
 function wildgrass#variant(dark, light, contrast)
     " ratio of red/green/blue each color has
     let RGB = {
-        \ 'gray': [4, 5, 4, -7],
+        \ 'gray': [4, 5, 4, -10],
         \ 'jade': [0, 5, 3, 0],
-        \ 'lime': [0, 5, 1, 3],
-        \ 'pear': [4, 5, 1, -3],
-        \ 'drab': [4, 5, 3, 0],
-        \ 'aqua': [3, 5, 4, 0],
-        \ 'sage': [3, 5, 3, 0],
-        \ 'teal': [1, 5, 4, 0]
+        \ 'lime': [0, 5, 1, 5],
+        \ 'pear': [4, 5, 1, -5],
+        \ 'drab': [4, 5, 3, 5],
+        \ 'aqua': [3, 5, 4, -5],
+        \ 'sage': [3, 5, 3, -5],
+        \ 'teal': [1, 5, 4, 5]
         \ }
 
     " check contrast
     if a:contrast ==# 'soft'
-        let x = 9
-        let y = 43
+        let x = 10
+        let y = 44
         
         if &background ==# 'dark'
-            let z = 25
+            let z = 24
         elseif &background ==# 'light'
-            let z = 25
+            let z = 26
         endif
     elseif a:contrast ==# 'medium'
         let x = 8
@@ -41,13 +41,13 @@ function wildgrass#variant(dark, light, contrast)
             let z = 24
         endif
     elseif a:contrast ==# 'hard'
-        let x = 7
-        let y = 41
+        let x = 6
+        let y = 44
 
         if &background ==# 'dark'
-            let z = 27
+            let z = 28
         elseif &background ==# 'light'
-            let z = 23
+            let z = 22
         endif
     endif
     
