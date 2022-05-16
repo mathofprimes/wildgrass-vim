@@ -6,14 +6,6 @@ Wildgrass is not one set colorscheme; in addition to their prefered level of con
 
 The default backgrounds for dark and light mode is sage, and the default contrast is medium.
 
-```
-let g:variant_dark = 'jade'
-let g:variant_light = 'gray'
-let g:variant_contrast = 'hard'
-```
-
-to your .vimrc file.
-
 # Features:
 
 ## Dark Mode:
