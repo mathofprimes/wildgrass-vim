@@ -1,10 +1,10 @@
 # Wildgrass:
 
-Wildgrass consists of just shades of green &mdash; more precisely, green is always the highest value in any color. It provides a dark and light variation and a few handy customization options.  
+Wildgrass is a 16 color palette consisting of just shades of green &mdash; more precisely, green is always the highest value in any color. Despite using just green, each color is carefully chosen and designated as either gray, jade, lime, pear, drab, aqua, sage, and teal, with 4 darker or lighter shades of these colors being used for background colors in dark or light mode. There are also soft/medium/hard options to change the contrast of text with background colors.
 
-# Palette:
+Wildgrass is not one set colorscheme; in addition to their prefered level of contrast, the user is free to choose to set the background colors in dark or light mode independently of each other to a color of their choosing from the 8 available designated colors, thus creating their own unique variation of Wildgrass. There are hundreds of possible combinations which, in a sense, probably makes Wildgrass the largest colorscheme plugin there is!
 
-Colors are chosen for so that contrast is even and legible in both light and dark variations. Each color has an assigned name of either gray, jade, lime, pear, drab, aqua, sage, and teal. Wildgrass also contains 8 different background variations for each of these colors, and you can change the background colors of light and dark mode independently of each other. You also have the options of soft/medium/hard to change the contrast of the background with text. The default backgrounds for light and dark are sage, and the default contrast is medium, but this can be changed by adding, for example,
+The default backgrounds for dark and light mode is sage, and the default contrast is medium.
 
 ```
 let g:variant_dark = 'jade'
@@ -12,13 +12,65 @@ let g:variant_light = 'gray'
 let g:variant_contrast = 'hard'
 ```
 
-to your .vimrc file. 
+to your .vimrc file.
+
+# Features:
+
+## Dark Mode:
+
+The background colors in dark mode can be set by adding, for example,
+
+```
+let g:variant_dark = 'jade'
+```
+
+to your .vimrc file.
+
+## Light Mode:
+
+The background colors in dark mode can be set by adding, for example,
+
+```
+let g:variant_dark = 'pear'
+```
+
+to your .vimrc file.
+
+## Contrast
+
+### Soft:
+
+To set contrast to soft, add this to your .vimrc file:
+
+```
+let g:variant_contrast = 'soft'
+```
+
+### Medium:
+
+To set contrast to medium, add this to your .vimrc file:
+
+```
+let g:variant_contrast = 'medium'
+```
+
+### Hard:
+
+To set contrast to hard, add this to your .vimrc file:
+
+```
+let g:variant_contrast = 'hard'
+```
 
 # Screenshots:
 
 This should give you a sense of what can be created with the available configuration options:
 
-![Screencast-from-05-12-2022-01_38_54-AM](https://user-images.githubusercontent.com/74194607/168000188-4a760143-9567-4d73-b181-0f907814d8f5.gif)
+![1](https://user-images.githubusercontent.com/74194607/168517125-eb6bb3e4-3fe1-41c8-bfcc-73e22616e689.png)
+
+![2](https://user-images.githubusercontent.com/74194607/168517151-d82d5c74-7067-4530-8eb4-0ed78ebe6e56.png)
+
+![3](https://user-images.githubusercontent.com/74194607/168517164-2dbdea81-2847-4d07-a2cb-c48a90574b49.png)
 
 # Installation:
 
