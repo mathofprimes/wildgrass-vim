@@ -99,9 +99,9 @@ call wildgrass#HL('PmenuSel', s:p.none, s:p.bg0, s:p.bg4, s:p.none)
 call wildgrass#HL('PmenuThumb', s:p.none, s:p.bg4, s:p.none, s:p.none)
 
 " search
-call wildgrass#HL('IncSearch', s:p.none, s:p.bg7, s:p.pear, s:p.none)
+call wildgrass#HL('IncSearch', s:p.none, s:p.bg0, s:p.pear, s:p.none)
 call wildgrass#HL('MatchParen', s:p.bold, s:p.bg7, s:p.none, s:p.none)
-call wildgrass#HL('Search', s:p.none, s:p.bg7, s:p.teal, s:p.none)
+call wildgrass#HL('Search', s:p.none, s:p.bg0, s:p.teal, s:p.none)
 hi link WildMenu IncSearch
 
 " folds
