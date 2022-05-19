@@ -9,18 +9,6 @@ endfunction
 
 " generates and returns user's palette
 function wildgrass#variant(dark, light, contrast)
-    " ratio of red/green/blue each color has
-    let RGB = {
-        \ 'gray': [4, 5, 4, -10],
-        \ 'jade': [0, 5, 3, 0],
-        \ 'lime': [0, 5, 1, 5],
-        \ 'pear': [4, 5, 1, -5],
-        \ 'drab': [4, 5, 3, 5],
-        \ 'aqua': [3, 5, 4, -5],
-        \ 'sage': [3, 5, 3, -5],
-        \ 'teal': [1, 5, 4, 5]
-        \ }
-
     " check contrast
     if a:contrast ==# 'soft'
         let x = 10
@@ -31,6 +19,17 @@ function wildgrass#variant(dark, light, contrast)
         elseif &background ==# 'light'
             let z = 26
         endif
+        
+        let RGB = {
+            \ 'gray': [4, 5, 4, -6],
+            \ 'jade': [0, 5, 3, 0],
+            \ 'lime': [0, 5, 1, 3],
+            \ 'pear': [4, 5, 1, -3],
+            \ 'drab': [4, 5, 3, 3],
+            \ 'aqua': [3, 5, 4, -3],
+            \ 'sage': [3, 5, 3, -3],
+            \ 'teal': [1, 5, 4, 3]
+            \ }
     elseif a:contrast ==# 'medium'
         let x = 8
         let y = 42
@@ -40,6 +39,17 @@ function wildgrass#variant(dark, light, contrast)
         elseif &background ==# 'light'
             let z = 24
         endif
+    
+        let RGB = {
+            \ 'gray': [4, 5, 4, -9],
+            \ 'jade': [0, 5, 3, 0],
+            \ 'lime': [0, 5, 1, 6],
+            \ 'pear': [4, 5, 1, -6],
+            \ 'drab': [4, 5, 3, 6],
+            \ 'aqua': [3, 5, 4, -6],
+            \ 'sage': [3, 5, 3, -6],
+            \ 'teal': [1, 5, 4, 5]
+            \ }
     elseif a:contrast ==# 'hard'
         let x = 6
         let y = 44
@@ -49,6 +59,17 @@ function wildgrass#variant(dark, light, contrast)
         elseif &background ==# 'light'
             let z = 22
         endif
+        
+        let RGB = {
+            \ 'gray': [4, 5, 4, -12],
+            \ 'jade': [0, 5, 3, 0],
+            \ 'lime': [0, 5, 1, 9],
+            \ 'pear': [4, 5, 1, -9],
+            \ 'drab': [4, 5, 3, 9],
+            \ 'aqua': [3, 5, 4, -9],
+            \ 'sage': [3, 5, 3, -9],
+            \ 'teal': [1, 5, 4, 9]
+            \ }
     endif
     
     " colors for dark/light mode
