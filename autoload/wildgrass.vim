@@ -16,60 +16,87 @@ function wildgrass#variant(dark, light, contrast)
         
         if &background ==# 'dark'
             let z = 24
+            let RGB = {
+                \ 'gray': [5, 5, 5, -4],
+                \ 'jade':  [0, 5, 3, 0],
+                \ 'lime':  [0, 5, 0, 2],
+                \ 'pear':  [5, 5, 0, 0],
+                \ 'drab': [5, 5, 3, -2],
+                \ 'aqua': [3, 5, 5, -2],
+                \ 'sage': [3, 5, 3, -2],
+                \ 'teal':  [0, 5, 5, 0]
+                \ }
         elseif &background ==# 'light'
             let z = 26
+            let RGB = {
+                \ 'gray':  [5, 5, 5, 4],
+                \ 'jade':  [0, 5, 3, 0],
+                \ 'lime': [0, 5, 0, -2],
+                \ 'pear':  [5, 5, 0, 0],
+                \ 'drab':  [5, 5, 3, 2],
+                \ 'aqua':  [3, 5, 5, 2],
+                \ 'sage':  [3, 5, 3, 2],
+                \ 'teal':  [0, 5, 5, 0]
+                \ }
         endif
-        
-        let RGB = {
-            \ 'gray': [4, 5, 4, -6],
-            \ 'jade': [0, 5, 3, 0],
-            \ 'lime': [0, 5, 1, 3],
-            \ 'pear': [4, 5, 1, -3],
-            \ 'drab': [4, 5, 3, 3],
-            \ 'aqua': [3, 5, 4, -3],
-            \ 'sage': [3, 5, 3, -3],
-            \ 'teal': [1, 5, 4, 3]
-            \ }
     elseif a:contrast ==# 'medium'
         let x = 8
         let y = 42
 
         if &background ==# 'dark'
-            let z = 26
-        elseif &background ==# 'light'
             let z = 24
+            let RGB = {
+                \ 'gray': [5, 5, 5, -6],
+                \ 'jade':  [0, 5, 3, 0],
+                \ 'lime':  [0, 5, 0, 4],
+                \ 'pear':  [5, 5, 0, 0],
+                \ 'drab': [5, 5, 3, -4],
+                \ 'aqua': [3, 5, 5, -4],
+                \ 'sage': [3, 5, 3, -4],
+                \ 'teal':  [0, 5, 5, 0]
+                \ }
+        elseif &background ==# 'light'
+            let z = 26
+            let RGB = {
+                \ 'gray':  [5, 5, 5, 6],
+                \ 'jade':  [0, 5, 3, 0],
+                \ 'lime': [0, 5, 0, -4],
+                \ 'pear':  [5, 5, 0, 0],
+                \ 'drab':  [5, 5, 3, 4],
+                \ 'aqua':  [3, 5, 5, 4],
+                \ 'sage':  [3, 5, 3, 4],
+                \ 'teal':  [0, 5, 5, 0]
+                \ }
         endif
-    
-        let RGB = {
-            \ 'gray': [4, 5, 4, -9],
-            \ 'jade': [0, 5, 3, 0],
-            \ 'lime': [0, 5, 1, 6],
-            \ 'pear': [4, 5, 1, -6],
-            \ 'drab': [4, 5, 3, 6],
-            \ 'aqua': [3, 5, 4, -6],
-            \ 'sage': [3, 5, 3, -6],
-            \ 'teal': [1, 5, 4, 5]
-            \ }
     elseif a:contrast ==# 'hard'
         let x = 6
         let y = 44
 
         if &background ==# 'dark'
-            let z = 28
+            let z = 24
+            let RGB = {
+                \ 'gray': [5, 5, 5, -8],
+                \ 'jade':  [0, 5, 3, 0],
+                \ 'lime':  [0, 5, 0, 6],
+                \ 'pear':  [5, 5, 0, 0],
+                \ 'drab': [5, 5, 3, -6],
+                \ 'aqua': [3, 5, 5, -6],
+                \ 'sage': [3, 5, 3, -6],
+                \ 'teal':  [0, 5, 5, 0]
+                \ }
         elseif &background ==# 'light'
-            let z = 22
+            let z = 26
+            let RGB = {
+                \ 'gray':  [5, 5, 5, 8],
+                \ 'jade':  [0, 5, 3, 0],
+                \ 'lime': [0, 5, 0, -6],
+                \ 'pear':  [5, 5, 0, 0],
+                \ 'drab':  [5, 5, 3, 6],
+                \ 'aqua':  [3, 5, 5, 6],
+                \ 'sage':  [3, 5, 3, 6],
+                \ 'teal':  [0, 5, 5, 0]
+                \ }
         endif
-        
-        let RGB = {
-            \ 'gray': [4, 5, 4, -12],
-            \ 'jade': [0, 5, 3, 0],
-            \ 'lime': [0, 5, 1, 9],
-            \ 'pear': [4, 5, 1, -9],
-            \ 'drab': [4, 5, 3, 9],
-            \ 'aqua': [3, 5, 4, -9],
-            \ 'sage': [3, 5, 3, -9],
-            \ 'teal': [1, 5, 4, 9]
-            \ }
     endif
     
     " colors for dark/light mode
