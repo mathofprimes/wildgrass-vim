@@ -24,4 +24,23 @@ let g:variant_light = 'drab'
 This won't just change the backgrounds for each mode, it will also change 
 the dark mode to use light drab for text and UI elements, as well as change
 the light mode to use jade for text and UI elements. By default, each
-background is set to gray.
+background is set to sage.
+
+===========================================================================
+Setting Contrast                                       *wildgrass-variants*
+===========================================================================
+
+There are soft, medium, and hard settings to control contrast. To set any
+of these, add
+
+let g:variant_contrast = 'soft'
+let g:variant_contrast = 'medium'
+let g:variant_contrast = 'hard'
+
+Medium offers an even contrast that should be pleasant to most users, whereas 
+soft darkens text and lightens background (in dark mode), or darkens background 
+and lightens text (in light mode), to create less contrast, and hard does the 
+opposite to achieve greater contrast. Contrast between between highlight groups
+(comments, for example, are darker than variable names), is decreased if soft 
+contrast is set, and increased if hard contrast is set. Medium is the default
+contrast.
