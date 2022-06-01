@@ -1,218 +1,154 @@
-" user configuration options
-function wildgrass#configuration() 
+function! wildgrass#configuration() 
     return {
-        \ 'variant_dark': get(g:, 'variant_dark', 'sage'),
-        \ 'variant_light': get(g:, 'variant_light', 'sage'),
-        \ 'variant_contrast': get(g:, 'variant_contrast', 'medium')
+        \ 'wildgrass_dark': get(g:, 'wildgrass_dark', 'sage'),
+        \ 'wildgrass_light': get(g:, 'wildgrass_light', 'sage'),
+        \ 'wildgrass_contrast': get(g:, 'wildgrass_contrast', 'medium')
         \ }
 endfunction
 
-" generates and returns user's palette
-function wildgrass#variant(dark, light, contrast)
-    " check contrast
+function! wildgrass#generate_palette(dark, light, contrast)
+    let rgb = {
+        \ 'gray': [5, 5, 5],
+        \ 'jade': [0, 5, 3],
+        \ 'lime': [0, 5, 0],
+        \ 'pear': [5, 5, 0],
+        \ 'drab': [5, 5, 3],
+        \ 'aqua': [3, 5, 5],
+        \ 'sage': [3, 5, 3],
+        \ 'teal': [0, 5, 5]
+        \ }
+
     if a:contrast ==# 'soft'
-        let x = 10
-        let y = 44
-        
         if &background ==# 'dark'
-            let z = 24
-            let RGB = {
-                \ 'gray': [5, 5, 5, -4],
-                \ 'jade':  [0, 5, 3, 0],
-                \ 'lime':  [0, 5, 0, 2],
-                \ 'pear':  [5, 5, 0, 0],
-                \ 'drab': [5, 5, 3, -2],
-                \ 'aqua': [3, 5, 5, -2],
-                \ 'sage': [3, 5, 3, -2],
-                \ 'teal':  [0, 5, 5, 0]
-                \ }
+            let bg = 10
+            let fg = 40
+            let sn = 24
+            let contrast_sn = [-4, 0, 2, 0, -2, -2, -2, 0]
         elseif &background ==# 'light'
-            let z = 26
-            let RGB = {
-                \ 'gray':  [5, 5, 5, 4],
-                \ 'jade':  [0, 5, 3, 0],
-                \ 'lime': [0, 5, 0, -2],
-                \ 'pear':  [5, 5, 0, 0],
-                \ 'drab':  [5, 5, 3, 2],
-                \ 'aqua':  [3, 5, 5, 2],
-                \ 'sage':  [3, 5, 3, 2],
-                \ 'teal':  [0, 5, 5, 0]
-                \ }
+            let bg = 40
+            let fg = 10
+            let sn = 27
+            let contrast_sn = [4, 0, -2, 0, 2, 2, 2, 0]
         endif
     elseif a:contrast ==# 'medium'
-        let x = 8
-        let y = 42
-
         if &background ==# 'dark'
-            let z = 24
-            let RGB = {
-                \ 'gray': [5, 5, 5, -6],
-                \ 'jade':  [0, 5, 3, 0],
-                \ 'lime':  [0, 5, 0, 4],
-                \ 'pear':  [5, 5, 0, 0],
-                \ 'drab': [5, 5, 3, -4],
-                \ 'aqua': [3, 5, 5, -4],
-                \ 'sage': [3, 5, 3, -4],
-                \ 'teal':  [0, 5, 5, 0]
-                \ }
+            let bg = 8
+            let fg = 43
+            let sn = 26
+            let contrast_sn = [-6, 0, 4, 0, -4, -4, -4, 0]
         elseif &background ==# 'light'
-            let z = 26
-            let RGB = {
-                \ 'gray':  [5, 5, 5, 6],
-                \ 'jade':  [0, 5, 3, 0],
-                \ 'lime': [0, 5, 0, -4],
-                \ 'pear':  [5, 5, 0, 0],
-                \ 'drab':  [5, 5, 3, 4],
-                \ 'aqua':  [3, 5, 5, 4],
-                \ 'sage':  [3, 5, 3, 4],
-                \ 'teal':  [0, 5, 5, 0]
-                \ }
+            let bg = 43
+            let fg = 8
+            let sn = 25
+            let contrast_sn = [6, 0, -4, 0, 4, 4, 4, 0]
         endif
     elseif a:contrast ==# 'hard'
-        let x = 6
-        let y = 44
+        if &background ==# 'dark'
+            let bg = 6
+            let fg = 45
+            let sn = 28
+            let contrast_sn = [-8, 0, 6, 0, -6, -6, -6, 0]
+        elseif &background ==# 'light'
+            let bg = 45
+            let fg = 6
+            let sn = 23
+            let contrast_sn = [8, 0, -6, 0, 6, 6, 6, 0]
+        endif
+    endif
+
+    if &background ==# 'dark'
+        exec 'let rgb_bg = rgb.' . a:dark 
+        exec 'let rgb_fg = rgb.' . a:light
+    elseif &background ==# 'light'
+        exec 'let rgb_bg = rgb.' . a:light 
+        exec 'let rgb_fg = rgb.' . a:dark
+    endif
+
+    let background = {}
+    let count_bg = 0
+
+    for i in ['bg0', 'bg1', 'bg2', 'bg3']
+        let r = printf('%X', (bg + count_bg) * rgb_bg[0])
+        let g = printf('%X', (bg + count_bg) * rgb_bg[1])
+        let b = printf('%X', (bg + count_bg) * rgb_bg[2])
+        
+        if len(r) < 2
+            let r = printf('%02X', (bg + count_bg) * rgb_bg[0])
+        endif
+        
+        if len(g) < 2
+            let g = printf('%02X', (bg + count_bg) * rgb_bg[1])
+        endif
+        
+        if len(b) < 2
+            let b = printf('%02X', (bg + count_bg) * rgb_bg[2])
+        endif
+        
+        if &background ==# 'dark'
+            let count_bg += 1
+        elseif &background ==# 'light'
+            let count_bg -= 1
+        endif
+
+        let background[i] = '#' . r . g . b
+    endfor
+    
+    let foreground = {}
+    let count_fg = 0
+
+    for j in ['fg0', 'fg1', 'fg2', 'fg3']
+        let r = printf('%X', (fg + count_fg) * rgb_fg[0])
+        let g = printf('%X', (fg + count_fg) * rgb_fg[1])
+        let b = printf('%X', (fg + count_fg) * rgb_fg[2])
+        
+        if len(r) < 2
+            let r = printf('%02X', (fg + count_fg) * rgb_fg[0])
+        endif
+        
+        if len(g) < 2
+            let g = printf('%02X', (fg + count_fg) * rgb_fg[1])
+        endif
+        
+        if len(b) < 2
+            let b = printf('%02X', (fg + count_fg) * rgb_fg[2])
+        endif
 
         if &background ==# 'dark'
-            let z = 24
-            let RGB = {
-                \ 'gray': [5, 5, 5, -8],
-                \ 'jade':  [0, 5, 3, 0],
-                \ 'lime':  [0, 5, 0, 6],
-                \ 'pear':  [5, 5, 0, 0],
-                \ 'drab': [5, 5, 3, -6],
-                \ 'aqua': [3, 5, 5, -6],
-                \ 'sage': [3, 5, 3, -6],
-                \ 'teal':  [0, 5, 5, 0]
-                \ }
+            let count_fg += 1
         elseif &background ==# 'light'
-            let z = 26
-            let RGB = {
-                \ 'gray':  [5, 5, 5, 8],
-                \ 'jade':  [0, 5, 3, 0],
-                \ 'lime': [0, 5, 0, -6],
-                \ 'pear':  [5, 5, 0, 0],
-                \ 'drab':  [5, 5, 3, 6],
-                \ 'aqua':  [3, 5, 5, 6],
-                \ 'sage':  [3, 5, 3, 6],
-                \ 'teal':  [0, 5, 5, 0]
-                \ }
-        endif
-    endif
-    
-    " colors for dark/light mode
-    exec 'let RGB_dark = RGB.' . a:dark 
-    exec 'let RGB_light = RGB.' . a:light
-   
-    " init dark colors dict
-    let dark = {}
-    let count_dk = 0
-    
-    for i in ['dk0', 'dk1', 'dk2', 'dk3']
-        let red = printf('%X', (x + count_dk) * RGB_dark[0])
-        let green = printf('%X', (x + count_dk) * RGB_dark[1])
-        let blue = printf('%X', (x + count_dk) * RGB_dark[2])
-        
-        " check red
-        if len(red) < 2
-            let red = printf('%02X', (x + count_dk) * RGB_dark[0])
-        endif
-        
-        " check green
-        if len(green) < 2
-            let green = printf('%02X', (x + count_dk) * RGB_dark[1])
-        endif
-        
-        " check blue
-        if len(blue) < 2
-            let blue = printf('%02X', (x + count_dk) * RGB_dark[2])
+            let count_fg -= 1
         endif
 
-        let count_dk += 1
-
-        let dark[i] = '#' . red . green . blue
-    endfor
-
-    let light = {}
-    let count_lt = 0
-    
-    for i in ['lt0', 'lt1', 'lt2', 'lt3']
-        let red = printf('%X', (y + count_lt) * RGB_light[0])
-        let green = printf('%X', (y + count_lt) * RGB_light[1])
-        let blue = printf('%X', (y + count_lt) * RGB_light[2])
-        
-        " check red
-        if len(red) < 2
-            let red = printf('%02X', (y + count_lt) * RGB_light[0])
-        endif
-        
-        " check green
-        if len(green) < 2
-            let green = printf('%02X', (y + count_lt) * RGB_light[1])
-        endif
-        
-        " check blue
-        if len(blue) < 2
-            let blue = printf('%02X', (y + count_lt) * RGB_light[2])
-        endif
-
-        let count_lt -= 1
-
-        let light[i] = '#' . red . green . blue
+        let background[j] = '#' . r . g . b
     endfor
     
-    let palette = {}
+    let syntax = {}
+    let count_sn = 0
 
-    for k in keys(RGB)
-        exec 'let RGB_palette = RGB.' . k
+    for k in keys(rgb)
+        exec 'let rgb_sn = rgb.' . k
         
-        let red = printf('%X', (z + RGB_palette[3]) * RGB_palette[0])
-        let green = printf('%X', (z + RGB_palette[3]) * RGB_palette[1])
-        let blue = printf('%X', (z + RGB_palette[3]) * RGB_palette[2])
+        let r = printf('%X', (sn + contrast_sn[count_sn]) * rgb_sn[0])
+        let g = printf('%X', (sn + contrast_sn[count_sn]) * rgb_sn[1])
+        let b = printf('%X', (sn + contrast_sn[count_sn]) * rgb_sn[2])
 
-        " check red
-        if len(red) < 2
-            let red = printf('%02X', (z + RGB_palette[3]) * RGB_palette[0])
+        if len(r) < 2
+            let r = printf('%02X', (sn + contrast_sn[count_sn]) * rgb_sn[0])
         endif
 
-        " check green
-        if len(green) < 2
-            let green = printf('%02X', (z + RGB_palette[3]) * RGB_palette[1])
+        if len(g) < 2
+            let g = printf('%02X', (sn + contrast_sn[count_sn]) * rgb_sn[1])
         endif
 
-        " check blue
-        if len(blue) < 2
-            let blue = printf('%02X', (z + RGB_palette[3]) * RGB_palette[2])
+        if len(b) < 2
+            let b = printf('%02X', (sn + contrast_sn[count_sn]) * rgb_sn[2])
         endif
+
+        let count_sn += 1
         
-        let palette[k] = '#' . red . green . blue
+        let syntax[k] = '#' . r . g . b
     endfor
     
-    " check if dark or light mode set
-    if &background ==# 'dark'
-        let background = {
-            \ 'bg0': dark.dk0,
-            \ 'bg1': dark.dk1,
-            \ 'bg2': dark.dk2,
-            \ 'bg3': dark.dk3,
-            \ 'bg4': light.lt0,
-            \ 'bg5': light.lt1,
-            \ 'bg6': light.lt2,
-            \ 'bg7': light.lt3
-            \ }
-        let variant = extend(background, palette)
-    elseif &background ==# 'light'
-        let background = {
-            \ 'bg0': light.lt0,
-            \ 'bg1': light.lt1,
-            \ 'bg2': light.lt2,
-            \ 'bg3': light.lt3,
-            \ 'bg4': dark.dk0,
-            \ 'bg5': dark.dk1,
-            \ 'bg6': dark.dk2,
-            \ 'bg7': dark.dk3 
-            \ }
-        let variant = extend(background, palette)
-    endif
     let other = {
         \ 'none': 'NONE',
         \ 'bold': 'bold',
@@ -221,7 +157,8 @@ function wildgrass#variant(dark, light, contrast)
         \ 'underline': 'underline',
         \ 'undercurl': 'undercurl'
         \ }
-    return extend(variant, other)
+
+    return extend(extend(background, foreground), extend(syntax, other))
 endfunction
 
 function! wildgrass#HL(group, gui, fgd, bgd, spl)
