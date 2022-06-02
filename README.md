@@ -11,18 +11,18 @@ Wildgrass uses just shades of green &mdash; more precisely, green is always the 
 The background colors in dark mode can be set by adding, for example,
 
 ```
-let g:variant_dark = 'jade'
+let g:wildgrass_dark = 'jade'
 ```
 
 to your .vimrc file. Similiarly, light mode can be adjusted by adding
 
 ```
-let g:variant_light = 'pear'
+let g:wildgrass_light = 'pear'
 ```
 
 Dark mode will now have a jade background, and light mode will have a pear background. The 4 light colors used in dark mode will be pear, whereas the 4 dark colors in light mode will be jade.
 
-## Contrast
+## Contrast:
 
 Contrast changes three different things: how bright dark colors are, how bright light colors are, and the contrast between different syntax (e.g. comments appear darker, and variable names appear brighter).
 
@@ -31,7 +31,7 @@ Contrast changes three different things: how bright dark colors are, how bright 
 To set contrast to soft, add this to your .vimrc file:
 
 ```
-let g:variant_contrast = 'soft'
+let g:wildgrass_contrast = 'soft'
 ```
 > In dark mode, dark colors are slightly brighter, and text is slightly darker. In light mode, light colors are slightly darker, and dark colors are slightly lighter. Contrast between syntax is minimal. 
 
@@ -40,7 +40,7 @@ let g:variant_contrast = 'soft'
 To set contrast to medium, add this to your .vimrc file:
 
 ```
-let g:variant_contrast = 'medium'
+let g:wildgrass_contrast = 'medium'
 ```
 > Contrast is a halfway between soft and medium, intended to be pleasant for most users.
 
@@ -49,15 +49,15 @@ let g:variant_contrast = 'medium'
 To set contrast to hard, add this to your .vimrc file:
 
 ```
-let g:variant_contrast = 'hard'
+let g:wildgrass_contrast = 'hard'
 ```
 > In dark mode, dark colors are slightly darker, and text is slightly brighter. In light mode, light colors are slightly lighter, and dark colors are slightly darker. Contrast between syntax is heavy.
 
-# Palette
+# Palette:
 
 Green is pleasant to look at for long coding sessions, so it is a natural choice for a colorscheme. Each designated color has a unique, set ratio of red/green/blue intended to make it as distinguishable as possible from the others. Unlike most colorschemes, the code for Wildgrass does not need the author explicitly state what each color is and, for example, assign it to a dictionary and then a highlight group. Rather, a function takes user settings and generates the correct colorscheme based off the ratio of red/green/blue of each color. This ensure users always get the colors they expect while also reducing code complexity and allowing more configuration options.
 
-# Installation
+# Installation:
 
 ## Pathogen:
 
