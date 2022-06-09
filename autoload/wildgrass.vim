@@ -63,64 +63,57 @@ function! wildgrass#generate_palette(dark, light, contrast)
         exec 'let rgb_bg = rgb.' . a:light 
         exec 'let rgb_fg = rgb.' . a:dark
     endif
-
-    let background = {}
-    let count_bg = 0
-
-    for i in ['bg0', 'bg1', 'bg2', 'bg3']
-        let r = printf('%X', (bg + count_bg) * rgb_bg[0])
-        let g = printf('%X', (bg + count_bg) * rgb_bg[1])
-        let b = printf('%X', (bg + count_bg) * rgb_bg[2])
-        
-        if len(r) < 2
-            let r = printf('%02X', (bg + count_bg) * rgb_bg[0])
-        endif
-        
-        if len(g) < 2
-            let g = printf('%02X', (bg + count_bg) * rgb_bg[1])
-        endif
-        
-        if len(b) < 2
-            let b = printf('%02X', (bg + count_bg) * rgb_bg[2])
-        endif
-        
-        if &background ==# 'dark'
-            let count_bg += 1
-        elseif &background ==# 'light'
-            let count_bg -= 1
-        endif
-
-        let background[i] = '#' . r . g . b
-    endfor
     
+    let background = {}
     let foreground = {}
-    let count_fg = 0
-
-    for j in ['fg0', 'fg1', 'fg2', 'fg3']
-        let r = printf('%X', (fg + count_fg) * rgb_fg[0])
-        let g = printf('%X', (fg + count_fg) * rgb_fg[1])
-        let b = printf('%X', (fg + count_fg) * rgb_fg[2])
+    
+    for i in ['0', '1', '2', '3']
         
-        if len(r) < 2
-            let r = printf('%02X', (fg + count_fg) * rgb_fg[0])
-        endif
-        
-        if len(g) < 2
-            let g = printf('%02X', (fg + count_fg) * rgb_fg[1])
-        endif
-        
-        if len(b) < 2
-            let b = printf('%02X', (fg + count_fg) * rgb_fg[2])
-        endif
-
         if &background ==# 'dark'
-            let count_fg += 1
+            let bg += 1
+            let fg -= 1 
         elseif &background ==# 'light'
-            let count_fg -= 1
+            let bg -= 1
+            let fg += 1
         endif
 
-        let background[j] = '#' . r . g . b
+        let r_bg = printf('%X', bg * rgb_bg[0]) 
+        let g_bg = printf('%X', bg * rgb_bg[1])
+        let b_bg = printf('%X', bg * rgb_bg[2])
+
+
+        if len(r_bg) < 2
+            let r_bg = printf('%02X', bg * rgb_bg[0])
+        endif
+        
+        if len(g_bg) < 2
+            let g_bg = printf('%02X', bg * rgb_bg[1])
+        endif
+        
+        if len(b_bg) < 2
+            let b_bg = printf('%02X', bg * rgb_bg[2])
+        endif
+
+        let r_fg = printf('%X', fg * rgb_fg[0])
+        let g_fg = printf('%X', fg * rgb_fg[1])
+        let b_fg = printf('%X', fg * rgb_fg[2])
+        
+        if len(r_fg) < 2
+            let r_fg = printf('%02X', fg * rgb_fg[0])
+        endif
+        
+        if len(g_fg) < 2
+            let g_fg = printf('%02X', fg * rgb_fg[1])
+        endif
+        
+        if len(b_fg) < 2
+            let b_fg = printf('%02X', fg * rgb_fg[2])
+        endif
+
+        let background['bg' . i] = '#' . r_bg . g_bg . b_bg
+        let foreground['fg' . i] = '#' . r_fg . g_fg . b_fg
     endfor
+
     
     let syntax = {}
     let count_sn = 0
