@@ -2,7 +2,7 @@
 
 Wildgrass uses just shades of green &mdash; more precisely, green is always the highest value of any color. Each color is designated as either gray, jade, lime, pear, drab, aqua, sage, and teal, with 4 darker or lighter shades of these colors being used for background colors in dark or light mode. Users can set contrast to soft, medium, or hard, and set the background colors of dark or light mode independently to one of the available designated colors, thus creating their own unique variation of Wildgrass. By default, backgrounds for dark and light mode is sage, and the default contrast is medium.
 
-![wildgrass](https://user-images.githubusercontent.com/74194607/169200607-27b595da-3dfd-43bd-b30e-a32fbd3eaaf6.gif)
+![wildgrass](https://user-images.githubusercontent.com/74194607/173153917-d495af75-c945-4cc0-a4cf-98b98e0e2fc3.png)
 
 # Features
 
