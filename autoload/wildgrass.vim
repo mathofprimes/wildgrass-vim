@@ -1,3 +1,4 @@
+" store user configuration in a dict to use later
 function! wildgrass#configuration() 
     return {
         \ 'wildgrass_dark': get(g:, 'wildgrass_dark', 'sage'),
@@ -6,9 +7,18 @@ function! wildgrass#configuration()
         \ }
 endfunction
 
+" function which generates the correct palette based 
+" on user dark, light, and contrast configurations
 function! wildgrass#generate_palette(dark, light, contrast)
+    " palette uses 8 colors with unique ratios of r:g:b; four
+    " darker shades are used for the background in dark mode 
+    " and foreground, and vice versa for light mode. Each color
+    " is used for syntax, making a 4 + 4 + 8 = 16 color palette.
+
+    " the colors' ratios stored in lists stored in a dict where
+    " the key is an assigned name for the color.
     let rgb = {
-        \ 'gray': [3.5, 5.0, 3.5],
+        \ 'gray': [4.5, 5.0, 4.5],
         \ 'jade': [0.0, 5.0, 2.5],
         \ 'lime': [1.0, 5.0, 1.0],
         \ 'pear': [4.5, 5.0, 1.0],
@@ -17,7 +27,9 @@ function! wildgrass#generate_palette(dark, light, contrast)
         \ 'sage': [2.5, 5.0, 2.5],
         \ 'teal': [1.0, 5.0, 4.5]
         \ }
-
+    
+    " this dict becomes the palette. we start with non-color
+    " (special) syntax attributes then append colors to it
     let palette = {
         \ 'none': 'NONE',
         \ 'bold': 'bold',
