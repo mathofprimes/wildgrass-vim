@@ -15,7 +15,7 @@ let s:p = wildgrass#generate_palette(s:c.wildgrass_dark, s:c.wildgrass_light, s:
 
 " SYNTAX GROUPS (see :h group-name):
 
-call wildgrass#HL('Comment', s:p.none, s:p.gray, s:p.none, s:p.none)
+call wildgrass#HL('Comment', s:p.italic, s:p.gray, s:p.none, s:p.none)
 call wildgrass#HL('Constant', s:p.none, s:p.jade, s:p.none, s:p.none)
 call wildgrass#HL('String', s:p.none, s:p.jade, s:p.none, s:p.none)
 call wildgrass#HL('Character', s:p.none, s:p.jade, s:p.none, s:p.none)
@@ -71,24 +71,24 @@ call wildgrass#HL('lCursor', s:p.reverse, s:p.none, s:p.none, s:p.none)
 call wildgrass#HL('CursorIM', s:p.reverse, s:p.none, s:p.none, s:p.none)
 call wildgrass#HL('CursorColumn', s:p.none, s:p.none, s:p.bg1, s:p.none)
 call wildgrass#HL('CursorLine', s:p.none, s:p.none, s:p.bg1, s:p.none)
-hi link CursorLineFold Normal
-call wildgrass#HL('CursorLineNr', s:p.none, s:p.fg3, s:p.none, s:p.none)
-hi link CursorLineSign Normal
+call wildgrass#HL('CursorLineFold', s:p.none, s:p.fg0, s:p.bg0, s:p.none)
+call wildgrass#HL('CursorLineNr', s:p.none, s:p.fg3, s:p.bg1, s:p.none)
+call wildgrass#HL('CursorLineSign', s:p.none, s:p.fg0, s:p.bg0, s:p.none)
 
 " columns, lines
 call wildgrass#HL('ColorColumn', s:p.none, s:p.none, s:p.bg1, s:p.none)
 call wildgrass#HL('EndOfBuffer', s:p.none, s:p.fg0, s:p.bg0, s:p.none)
-call wildgrass#HL('LineNr', s:p.none, s:p.fg3, s:p.none, s:p.none)
+call wildgrass#HL('LineNr', s:p.bold, s:p.fg3, s:p.bg1, s:p.none)
 call wildgrass#HL('LineNrAbove', s:p.none, s:p.gray, s:p.none, s:p.none)
 call wildgrass#HL('LineNrBelow', s:p.none, s:p.gray, s:p.none, s:p.none)
 call wildgrass#HL('SignColumn', s:p.none, s:p.fg0, s:p.none, s:p.none)
 call wildgrass#HL('VertSplit', s:p.none, s:p.fg0, s:p.none, s:p.none) 
 
 " messages
-call wildgrass#HL('ErrorMsg', s:p.none, s:p.pear, s:p.none, s:p.none)
-call wildgrass#HL('ModeMsg', s:p.none, s:p.teal, s:p.none, s:p.none)
-call wildgrass#HL('MoreMsg', s:p.none, s:p.lime, s:p.none, s:p.none) 
-call wildgrass#HL('WarningMsg', s:p.none, s:p.pear, s:p.none, s:p.none)
+call wildgrass#HL('ErrorMsg', s:p.bold, s:p.pear, s:p.none, s:p.none)
+call wildgrass#HL('ModeMsg', s:p.bold, s:p.teal, s:p.none, s:p.none)
+call wildgrass#HL('MoreMsg', s:p.bold, s:p.lime, s:p.none, s:p.none) 
+call wildgrass#HL('WarningMsg', s:p.bold, s:p.pear, s:p.none, s:p.none)
 
 " popup menu
 call wildgrass#HL('Pmenu', s:p.none, s:p.none, s:p.bg3, s:p.none)
