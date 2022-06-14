@@ -39,6 +39,12 @@ function! wildgrass#generate_palette(dark, light, contrast)
         \ 'undercurl': 'undercurl'
         \ }
 
+    " check contrast. bg is background colors, fg is foreground
+    " colors, sn is syntax colors, and contrast_sn controls contrast
+    " between syntax highlight groups. bg and fg swap when changing
+    " between light and dark mode, and contrast between sn colors switches
+    " (e.g. in dark mode comments are darker compared to other sn colors to 
+    " stand out less, but brighter in light mode)
     if a:contrast ==# 'soft'
         if &background ==# 'dark'
             let bg = 10
@@ -76,6 +82,15 @@ function! wildgrass#generate_palette(dark, light, contrast)
             let contrast_sn = [8, 0, -6, 0, 6, 6, 6, 0]
         endif
     endif
+
+    " attempt to implement if else more elegently
+    for option in ['soft', 'medium', 'hard']
+        if a:contrast ==# option
+            if &background ==# 'dark'
+                let a = 5
+            endif
+        endif
+    endfor
 
     if &background ==# 'dark'
         exec 'let rgb_bg = rgb.' . a:dark 
@@ -135,7 +150,7 @@ endfunction
 
 function! wildgrass#HL(group, gui, fgd, bgd, spl)
     exec 'hi' a:group
-        \ 'cterm   = NONE'
+        \ 'cterm=' . a:gui
         \ 'ctermfg = NONE'
         \ 'ctermbg = NONE'
         \ 'gui='   . a:gui
