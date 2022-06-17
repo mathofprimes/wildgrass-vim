@@ -1,8 +1,8 @@
 " store user configuration in a dict to use later
 function! wildgrass#configuration() 
     return {
-        \ 'wildgrass_dark': get(g:, 'wildgrass_dark', 'sage'),
-        \ 'wildgrass_light': get(g:, 'wildgrass_light', 'sage'),
+        \ 'wildgrass_dark': get(g:, 'wildgrass_dark', 'pure'),
+        \ 'wildgrass_light': get(g:, 'wildgrass_light', 'pure'),
         \ 'wildgrass_contrast': get(g:, 'wildgrass_contrast', 'medium')
         \ }
 endfunction
@@ -18,14 +18,14 @@ function! wildgrass#generate_palette(dark, light, contrast)
     " the colors' ratios stored in lists stored in a dict where
     " the key is an assigned name for the color.
     let rgb = {
-        \ 'gray': [4.5, 5.0, 4.5],
-        \ 'jade': [0.0, 5.0, 2.5],
-        \ 'lime': [1.0, 5.0, 1.0],
-        \ 'pear': [4.5, 5.0, 1.0],
-        \ 'drab': [4.5, 5.0, 2.5],
-        \ 'aqua': [2.5, 5.0, 4.5],
-        \ 'sage': [2.5, 5.0, 2.5],
-        \ 'teal': [1.0, 5.0, 4.5]
+        \ 'gray': [5, 5, 5],
+        \ 'jade': [0, 5, 2],
+        \ 'lime': [2, 5, 0],
+        \ 'pear': [5, 5, 0],
+        \ 'drab': [5, 5, 2],
+        \ 'aqua': [2, 5, 5],
+        \ 'sage': [2, 5, 2],
+        \ 'teal': [0, 5, 5],
         \ }
     
     " this dict becomes the palette. we start with non-color
@@ -33,10 +33,10 @@ function! wildgrass#generate_palette(dark, light, contrast)
     let palette = {
         \ 'none': 'NONE',
         \ 'bold': 'bold',
-        \ 'italic': 'italic',
-        \ 'reverse': 'reverse',
-        \ 'underline': 'underline',
-        \ 'undercurl': 'undercurl'
+        \ 'itlc': 'italic',
+        \ 'rvrs': 'reverse',
+        \ 'undl': 'underline',
+        \ 'undc': 'undercurl'
         \ }
 
     " check contrast. bg is background colors, fg is foreground
@@ -47,7 +47,7 @@ function! wildgrass#generate_palette(dark, light, contrast)
     " stand out less, but brighter in light mode)
     if a:contrast ==# 'soft'
         if &background ==# 'dark'
-            let bg = 10
+            let bg = 10 
             let fg = 40
             let sn = 24
             let contrast_sn = [-4, 0, 2, 0, -2, -2, -2, 0]
@@ -83,21 +83,30 @@ function! wildgrass#generate_palette(dark, light, contrast)
         endif
     endif
 
-    " attempt to implement if else more elegently
-    for option in ['soft', 'medium', 'hard']
-        if a:contrast ==# option
-            if &background ==# 'dark'
-                let a = 5
-            endif
-        endif
-    endfor
-
     if &background ==# 'dark'
-        exec 'let rgb_bg = rgb.' . a:dark 
-        exec 'let rgb_fg = rgb.' . a:light
+        if a:dark ==# 'pure'
+            let rgb_bg = [0, 5, 0]
+        else
+            exec 'let rgb_bg = rgb.' . a:dark
+        endif
+        
+        if a:light == 'pure'
+            let rgb_fg = [0, 5, 0]
+        else
+            exec 'let rgb_fg = rgb.' . a:light
+        endif
     elseif &background ==# 'light'
-        exec 'let rgb_bg = rgb.' . a:light 
-        exec 'let rgb_fg = rgb.' . a:dark
+        if a:light ==# 'pure'
+            let rgb_bg = [0, 5, 0]
+        else
+            exec 'let rgb_bg = rgb.' . a:light
+        endif
+
+        if a:dark ==# 'pure'
+            let rgb_fg =[0, 5, 0]
+        else
+            exec 'let rgb_fg = rgb.' . a:dark
+        endif
     endif
     
     for i in ['bg0', 'bg1', 'bg2', 'bg3']
@@ -108,9 +117,9 @@ function! wildgrass#generate_palette(dark, light, contrast)
             let bg -= 1
         endif
 
-        let r = printf('%02X', float2nr(bg * rgb_bg[0])) 
-        let g = printf('%02X', float2nr(bg * rgb_bg[1]))
-        let b = printf('%02X', float2nr(bg * rgb_bg[2]))
+        let r = printf('%02X', bg * rgb_bg[0]) 
+        let g = printf('%02X', bg * rgb_bg[1])
+        let b = printf('%02X', bg * rgb_bg[2])
         
         let palette[i] = '#' . r . g . b
     endfor
@@ -123,9 +132,9 @@ function! wildgrass#generate_palette(dark, light, contrast)
             let fg -= 1
         endif
 
-        let r = printf('%02X', float2nr(fg * rgb_fg[0]))
-        let g = printf('%02X', float2nr(fg * rgb_fg[1]))
-        let b = printf('%02X', float2nr(fg * rgb_fg[2]))
+        let r = printf('%02X', fg * rgb_fg[0])
+        let g = printf('%02X', fg * rgb_fg[1])
+        let b = printf('%02X', fg * rgb_fg[2])
         
         let palette[j] = '#' . r . g . b
     endfor
@@ -136,9 +145,9 @@ function! wildgrass#generate_palette(dark, light, contrast)
     for k in keys(rgb)
         exec 'let rgb_sn = rgb.' . k
         
-        let r = printf('%02X', float2nr((sn + contrast_sn[count_sn]) * rgb_sn[0]))
-        let g = printf('%02X', float2nr((sn + contrast_sn[count_sn]) * rgb_sn[1]))
-        let b = printf('%02X', float2nr((sn + contrast_sn[count_sn]) * rgb_sn[2]))
+        let r = printf('%02X', (sn + contrast_sn[count_sn]) * rgb_sn[0])
+        let g = printf('%02X', (sn + contrast_sn[count_sn]) * rgb_sn[1])
+        let b = printf('%02X', (sn + contrast_sn[count_sn]) * rgb_sn[2])
         
         let count_sn += 1
         
