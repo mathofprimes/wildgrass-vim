@@ -16,6 +16,7 @@ let s:p = wildgrass#generate_palette(s:c.wildgrass_dark, s:c.wildgrass_light, s:
 " SYNTAX GROUPS (see :h group-name):
 
 call wildgrass#HL('Comment', s:p.itlc, s:p.gray, s:p.none, s:p.none)
+
 call wildgrass#HL('Constant', s:p.none, s:p.jade, s:p.none, s:p.none)
 call wildgrass#HL('String', s:p.none, s:p.jade, s:p.none, s:p.none)
 call wildgrass#HL('Character', s:p.none, s:p.jade, s:p.none, s:p.none)
@@ -23,7 +24,7 @@ call wildgrass#HL('Number', s:p.none, s:p.jade, s:p.none, s:p.none)
 call wildgrass#HL('Boolean', s:p.none, s:p.jade, s:p.none, s:p.none)
 call wildgrass#HL('Float', s:p.none, s:p.jade, s:p.none, s:p.none)
 
-call wildgrass#HL('Identifier', s:p.none, s:p.lime, s:p.none, s:p.none)
+call wildgrass#HL('Identifier', s:p.none, s:p.pure, s:p.none, s:p.none)
 call wildgrass#HL('Function', s:p.none, s:p.lime, s:p.none, s:p.none)
 
 call wildgrass#HL('Statement', s:p.none, s:p.pear, s:p.none, s:p.none)
