@@ -28,6 +28,16 @@ function! wildgrass#generate_palette(dark, light, contrast)
         \ 'sage': [2.5, 5.0, 2.5],
         \ 'teal': [1.0, 5.0, 4.5]
         \ }
+
+    let contrast = {
+        \ 'dark_soft':    [10, 40, 24],
+        \ 'light_soft':   [40, 10, 27],
+        \ 'dark_medium':  [8, 43, 26],
+        \ 'light_medium': [43, 8, 35],
+        \ 'dark_hard':    [6, 45, 28],
+        \ 'light_hard':   [45, 6, 23]
+        \ }
+
     
     " this dict becomes the palette. we start with non-color
     " (special) syntax attributes then append colors to it
@@ -48,38 +58,20 @@ function! wildgrass#generate_palette(dark, light, contrast)
     " stand out less, but brighter in light mode)
     if a:contrast ==# 'soft'
         if &background ==# 'dark'
-            let bg = 10 
-            let fg = 40
-            let sn = 24
             let contrast_sn = [0, -4, 0, 2, 0, -2, -2, -2, 0]
         elseif &background ==# 'light'
-            let bg = 40
-            let fg = 10
-            let sn = 27
             let contrast_sn = [0, 4, 0, -2, 0, 2, 2, 2, 0]
         endif
     elseif a:contrast ==# 'medium'
         if &background ==# 'dark'
-            let bg = 8
-            let fg = 43
-            let sn = 26
             let contrast_sn = [0, -6, 0, 4, 0, -4, -4, -4, 0]
         elseif &background ==# 'light'
-            let bg = 43
-            let fg = 8
-            let sn = 25
             let contrast_sn = [0, 6, 0, -4, 0, 4, 4, 4, 0]
         endif
     elseif a:contrast ==# 'hard'
         if &background ==# 'dark'
-            let bg = 6
-            let fg = 45
-            let sn = 28
             let contrast_sn = [0, -8, 0, 6, 0, -6, -6, -6, 0]
         elseif &background ==# 'light'
-            let bg = 45
-            let fg = 6
-            let sn = 23
             let contrast_sn = [0, 8, 0, -6, 0, 6, 6, 6, 0]
         endif
     endif
@@ -87,22 +79,28 @@ function! wildgrass#generate_palette(dark, light, contrast)
     if &background ==# 'dark'
         exec 'let rgb_bg = rgb.' . a:dark
         exec 'let rgb_fg = rgb.' . a:light
+        exec 'let bg = contrast.' . 'dark_' . a:contrast
+        exec 'let fg = contrast.' . 'dark_' . a:contrast
+        exec 'let sn = contrast.' . 'dark_' . a:contrast
     elseif &background ==# 'light'
         exec 'let rgb_bg = rgb.' . a:light
         exec 'let rgb_fg = rgb.' . a:dark
+        exec 'let bg = contrast.' . 'light_' . a:contrast
+        exec 'let fg = contrast.' . 'light_' . a:contrast
+        exec 'let sn = contrast.' . 'light_' . a:contrast
     endif
     
     for i in ['bg0', 'bg1', 'bg2', 'bg3']
         
         if &background ==# 'dark'
-            let bg += 1
+            let bg[0] += 1
         elseif &background ==# 'light'
-            let bg -= 1
+            let bg[0] -= 1
         endif
 
-        let r = printf('%02X', float2nr(bg * rgb_bg[0])) 
-        let g = printf('%02X', float2nr(bg * rgb_bg[1]))
-        let b = printf('%02X', float2nr(bg * rgb_bg[2]))
+        let r = printf('%02X', float2nr(bg[0] * rgb_bg[0])) 
+        let g = printf('%02X', float2nr(bg[0] * rgb_bg[1]))
+        let b = printf('%02X', float2nr(bg[0] * rgb_bg[2]))
         
         let palette[i] = '#' . r . g . b
     endfor
@@ -110,14 +108,14 @@ function! wildgrass#generate_palette(dark, light, contrast)
     for j in ['fg0', 'fg1', 'fg2', 'fg3']
         
         if &background ==# 'dark'
-            let fg += 1
+            let fg[1] += 1
         elseif &background ==# 'light'
-            let fg -= 1
+            let fg[1] -= 1
         endif
 
-        let r = printf('%02X', float2nr(fg * rgb_fg[0]))
-        let g = printf('%02X', float2nr(fg * rgb_fg[1]))
-        let b = printf('%02X', float2nr(fg * rgb_fg[2]))
+        let r = printf('%02X', float2nr(fg[1] * rgb_fg[0]))
+        let g = printf('%02X', float2nr(fg[1] * rgb_fg[1]))
+        let b = printf('%02X', float2nr(fg[1] * rgb_fg[2]))
         
         let palette[j] = '#' . r . g . b
     endfor
@@ -128,15 +126,15 @@ function! wildgrass#generate_palette(dark, light, contrast)
     for k in keys(rgb)
         exec 'let rgb_sn = rgb.' . k
         
-        let r = printf('%02X', float2nr((sn + contrast_sn[count_sn]) * rgb_sn[0]))
-        let g = printf('%02X', float2nr((sn + contrast_sn[count_sn]) * rgb_sn[1]))
-        let b = printf('%02X', float2nr((sn + contrast_sn[count_sn]) * rgb_sn[2]))
+        let r = printf('%02X', float2nr((sn[2] + contrast_sn[count_sn]) * rgb_sn[0]))
+        let g = printf('%02X', float2nr((sn[2] + contrast_sn[count_sn]) * rgb_sn[1]))
+        let b = printf('%02X', float2nr((sn[2] + contrast_sn[count_sn]) * rgb_sn[2]))
         
         let count_sn += 1
         
         let palette[k] = '#' . r . g . b
     endfor
-    
+
     return palette
 endfunction
 
