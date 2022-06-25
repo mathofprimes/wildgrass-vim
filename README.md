@@ -60,7 +60,7 @@ let g:wildgrass_contrast = 'hard'
 
 # Palette:
 
-Green is pleasant to look at, making it a natural choice for a colorscheme. Each designated color has a unique ratio of red/green/blue intended to make it as distinguishable as possible from the others. Unlike most colorschemes, Wildgrass does not rely on explicitly stating what each color is before assigning it to a highlight group. Rather, a function takes user settings and generates the correct colorscheme, thus ensuring users get the colors they expect while reducing code complexity and allowing more configuration options. The function is kept as simple as possible (about 80 lines of code) so as now to impede Vim startup time.
+Green is pleasant to look at, making it a natural choice for a colorscheme. Each designated color has a unique ratio of red/green/blue intended to make it as distinguishable as possible from the others. Unlike most colorschemes, Wildgrass does not rely on explicitly stating what each color is before assigning it to a highlight group. Rather, a function takes user settings and generates the correct colorscheme, thus ensuring users get the colors they expect while reducing code complexity and allowing more configuration options. The function is kept as simple as possible (about 80 lines of code) so as to not impede Vim startup time.
 
 # Installation:
 
