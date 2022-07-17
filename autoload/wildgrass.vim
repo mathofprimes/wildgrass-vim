@@ -9,34 +9,35 @@ endfunction
 
 " function which generates palette from user configurations
 function! wildgrass#generate_palette(dark, light, contrast)
+    " this code is correct
     let rgb = {
-        \ 'pure': [0, 5, 0, 0],
-        \ 'gray': [4, 5, 4, 1],
-        \ 'jade': [0, 5, 2, 2],
-        \ 'lime': [2, 5, 0, 3],
-        \ 'pear': [4, 5, 0, 4],
-        \ 'drab': [4, 5, 2, 5],
-        \ 'aqua': [2, 5, 4, 6],
-        \ 'sage': [2, 5, 2, 7],
-        \ 'teal': [0, 5, 4, 8]
+        \ 'pure': [0, 15, 0, 0],
+        \ 'gray': [14, 15, 14, 1],
+        \ 'jade': [0, 15, 7, 2],
+        \ 'lime': [7, 15, 0, 3],
+        \ 'pear': [14, 15, 0, 4],
+        \ 'drab': [14, 15, 7, 5],
+        \ 'aqua': [7, 15, 14, 6],
+        \ 'sage': [7, 15, 7, 7],
+        \ 'teal': [0, 15, 14, 8]
         \ }
 
     let con_bf = {
-        \ 'darksoft':    [10, 41, 24],
-        \ 'lightsoft':   [40, 10, 27],
-        \ 'darkmedium':  [ 8, 43, 26],
-        \ 'lightmedium': [43,  8, 25],
-        \ 'darkhard':    [ 6, 45, 28],
-        \ 'lighthard':   [45,  6, 23]
+        \ 'darksoft':    [ 4, 13,  8],
+        \ 'lightsoft':   [13,  4,  9],
+        \ 'darkmedium':  [3, 14, 9],
+        \ 'lightmedium': [14,  3,  8],
+        \ 'darkhard':    [ 2, 15, 10],
+        \ 'lighthard':   [15,  2,  7]
         \ }
 
     let con_sn = {
-        \ 'darksoft':    [-1, -3,  1,  2, 0, -2, -2, 0, 0],
-        \ 'lightsoft':   [ 1,  3, -1, -2, 0,  2,  2, 0, 0],
-        \ 'darkmedium':  [-2, -5,  2,  4, 0,  4, -4, 0, 0],
-        \ 'lightmedium': [ 2,  5, -2, -4, 0, -4,  4, 0, 0],
-        \ 'darkhard':    [-3, -7,  3,  6, 0,  6, -6, 0, 0],
-        \ 'lighthard':   [ 3,  7, -3, -6, 0, -6,  6, 0, 0]
+        \ 'darksoft':    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        \ 'lightsoft':   [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        \ 'darkmedium':  [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        \ 'lightmedium': [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        \ 'darkhard':    [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        \ 'lighthard':   [0, 0, 0, 0, 0, 0, 0, 0, 0]
         \ }
 
     let palette = {
@@ -61,31 +62,31 @@ function! wildgrass#generate_palette(dark, light, contrast)
         exec 'let rgb_fg = rgb.' . a:dark
     endif
 
+    let count_bg = 0
+    let count_fg = 0
 
     for bf in ['0', '1', '2', '3']
         if &background ==# 'dark'
-            let bg[0] += 1
-            let fg[1] -= 1
+            let count_bg += 5
+            let count_fg -= 5
         elseif &background ==# 'light'
-            let bg[0] -= 1
-            let fg[1] += 1
+            let count_bg -= 5
+            let count_fg += 5
         endif
 
-        let palette['bg' . bf] = '#' . printf('%02X', bg[0] * rgb_bg[0])
-                                   \ . printf('%02X', bg[0] * rgb_bg[1])
-                                   \ . printf('%02X', bg[0] * rgb_bg[2])
+        let palette['bg' . bf] = '#' . printf('%02X', abs(bg[0] * rgb_bg[0] + count_bg))
+                                   \ . printf('%02X', bg[0] * rgb_bg[1] + count_bg)
+                                   \ . printf('%02X', abs(bg[0] * rgb_bg[2] + count_bg))
         
-        let palette['fg' . bf] = '#' . printf('%02X', fg[1] * rgb_fg[0])
-                                   \ . printf('%02X', fg[1] * rgb_fg[1])
-                                   \ . printf('%02X', fg[1] * rgb_fg[2])
+        let palette['fg' . bf] = '#' . printf('%02X', abs(fg[1] * rgb_fg[0] + count_fg))
+                                   \ . printf('%02X', fg[1] * rgb_fg[1] + count_fg)
+                                   \ . printf('%02X', abs(fg[1] * rgb_fg[2] + count_fg))
     endfor
 
-    let rgb_list = items(rgb)
-
-    for [name, rgb_sn] in rgb_list
-        let palette[name] = '#' . printf('%02X', (sn[2] + csn[rgb_sn[3]]) * rgb_sn[0])
-                              \ . printf('%02X', (sn[2] + csn[rgb_sn[3]]) * rgb_sn[1])
-                              \ . printf('%02X', (sn[2] + csn[rgb_sn[3]]) * rgb_sn[2])
+    for [name, rgb_sn] in items(rgb)
+        let palette[name] = '#' . printf('%02X', abs(sn[2] * rgb_sn[0] + csn[rgb_sn[3]]))
+                              \ . printf('%02X', sn[2] * rgb_sn[1] + csn[rgb_sn[3]])
+                              \ . printf('%02X', abs(sn[2] * rgb_sn[2] + csn[rgb_sn[3]]))
     endfor
 
     return palette
